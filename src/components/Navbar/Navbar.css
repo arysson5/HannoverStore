@@ -1,0 +1,30 @@
+.bg-primary{
+    background-color: #db1414 !important;
+    width: 100%;
+
+}
+
+.navbar {
+    background-color: #db1414;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #search{
+        margin-right: 10px;
+        width: 50%;
+
+        background-color: #ffffff;
+        color: rgb(6, 6, 6);
+        outline: none;
+        transition: all 0.3s ease-in-out;
+    
+    }
+  }
+.logo img {
+        width: 70px;
+        height: 70px;
+        margin-top: 10px;
+      
+      }

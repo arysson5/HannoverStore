@@ -1,0 +1,13 @@
+#cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+#pfutebol{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 2rem;
+   
+}
