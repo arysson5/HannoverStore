@@ -13,7 +13,7 @@ const Carousel = () => {
       alt: "Tenis Esportivo",
       title: "Tênis Esportivo",
       description: "Descubra nossa nova coleção de tênis",
-      className: "jordan-slide"
+      className: "tenis-slide"
     },
     {
       src: "https://images.unsplash.com/photo-1601866656253-7179120e5e59?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -21,6 +21,20 @@ const Carousel = () => {
       title: "Equipamentos para Corrida",
       description: "Os melhores equipamentos para sua corrida",
       className: "corrida-slide"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1506079906501-adbb5907b720?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Futebol",
+      title: "As melhores chuteiras para o seu jogo",
+      description: "Descubra as chuteiras que vão revolucionar o seu jogo",
+      className: "futebol-slide"
+    },
+    {
+      src:"https://images.unsplash.com/photo-1489647767089-3944a3baa54e?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Jordan Raro",
+      title: "Tenis Exclusivos",
+      description: "Os Tenis Mais Raros da Marca",
+      className: "jordan-slide"
     }
   ];
 
