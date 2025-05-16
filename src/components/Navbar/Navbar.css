@@ -28,3 +28,58 @@
         margin-top: 10px;
       
       }
+
+.login-btn, .register-btn {
+    margin-left: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 5px 15px !important;
+}
+
+.login-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.register-btn {
+    background-color: white;
+    color: #db1414 !important;
+    border-radius: 4px;
+    padding: 5px 15px !important;
+}
+
+.register-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.cart-icon-link {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.cart-icon {
+    position: relative;
+    color: white;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: white;
+    color: #db1414;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}

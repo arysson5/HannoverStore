@@ -1,0 +1,164 @@
+.tips-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.tips-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tips-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.tips-header p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tips-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.tips-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tips-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.tips-image {
+  flex: 1;
+  max-width: 40%;
+  position: relative;
+}
+
+.tips-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tips-text {
+  flex: 1.5;
+  padding: 2rem;
+}
+
+.tips-text h2 {
+  color: #db1414;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tips-text p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tips-text ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tips-text li {
+  margin-bottom: 0.8rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.tips-text strong {
+  color: #333;
+}
+
+.tips-care {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tips-care h2 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.care-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.care-tip {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.care-tip:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.care-tip h3 {
+  color: #db1414;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.care-tip p {
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .tips-section,
+  .tips-section.reverse {
+    flex-direction: column;
+  }
+  
+  .tips-image {
+    max-width: 100%;
+  }
+  
+  .care-tips {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .tips-header h1 {
+    font-size: 2rem;
+  }
+  
+  .tips-text {
+    padding: 1.5rem;
+  }
+  
+  .tips-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .care-tips {
+    grid-template-columns: 1fr;
+  }
+} 

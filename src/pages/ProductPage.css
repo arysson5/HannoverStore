@@ -1,0 +1,143 @@
+.product-page-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.product-details {
+  display: flex;
+  gap: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.product-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: #db1414;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.product-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.add-to-cart-btn, .buy-now-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.add-to-cart-btn {
+  background-color: #fff;
+  color: #db1414;
+  border: 2px solid #db1414;
+}
+
+.add-to-cart-btn:hover {
+  background-color: rgba(219, 20, 20, 0.1);
+}
+
+.buy-now-btn {
+  background-color: #db1414;
+  color: white;
+  border: 2px solid #db1414;
+}
+
+.buy-now-btn:hover {
+  background-color: #c01212;
+}
+
+.back-link {
+  margin-top: auto;
+}
+
+.back-link a {
+  color: #666;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-link a:hover {
+  color: #db1414;
+  text-decoration: underline;
+}
+
+.product-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+}
+
+.product-not-found h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.product-not-found a {
+  color: #db1414;
+  text-decoration: none;
+}
+
+.product-not-found a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .product-details {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .product-title {
+    font-size: 1.5rem;
+  }
+  
+  .product-price {
+    font-size: 1.25rem;
+  }
+} 

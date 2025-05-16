@@ -1,0 +1,21 @@
+.cart-animation-wrapper {
+  pointer-events: none;
+}
+
+.cart-animation-item {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-animation-item img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+} 

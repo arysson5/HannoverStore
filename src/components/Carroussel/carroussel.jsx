@@ -2,22 +2,21 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./carroussel.css";
 // Importando as imagens
-import jordanImage from "../../assets/images/carrossel_jordan.jpg";
-import corridaImage from "../../assets/images/carroussel2.jpg";
+
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   
   const images = [
     {
-      src: jordanImage,
+      src: "https://images.unsplash.com/photo-1589091637606-cf39856ab82f?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Tenis Esportivo",
       title: "Tênis Esportivo",
       description: "Descubra nossa nova coleção de tênis",
       className: "jordan-slide"
     },
     {
-      src: corridaImage,
+      src: "https://images.unsplash.com/photo-1601866656253-7179120e5e59?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       alt: "Corrida",
       title: "Equipamentos para Corrida",
       description: "Os melhores equipamentos para sua corrida",
@@ -31,7 +30,7 @@ const Carousel = () => {
       setActiveIndex((current) => 
         current === images.length - 1 ? 0 : current + 1
       );
-    }, 10000); // Change slide every 5 seconds
+    }, 7000); // Alterar slide a cada 7 segundos
 
     return () => clearInterval(interval);
   }, []);

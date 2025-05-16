@@ -1,9 +1,16 @@
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 #card {
   width: 18rem;
   margin: 1rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease-in-out;
 
   img {
     border-top-left-radius: 10px;
@@ -21,14 +28,14 @@
     border-radius: 10px;
     cursor: pointer;
     margin: 1rem;
-  }
-  &:hover {
-    background-color: #0c0c0c;
-    color: #f2f2f2;
+    transition: background-color 0.3s;
   }
 
-  :hover {
-    transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
+  button:hover {
+    background-color: #c01212;
   }
+}
+
+#card:hover {
+  transform: scale(1.05);
 }
