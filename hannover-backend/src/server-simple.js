@@ -8,17 +8,18 @@ import jwt from 'jsonwebtoken';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Configuração
-const JWT_SECRET = 'hannover-store-secret-key-2024';
-const PORT = 3002;
+// Configuração com variáveis de ambiente para Render
+const JWT_SECRET = process.env.JWT_SECRET || 'hannover-store-secret-key-2024';
+const PORT = process.env.PORT || 3002;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Inicializar Fastify
 const fastify = Fastify({
-  logger: {
+  logger: NODE_ENV === 'development' ? {
     transport: {
       target: 'pino-pretty'
     }
-  }
+  } : true
 });
 
 // CORS manual
@@ -329,9 +330,13 @@ fastify.get('/api/health', async (request, reply) => {
 // Iniciar servidor
 const start = async () => {
   try {
-    await fastify.listen({ port: PORT, host: '0.0.0.0' });
-    console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-    console.log(`📚 Documentação: http://localhost:${PORT}/documentation`);
+    // Render requer host 0.0.0.0 e porta dinâmica
+    await fastify.listen({ 
+      port: PORT, 
+      host: '0.0.0.0' 
+    });
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
+    console.log(`📚 Health check: /api/health`);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
