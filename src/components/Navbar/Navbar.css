@@ -6,80 +6,245 @@
 
 .navbar {
     background-color: #db1414;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
-    #search{
-        margin-right: 10px;
-        width: 50%;
+.navbar .container {
+    position: relative;
+}
 
-        background-color: #ffffff;
-        color: rgb(6, 6, 6);
-        outline: none;
-        transition: all 0.3s ease-in-out;
-    
-    }
-  }
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
 .logo img {
-        width: 70px;
-        height: 70px;
-        margin-top: 10px;
-      
-      }
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#search {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#search::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#search:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+    color: white;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+}
 
 .login-btn, .register-btn {
-    margin-left: 5px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    border-radius: 20px;
+    margin: 0 0.25rem;
+    padding: 0.5rem 1rem !important;
 }
 
 .login-btn {
     background-color: transparent;
     border: 1px solid white;
-    border-radius: 4px;
-    padding: 5px 15px !important;
-}
-
-.login-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .register-btn {
     background-color: white;
-    color: #db1414 !important;
-    border-radius: 4px;
-    padding: 5px 15px !important;
-}
-
-.register-btn:hover {
-    background-color: #f0f0f0;
+    color: var(--bs-primary) !important;
 }
 
 .cart-icon-link {
-    display: flex;
-    align-items: center;
-    margin-left: 15px;
+    position: relative;
+    padding: 0.5rem !important;
 }
 
 .cart-icon {
     position: relative;
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cart-count {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: white;
-    color: #db1414;
+    background-color: #ff4444;
+    color: white;
     border-radius: 50%;
     width: 20px;
     height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: bold;
+}
+
+/* Botões como links */
+.btn-link {
+    background: none !important;
+    border: none !important;
+    padding: 0.5rem 1rem !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    cursor: pointer;
+    font-size: inherit;
+}
+
+.btn-link:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Saudação do usuário */
+.user-greeting {
+    color: #ffd700 !important;
+    font-weight: 500;
+}
+
+/* Link de admin */
+.admin-link {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
+    color: white !important;
+    border-radius: 6px !important;
+    font-weight: 600;
+    margin: 0 0.25rem;
+}
+
+.admin-link:hover {
+    background: linear-gradient(135deg, #ee5a24, #d63031) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(238, 90, 36, 0.3);
+}
+
+/* Botão de logout */
+.logout-btn {
+    color: #ffc107 !important;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    color: #ffca2c !important;
+}
+
+/* Link do Portal de Dicas */
+.tips-portal-link {
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+    color: white !important;
+    border-radius: 20px !important;
+    font-weight: 600;
+    margin: 0 0.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tips-portal-link::before {
+    content: '💡';
+    margin-right: 6px;
+}
+
+.tips-portal-link:hover {
+    background: linear-gradient(135deg, #20c997, #17a2b8) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    color: white !important;
+}
+
+/* Mobile Styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--bs-primary);
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .login-btn, .register-btn {
+        display: block;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .cart-icon-link {
+        display: inline-block;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .nav-link:hover {
+        transform: none;
+    }
+
+    .nav-link:active {
+        opacity: 0.7;
+    }
+
+    .login-btn:active, .register-btn:active {
+        opacity: 0.8;
+    }
 }

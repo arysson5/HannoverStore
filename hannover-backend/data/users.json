@@ -1,0 +1,34 @@
+[
+  {
+    "id": "admin-default-001",
+    "name": "Administrador",
+    "email": "admin@hannover.com",
+    "password": "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+    "role": "admin",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "test-admin-002",
+    "name": "Admin Teste",
+    "email": "test@admin.com",
+    "password": "$2b$10$CwTycUXWue0Thq9StjUM0uJ8Z8W4uF6FBAGTtMiDRAjVEuZe6JYu6",
+    "role": "admin",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "test-user-001",
+    "name": "Usuário Teste",
+    "email": "teste@teste.com",
+    "password": "$2a$10$fIuyYSZaV97quZW69f0aBej3TD.3BBQA6VdPNH3draHWNarrlJNY6",
+    "role": "user",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "c66f27d3-ea95-4ca1-89fd-fffe46c47306",
+    "name": "Arysson Menezes",
+    "email": "Aryssonmenezes@gmail.com",
+    "password": "$2a$10$fIuyYSZaV97quZW69f0aBej3TD.3BBQA6VdPNH3draHWNarrlJNY6",
+    "role": "admin",
+    "createdAt": "2025-06-14T05:50:06.099Z"
+  }
+]

@@ -1,27 +1,122 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useApp } from "../context/AppContext";
 import "./Auth.css";
 
 const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const { login, showNotification } = useApp();
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+    setError(""); // Limpar erro quando usuário digita
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('🔍 handleSubmit chamado');
+    console.log('🔍 Event:', e);
+    console.log('🔍 FormData:', formData);
+    
+    setLoading(true);
+    setError("");
+
+    try {
+      console.log('🔍 Fazendo requisição POST para:', "http://localhost:3002/api/auth/login");
+      console.log('🔍 Body da requisição:', JSON.stringify(formData));
+      
+      const response = await fetch("http://localhost:3002/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('🔍 Response status:', response.status);
+      console.log('🔍 Response headers:', response.headers);
+
+      const data = await response.json();
+      console.log('🔍 Response data:', data);
+
+      if (response.ok) {
+        login(data.user, data.token);
+        showNotification("Login realizado com sucesso!", "success");
+        navigate("/"); // Redirecionar para home
+      } else {
+        setError(data.message || "Erro ao fazer login");
+      }
+    } catch (error) {
+      console.error("❌ Erro no login:", error);
+      setError("Erro de conexão. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-content">
           <h2>Que bom ter você aqui!</h2>
-          <p className="auth-subtitle">Entre rapidamente colocando seu login Stark</p>
+          <p className="auth-subtitle">Entre rapidamente colocando seu login</p>
           
-          <div className="input-label">Informe seu usuário ou e-mail</div>
-          <input type="text" className="auth-input" placeholder="CPF, CNPJ ou e-mail" />
+          {error && <div className="auth-error">{error}</div>}
           
-          <div className="input-label">Informe sua senha</div>
-          <div className="password-input-container">
-            <input type="password" className="auth-input" placeholder="Senha" />
-            <button className="password-toggle">👁️</button>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="input-label">Informe seu e-mail</div>
+            <input 
+              type="email" 
+              name="email"
+              className="auth-input" 
+              placeholder="E-mail" 
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            
+            <div className="input-label">Informe sua senha</div>
+            <div className="password-input-container">
+              <input 
+                type={showPassword ? "text" : "password"} 
+                name="password"
+                className="auth-input" 
+                placeholder="Senha" 
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <button 
+                type="button"
+                className="password-toggle"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </button>
+            </div>
+            
+            <div className="forgot-password">Esqueci minha senha</div>
+            
+            <button 
+              type="submit" 
+              className="auth-button primary"
+              disabled={loading}
+            >
+              {loading ? "Entrando..." : "Entrar"}
+            </button>
+          </form>
           
-          <div className="forgot-password">Esqueci minha senha</div>
-          
-          <button className="auth-button primary">Entrar</button>
           <Link to="/register">
             <button className="auth-button secondary">Criar conta agora</button>
           </Link>
@@ -43,7 +138,7 @@ const Login = () => {
           </div>
         </div>
         <div className="auth-image">
-          <img src="chuteira_nike.jpg" alt="Sneakers" />
+          <img src="/chuteira_nike.jpg" alt="Sneakers" />
         </div>
       </div>
     </div>

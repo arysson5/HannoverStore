@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 import "./carroussel.css";
-// Importando as imagens
-
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -14,6 +12,14 @@ const Carousel = () => {
       title: "Tênis Esportivo",
       description: "Descubra nossa nova coleção de tênis",
       className: "tenis-slide"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1597892657493-6847b9640bac?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Portal de Dicas",
+      title: "Portal de Dicas Hannover",
+      description: "Descubra como escolher o calçado ideal para cada atividade",
+      className: "tips-portal-slide",
+      isPortalSlide: true
     },
     {
       src: "https://images.unsplash.com/photo-1601866656253-7179120e5e59?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -44,10 +50,10 @@ const Carousel = () => {
       setActiveIndex((current) => 
         current === images.length - 1 ? 0 : current + 1
       );
-    }, 7000); // Alterar slide a cada 7 segundos
+    }, 7000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   const handlePrevClick = () => {
     setActiveIndex((current) => 
@@ -61,55 +67,66 @@ const Carousel = () => {
     );
   };
 
+  const goToSlide = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
-    <div
-      id="carouselExample"
-      className="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div className="carousel-inner">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`carousel-item ${index === activeIndex ? 'active' : ''}`}
-          >
-            <img
-              src={image.src}
-              className="d-block w-100"
-              alt={image.alt}
-            />
-            <div className="carousel-caption">
-              <h3>{image.title}</h3>
-              <p>{image.description}</p>
+    <div className="hannover-carousel">
+      <div className="carousel-container">
+        <div className="carousel-slides">
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`carousel-slide ${index === activeIndex ? 'active' : ''} ${image.className}`}
+              style={{ display: index === activeIndex ? 'block' : 'none' }}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="carousel-image"
+              />
+              <div className="carousel-overlay">
+                <div className="carousel-content">
+                  <h2>{image.title}</h2>
+                  <p>{image.description}</p>
+                  {image.isPortalSlide && (
+                    <Link to="/tips-portal" className="portal-cta-btn">
+                      💡 Explorar Portal de Dicas
+                    </Link>
+                  )}
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <button
-        className="carousel-control-prev"
-        type="button"
-        onClick={handlePrevClick}
-      >
-        <span className="carousel-control-prev-icon"></span>
-      </button>
-      <button
-        className="carousel-control-next"
-        type="button"
-        onClick={handleNextClick}
-      >
-        <span className="carousel-control-next-icon"></span>
-      </button>
+        <button
+          className="carousel-nav carousel-prev"
+          onClick={handlePrevClick}
+          aria-label="Slide anterior"
+        >
+          &#8249;
+        </button>
+        
+        <button
+          className="carousel-nav carousel-next"
+          onClick={handleNextClick}
+          aria-label="Próximo slide"
+        >
+          &#8250;
+        </button>
 
-      <div className="carousel-indicators">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            className={`${index === activeIndex ? 'active' : ''}`}
-            onClick={() => setActiveIndex(index)}
-          ></button>
-        ))}
+        <div className="carousel-dots">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`carousel-dot ${index === activeIndex ? 'active' : ''}`}
+              onClick={() => goToSlide(index)}
+              aria-label={`Ir para slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

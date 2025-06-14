@@ -1,33 +1,173 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useApp } from "../context/AppContext";
 import "./Auth.css";
 
 const Register = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const { showNotification } = useApp();
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+    setError(""); // Limpar erro quando usuário digita
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('🔍 handleSubmit register chamado');
+    console.log('🔍 Event:', e);
+    console.log('🔍 FormData:', formData);
+    
+    setLoading(true);
+    setError("");
+
+    // Validar se as senhas coincidem
+    if (formData.password !== formData.confirmPassword) {
+      setError("As senhas não coincidem");
+      setLoading(false);
+      return;
+    }
+
+    // Validar força da senha
+    if (formData.password.length < 6) {
+      setError("A senha deve ter pelo menos 6 caracteres");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      console.log('🔍 Fazendo requisição POST para:', "http://localhost:3002/api/auth/register");
+      console.log('🔍 Body da requisição:', JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      }));
+      
+      const response = await fetch("http://localhost:3002/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password
+        }),
+      });
+
+      console.log('🔍 Response status:', response.status);
+      console.log('🔍 Response headers:', response.headers);
+
+      const data = await response.json();
+      console.log('🔍 Response data:', data);
+
+      if (response.ok) {
+        showNotification("Conta criada com sucesso!", "success");
+        navigate("/login"); // Redirecionar para login
+      } else {
+        setError(data.message || "Erro ao criar conta");
+      }
+    } catch (error) {
+      console.error("❌ Erro no registro:", error);
+      setError("Erro de conexão. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="auth-container">
       <div className="auth-card">
         <div className="auth-content">
           <h2>Criar Conta</h2>
           
-          <div className="input-label">Nome completo</div>
-          <input type="text" className="auth-input" placeholder="Nome completo" />
+          {error && <div className="auth-error">{error}</div>}
           
-          <div className="input-label">Endereço de E-mail</div>
-          <input type="email" className="auth-input" placeholder="Endereço de E-mail" />
-          
-          <div className="input-label">Senha</div>
-          <div className="password-input-container">
-            <input type="password" className="auth-input" placeholder="Senha" />
-            <button className="password-toggle">👁️</button>
-          </div>
-          
-          <div className="input-label">Confirmar Senha</div>
-          <div className="password-input-container">
-            <input type="password" className="auth-input" placeholder="Confirmar Senha" />
-            <button className="password-toggle">👁️</button>
-          </div>
-          
-          <button className="auth-button primary">Criar Conta</button>
+          <form onSubmit={handleSubmit}>
+            <div className="input-label">Nome completo</div>
+            <input 
+              type="text" 
+              name="name"
+              className="auth-input" 
+              placeholder="Nome completo" 
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            
+            <div className="input-label">Endereço de E-mail</div>
+            <input 
+              type="email" 
+              name="email"
+              className="auth-input" 
+              placeholder="Endereço de E-mail" 
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            
+            <div className="input-label">Senha</div>
+            <div className="password-input-container">
+              <input 
+                type={showPassword ? "text" : "password"} 
+                name="password"
+                className="auth-input" 
+                placeholder="Senha" 
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              <button 
+                type="button"
+                className="password-toggle"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? "🙈" : "👁️"}
+              </button>
+            </div>
+            
+            <div className="input-label">Confirmar Senha</div>
+            <div className="password-input-container">
+              <input 
+                type={showConfirmPassword ? "text" : "password"} 
+                name="confirmPassword"
+                className="auth-input" 
+                placeholder="Confirmar Senha" 
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+              <button 
+                type="button"
+                className="password-toggle"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? "🙈" : "👁️"}
+              </button>
+            </div>
+            
+            <button 
+              type="submit" 
+              className="auth-button primary"
+              disabled={loading}
+            >
+              {loading ? "Criando..." : "Criar Conta"}
+            </button>
+          </form>
           
           <div className="social-login">
             <button className="google-login">
@@ -46,7 +186,7 @@ const Register = () => {
           </div>
         </div>
         <div className="auth-image">
-          <img src="chuteira_nike.jpg" alt="Sneakers" />
+          <img src="/chuteira_nike.jpg" alt="Sneakers" />
         </div>
       </div>
     </div>

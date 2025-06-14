@@ -1,14 +1,79 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useApp } from "../context/AppContext";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cartItems, cartTotal, removeFromCart, updateQuantity, clearCart } = useCart();
+  const { cart, removeFromCart, updateCartQuantity, clearCart } = useApp();
+  const [isMobile, setIsMobile] = useState(false);
 
-  if (cartItems.length === 0) {
+  // Função helper para converter preço para número
+  const parsePrice = (price) => {
+    // Se for undefined ou null, retorna 0
+    if (!price && price !== 0) {
+      return 0;
+    }
+    
+    // Se já for um número, retorna ele
+    if (typeof price === 'number') {
+      return price;
+    }
+    
+    // Se for string, tenta fazer o parse
+    if (typeof price === 'string') {
+      // Remove espaços e caracteres especiais
+      const cleanPrice = price.replace(/[^\d,.-]/g, '').replace(',', '.');
+      const parsed = parseFloat(cleanPrice);
+      return isNaN(parsed) ? 0 : parsed;
+    }
+    
+    // Para qualquer outro tipo, retorna 0
+    return 0;
+  };
+
+  // Função helper para formatar preço para exibição
+  const formatPrice = (price) => {
+    const numericPrice = parsePrice(price);
+    return `R$ ${numericPrice.toFixed(2).replace(".", ",")}`;
+  };
+
+  // Calcular total do carrinho
+  const cartTotal = cart.reduce((total, item) => {
+    const numericPrice = parsePrice(item.price);
+    return total + (numericPrice * item.quantity);
+  }, 0);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
+  // Verificar se há itens inválidos no carrinho e limpar se necessário
+  useEffect(() => {
+    const hasInvalidItems = cart.some(item => 
+      !item.price || 
+      !item.title || 
+      !item.id ||
+      (typeof item.price !== 'number' && typeof item.price !== 'string')
+    );
+    
+    if (hasInvalidItems) {
+      console.warn('Itens inválidos encontrados no carrinho, limpando...');
+      clearCart();
+    }
+  }, [cart, clearCart]);
+
+  if (cart.length === 0) {
     return (
       <>
         <Navbar />
@@ -33,56 +98,69 @@ const Cart = () => {
         <h1>Meu Carrinho</h1>
         
         <div className="cart-items">
-          <div className="cart-header">
-            <div className="cart-product">Produto</div>
-            <div className="cart-price">Preço</div>
-            <div className="cart-quantity">Quantidade</div>
-            <div className="cart-total">Total</div>
-            <div className="cart-actions">Ações</div>
-          </div>
+          {!isMobile && (
+            <div className="cart-header">
+              <div className="cart-product">Produto</div>
+              <div className="cart-price">Preço</div>
+              <div className="cart-quantity">Quantidade</div>
+              <div className="cart-total">Total</div>
+              <div className="cart-actions">Ações</div>
+            </div>
+          )}
           
-          {cartItems.map((item) => {
-            // Extract numeric price
-            const numericPrice = parseFloat(item.price.replace("R$ ", "").replace(",", "."));
+          {cart.map((item) => {
+            const numericPrice = parsePrice(item.price);
             const itemTotal = numericPrice * item.quantity;
             
             return (
-              <div className="cart-item" key={item.id}>
+              <div className="cart-item" key={`${item.id}-${item.size || ''}-${item.color || ''}`}>
                 <div className="cart-product">
                   <img src={item.image} alt={item.title} />
                   <div className="cart-product-info">
                     <h3>{item.title}</h3>
+                    {item.size && <p>Tamanho: {item.size}</p>}
+                    {item.color && <p>Cor: {item.color}</p>}
+                    {isMobile && (
+                      <div className="mobile-price">
+                        <span className="price-label">Preço:</span>
+                        <span>{formatPrice(item.price)}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
                 
-                <div className="cart-price">{item.price}</div>
+                {!isMobile && <div className="cart-price">{formatPrice(item.price)}</div>}
                 
                 <div className="cart-quantity">
                   <button 
                     className="quantity-btn" 
-                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                    onClick={() => updateCartQuantity(item.id, item.quantity - 1, item.size, item.color)}
+                    aria-label="Diminuir quantidade"
                   >
                     -
                   </button>
                   <span>{item.quantity}</span>
                   <button 
                     className="quantity-btn" 
-                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                    onClick={() => updateCartQuantity(item.id, item.quantity + 1, item.size, item.color)}
+                    aria-label="Aumentar quantidade"
                   >
                     +
                   </button>
                 </div>
                 
                 <div className="cart-total">
-                  R$ {itemTotal.toFixed(2).replace(".", ",")}
+                  {isMobile && <span className="total-label">Total:</span>}
+                  <span>R$ {itemTotal.toFixed(2).replace(".", ",")}</span>
                 </div>
                 
                 <div className="cart-actions">
                   <button 
                     className="remove-btn"
-                    onClick={() => removeFromCart(item.id)}
+                    onClick={() => removeFromCart(item.id, item.size, item.color)}
+                    aria-label="Remover item"
                   >
-                    Remover
+                    {isMobile ? 'X' : 'Remover'}
                   </button>
                 </div>
               </div>
@@ -91,7 +169,11 @@ const Cart = () => {
         </div>
         
         <div className="cart-summary">
-          <button className="clear-cart-btn" onClick={clearCart}>
+          <button 
+            className="clear-cart-btn" 
+            onClick={clearCart}
+            aria-label="Limpar carrinho"
+          >
             Limpar Carrinho
           </button>
           

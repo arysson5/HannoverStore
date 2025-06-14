@@ -1,0 +1,56 @@
+[
+  {
+    "id": "tenis-esportivos",
+    "name": "Tênis Esportivos",
+    "description": "Tênis para corrida, academia e atividades físicas",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+  },
+  {
+    "id": "tenis-casual",
+    "name": "Tênis Casual",
+    "description": "Tênis para o dia a dia, conforto e estilo",
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400"
+  },
+  {
+    "id": "chuteiras",
+    "name": "Chuteiras",
+    "description": "Chuteiras para futebol de campo, society e futsal",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400"
+  },
+  {
+    "id": "tenis-exclusivos",
+    "name": "Tênis Exclusivos",
+    "description": "Edições limitadas e lançamentos exclusivos",
+    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400"
+  },
+  {
+    "id": "sapatos-sociais",
+    "name": "Sapatos Sociais",
+    "description": "Sapatos elegantes para trabalho e ocasiões especiais",
+    "image": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400"
+  },
+  {
+    "id": "sandálias",
+    "name": "Sandálias",
+    "description": "Sandálias, chinelos e calçados para verão",
+    "image": "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400"
+  },
+  {
+    "id": "botas",
+    "name": "Botas",
+    "description": "Botas de trabalho, adventure e estilo",
+    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=400"
+  },
+  {
+    "id": "calcados-femininos",
+    "name": "Calçados Femininos",
+    "description": "Sapatos, saltos e calçados especiais para mulheres",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400"
+  },
+  {
+    "id": "calcados-infantis",
+    "name": "Calçados Infantis",
+    "description": "Tênis e sapatos para crianças e adolescentes",
+    "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=400"
+  }
+] 

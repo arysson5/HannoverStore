@@ -23,11 +23,12 @@
 
 .cart-confirm-modal {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 90%;
   max-width: 500px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   animation: slideUp 0.4s ease-out;
+  overflow: hidden;
 }
 
 @keyframes slideUp {
@@ -45,14 +46,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid #eee;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
 }
 
 .cart-confirm-header h3 {
   margin: 0;
-  color: #333;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .close-btn {
@@ -60,52 +62,72 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #999;
-  transition: color 0.3s;
-  padding: 0;
+  color: white;
+  transition: all 0.2s;
+  padding: 0.25rem;
   line-height: 1;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-btn:hover {
-  color: #db1414;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
 }
 
 .cart-confirm-content {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .product-added {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
 }
 
 .product-added img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
   margin-right: 1rem;
-  border-radius: 4px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .product-info h4 {
   margin: 0 0 0.5rem;
   color: #333;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
-.product-info p {
-  margin: 0;
-  color: #db1414;
+.product-price {
+  margin: 0 0 0.25rem;
+  color: #28a745;
   font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.product-brand {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 .confirm-message {
-  margin: 1rem 0 0;
-  color: #666;
+  margin: 0;
+  color: #555;
   text-align: center;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
 .cart-confirm-actions {
@@ -116,30 +138,67 @@
 
 .continue-btn, .go-to-cart-btn {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border-radius: 4px;
-  font-weight: bold;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
   border: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .continue-btn {
-  background-color: #f5f5f5;
-  color: #333;
-  border: 1px solid #ddd;
+  background-color: #6c757d;
+  color: white;
 }
 
 .continue-btn:hover {
-  background-color: #eaeaea;
+  background-color: #5a6268;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
 }
 
 .go-to-cart-btn {
-  background-color: #db1414;
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
 }
 
 .go-to-cart-btn:hover {
-  background-color: #c01212;
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-confirm-modal {
+    width: 95%;
+    margin: 1rem;
+  }
+  
+  .cart-confirm-header {
+    padding: 1rem;
+  }
+  
+  .cart-confirm-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .cart-confirm-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .product-added {
+    padding: 0.75rem;
+  }
+  
+  .product-added img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .cart-confirm-actions {
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+  }
 } 

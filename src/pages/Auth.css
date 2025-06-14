@@ -109,6 +109,11 @@ h2 {
   background-color: #c01212;
 }
 
+.auth-button.primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
 .auth-button.secondary {
   background-color: #f5f5f5;
   color: #333;
@@ -117,6 +122,16 @@ h2 {
 
 .auth-button.secondary:hover {
   background-color: #eaeaea;
+}
+
+.auth-error {
+  background-color: #fee;
+  color: #d32f2f;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  border: 1px solid #ffcdd2;
 }
 
 .social-login {

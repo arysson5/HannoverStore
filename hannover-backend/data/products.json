@@ -1,0 +1,941 @@
+[
+  {
+    "id": "nike-air-max-90",
+    "name": "Nike Air Max 90",
+    "description": "Tênis clássico com tecnologia Air Max, perfeito para o dia a dia. Solado em borracha com amortecimento superior.",
+    "price": 599.99,
+    "originalPrice": 699.99,
+    "category": "tenis-casual",
+    "brand": "Nike",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Branco/Preto",
+      "Preto/Branco",
+      "Azul/Branco"
+    ],
+    "stock": 25,
+    "rating": 4.8,
+    "reviews": 156,
+    "features": [
+      "Air Max",
+      "Solado em borracha",
+      "Cabedal em couro sintético"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "adidas-ultraboost-22",
+    "name": "Adidas Ultraboost 22",
+    "description": "Tênis de corrida com tecnologia Boost para máximo retorno de energia. Ideal para treinos e corridas.",
+    "price": 899.99,
+    "originalPrice": 999.99,
+    "category": "tenis-esportivos",
+    "brand": "Adidas",
+    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500"
+    ],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Azul/Laranja",
+      "Cinza/Verde"
+    ],
+    "stock": 18,
+    "rating": 4.9,
+    "reviews": 89,
+    "features": [
+      "Tecnologia Boost",
+      "Cabedal Primeknit",
+      "Continental Rubber"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-nike",
+    "name": "Chuteira Nike",
+    "description": "Chuteira Nike de campo com tecnologia avançada para controle de bola. Ideal para jogadores técnicos que buscam precisão.",
+    "price": 199.99,
+    "originalPrice": 249.99,
+    "category": "chuteiras",
+    "brand": "Nike",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Azul/Branco",
+      "Verde/Preto"
+    ],
+    "stock": 20,
+    "rating": 4.6,
+    "reviews": 89,
+    "features": [
+      "Solado FG",
+      "Tecnologia Phantom",
+      "Cabedal texturizado"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-adidas",
+    "name": "Chuteira Adidas",
+    "description": "A lendária chuteira Adidas Copa Mundial em couro canguru. Clássica e atemporal, preferida pelos profissionais.",
+    "price": 299.99,
+    "originalPrice": 349.99,
+    "category": "chuteiras",
+    "brand": "Adidas",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Branco/Preto"
+    ],
+    "stock": 15,
+    "rating": 4.9,
+    "reviews": 156,
+    "features": [
+      "Couro canguru",
+      "Solado FG",
+      "Design clássico"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-puma",
+    "name": "Chuteira Puma",
+    "description": "Chuteira Puma Future Z com tecnologia de adaptação ao pé. Design inovador para máxima agilidade em campo.",
+    "price": 399.99,
+    "originalPrice": 449.99,
+    "category": "chuteiras",
+    "brand": "Puma",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Laranja/Preto",
+      "Azul/Amarelo",
+      "Verde/Branco"
+    ],
+    "stock": 18,
+    "rating": 4.7,
+    "reviews": 73,
+    "features": [
+      "Tecnologia FUZIONFIT",
+      "Solado FG/AG",
+      "Cabedal adaptativo"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-umbro",
+    "name": "Chuteira Umbro",
+    "description": "Chuteira Umbro Velocita Pro para velocidade máxima. Leve e resistente, ideal para jogadores rápidos.",
+    "price": 499.99,
+    "originalPrice": 599.99,
+    "category": "chuteiras",
+    "brand": "Umbro",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Branco/Azul",
+      "Preto/Vermelho",
+      "Amarelo/Preto"
+    ],
+    "stock": 12,
+    "rating": 4.5,
+    "reviews": 45,
+    "features": [
+      "Ultra leve",
+      "Solado FG",
+      "Cabedal sintético"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "nike-mercurial-vapor",
+    "name": "Nike Mercurial Vapor 15",
+    "description": "Chuteira de campo para jogadores que buscam velocidade. Solado com travas para gramado natural.",
+    "price": 749.99,
+    "originalPrice": 849.99,
+    "category": "chuteiras",
+    "brand": "Nike",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Verde/Preto",
+      "Laranja/Preto",
+      "Azul/Branco"
+    ],
+    "stock": 12,
+    "rating": 4.7,
+    "reviews": 67,
+    "features": [
+      "Solado FG",
+      "Cabedal sintético",
+      "Ajuste anatômico"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-nike-tiempo",
+    "name": "Nike Tiempo Legend 10",
+    "description": "Chuteira Nike Tiempo em couro premium para máximo toque de bola. Tradicional e elegante.",
+    "price": 649.99,
+    "originalPrice": 749.99,
+    "category": "chuteiras",
+    "brand": "Nike",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Ouro",
+      "Branco/Azul",
+      "Vermelho/Preto"
+    ],
+    "stock": 14,
+    "rating": 4.8,
+    "reviews": 92,
+    "features": [
+      "Couro premium",
+      "Solado FG",
+      "Tecnologia Tiempo"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-adidas-x",
+    "name": "Adidas X Speedflow.1",
+    "description": "Chuteira Adidas X para velocidade extrema. Design aerodinâmico e leveza incomparável.",
+    "price": 799.99,
+    "originalPrice": 899.99,
+    "category": "chuteiras",
+    "brand": "Adidas",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Amarelo/Preto",
+      "Branco/Azul",
+      "Rosa/Preto"
+    ],
+    "stock": 16,
+    "rating": 4.6,
+    "reviews": 78,
+    "features": [
+      "Ultra leve",
+      "Solado Speedframe",
+      "Cabedal Speedskin"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-society-nike",
+    "name": "Nike Mercurial Vapor 15 TF",
+    "description": "Chuteira society Nike para quadras e campos sintéticos. Excelente tração e controle.",
+    "price": 449.99,
+    "originalPrice": 519.99,
+    "category": "chuteiras",
+    "brand": "Nike",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Verde/Preto",
+      "Azul/Branco",
+      "Laranja/Preto"
+    ],
+    "stock": 22,
+    "rating": 4.5,
+    "reviews": 134,
+    "features": [
+      "Solado TF",
+      "Cabedal sintético",
+      "Múltiplas travas"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-futsal-adidas",
+    "name": "Adidas Predator Freak.3 IN",
+    "description": "Chuteira de futsal Adidas com tecnologia Demonskin para controle superior da bola.",
+    "price": 349.99,
+    "originalPrice": 399.99,
+    "category": "chuteiras",
+    "brand": "Adidas",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Rosa",
+      "Branco/Azul",
+      "Verde/Preto"
+    ],
+    "stock": 19,
+    "rating": 4.7,
+    "reviews": 86,
+    "features": [
+      "Solado IC",
+      "Demonskin",
+      "Controle de bola"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "chuteira-puma-king",
+    "name": "Puma King Platinum",
+    "description": "Chuteira Puma King em couro premium. Tradição e qualidade para jogadores clássicos.",
+    "price": 549.99,
+    "originalPrice": 649.99,
+    "category": "chuteiras",
+    "brand": "Puma",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Branco/Ouro",
+      "Azul/Branco"
+    ],
+    "stock": 13,
+    "rating": 4.8,
+    "reviews": 67,
+    "features": [
+      "Couro K-Better",
+      "Solado FG",
+      "Design clássico"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "jordan-1-retro-high",
+    "name": "Air Jordan 1 Retro High OG",
+    "description": "Edição limitada do clássico Jordan 1. Peça de colecionador com design icônico dos anos 80.",
+    "price": 1299.99,
+    "originalPrice": 1499.99,
+    "category": "tenis-exclusivos",
+    "brand": "Jordan",
+    "image": "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500",
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"
+    ],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Chicago (Vermelho/Branco/Preto)",
+      "Bred (Preto/Vermelho)",
+      "Royal (Azul/Preto/Branco)"
+    ],
+    "stock": 5,
+    "rating": 5,
+    "reviews": 23,
+    "features": [
+      "Couro premium",
+      "Solado de borracha",
+      "Edição limitada"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "sapato-social-couro",
+    "name": "Sapato Social Couro Legítimo",
+    "description": "Sapato social em couro legítimo, ideal para trabalho e ocasiões formais. Solado em couro com acabamento premium.",
+    "price": 299.99,
+    "originalPrice": 399.99,
+    "category": "sapatos-sociais",
+    "brand": "Democrata",
+    "image": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500",
+      "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500"
+    ],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Café"
+    ],
+    "stock": 30,
+    "rating": 4.6,
+    "reviews": 124,
+    "features": [
+      "Couro legítimo",
+      "Solado em couro",
+      "Forro em couro"
+    ],
+    "gender": "masculino"
+  },
+  {
+    "id": "havaianas-top",
+    "name": "Havaianas Top",
+    "description": "Chinelo clássico brasileiro, confortável e durável. Ideal para praia, piscina e uso casual.",
+    "price": 29.99,
+    "originalPrice": 39.99,
+    "category": "sandálias",
+    "brand": "Havaianas",
+    "image": "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500",
+      "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500"
+    ],
+    "sizes": [
+      "35/36",
+      "37/38",
+      "39/40",
+      "41/42",
+      "43/44"
+    ],
+    "colors": [
+      "Azul Naval",
+      "Preto",
+      "Branco",
+      "Verde",
+      "Vermelho"
+    ],
+    "stock": 50,
+    "rating": 4.5,
+    "reviews": 89,
+    "features": [
+      "Borracha natural",
+      "Antiderrapante",
+      "Resistente à água"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "caterpillar-second-shift",
+    "name": "Caterpillar Second Shift",
+    "description": "Bota de trabalho com biqueira de aço, ideal para construção e trabalhos pesados. Resistente e durável.",
+    "price": 449.99,
+    "originalPrice": 549.99,
+    "category": "botas",
+    "brand": "Caterpillar",
+    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
+      "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
+    ],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Amarelo",
+      "Preto",
+      "Marrom"
+    ],
+    "stock": 15,
+    "rating": 4.8,
+    "reviews": 45,
+    "features": [
+      "Biqueira de aço",
+      "Solado antiderrapante",
+      "Couro resistente"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "scarpin-salto-alto",
+    "name": "Scarpin Salto Alto Verniz",
+    "description": "Scarpin elegante em verniz com salto alto. Perfeito para ocasiões especiais e ambiente corporativo.",
+    "price": 199.99,
+    "originalPrice": 249.99,
+    "category": "calcados-femininos",
+    "brand": "Vizzano",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
+      "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500"
+    ],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Preto",
+      "Nude",
+      "Vermelho",
+      "Azul Marinho"
+    ],
+    "stock": 20,
+    "rating": 4.4,
+    "reviews": 78,
+    "features": [
+      "Salto 10cm",
+      "Verniz premium",
+      "Palmilha acolchoada"
+    ],
+    "gender": "feminino"
+  },
+  {
+    "id": "tenis-infantil-led",
+    "name": "Tênis Infantil com LED",
+    "description": "Tênis divertido para crianças com luzes LED que acendem ao caminhar. Velcro para facilitar o calce.",
+    "price": 89.99,
+    "originalPrice": 119.99,
+    "category": "calcados-infantis",
+    "brand": "Bibi",
+    "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
+      "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
+    ],
+    "sizes": [
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30"
+    ],
+    "colors": [
+      "Rosa/Roxo",
+      "Azul/Verde",
+      "Preto/Vermelho"
+    ],
+    "stock": 35,
+    "rating": 4.7,
+    "reviews": 92,
+    "features": [
+      "LED colorido",
+      "Velcro duplo",
+      "Solado antiderrapante"
+    ],
+    "gender": "infantil"
+  },
+  {
+    "id": "vans-old-skool",
+    "name": "Vans Old Skool",
+    "description": "Tênis skate clássico com a icônica lateral em couro. Estilo atemporal para todas as idades.",
+    "price": 349.99,
+    "originalPrice": 399.99,
+    "category": "tenis-casual",
+    "brand": "Vans",
+    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+      "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
+    ],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Azul Marinho/Branco",
+      "Vermelho/Branco"
+    ],
+    "stock": 28,
+    "rating": 4.6,
+    "reviews": 134,
+    "features": [
+      "Cabedal em canvas",
+      "Lateral em couro",
+      "Solado waffle"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "mizuno-wave-prophecy",
+    "name": "Mizuno Wave Prophecy 12",
+    "description": "Tênis de corrida premium com tecnologia Wave Plate para máximo amortecimento e estabilidade.",
+    "price": 1199.99,
+    "originalPrice": 1399.99,
+    "category": "tenis-esportivos",
+    "brand": "Mizuno",
+    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
+    ],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Prata/Azul",
+      "Preto/Dourado",
+      "Branco/Verde"
+    ],
+    "stock": 8,
+    "rating": 4.9,
+    "reviews": 34,
+    "features": [
+      "Wave Plate",
+      "Infinity Wave",
+      "U4ic midsole"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "adidas-predator-freak",
+    "name": "Adidas Predator Freak.1",
+    "description": "Chuteira society com tecnologia de controle de bola. Ideal para jogos em quadra e society.",
+    "price": 649.99,
+    "originalPrice": 749.99,
+    "category": "chuteiras",
+    "brand": "Adidas",
+    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+    ],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Rosa",
+      "Branco/Azul",
+      "Verde/Preto"
+    ],
+    "stock": 14,
+    "rating": 4.8,
+    "reviews": 56,
+    "features": [
+      "Solado TF",
+      "Demonskin",
+      "Primeknit collar"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "yeezy-boost-350",
+    "name": "Adidas Yeezy Boost 350 V2",
+    "description": "Tênis exclusivo da colaboração Kanye West x Adidas. Design futurista com tecnologia Boost.",
+    "price": 1899.99,
+    "originalPrice": 2199.99,
+    "category": "tenis-exclusivos",
+    "brand": "Adidas",
+    "image": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500",
+      "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500"
+    ],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Zebra",
+      "Cream White",
+      "Static Black"
+    ],
+    "stock": 3,
+    "rating": 4.9,
+    "reviews": 18,
+    "features": [
+      "Primeknit upper",
+      "Boost midsole",
+      "Edição limitada"
+    ],
+    "gender": "unisex"
+  },
+  {
+    "id": "oxford-couro-premium",
+    "name": "Oxford Couro Premium",
+    "description": "Sapato Oxford em couro premium com acabamento artesanal. Elegância e sofisticação para ocasiões especiais.",
+    "price": 599.99,
+    "originalPrice": 699.99,
+    "category": "sapatos-sociais",
+    "brand": "Ferracini",
+    "image": "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500",
+      "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500"
+    ],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom Escuro",
+      "Whisky"
+    ],
+    "stock": 12,
+    "rating": 4.7,
+    "reviews": 67,
+    "features": [
+      "Couro premium",
+      "Solado em couro",
+      "Acabamento artesanal"
+    ],
+    "gender": "masculino"
+  },
+  {
+    "id": "sandalia-plataforma",
+    "name": "Sandália Plataforma Trançada",
+    "description": "Sandália feminina com plataforma em corda trançada. Confortável e estilosa para o verão.",
+    "price": 149.99,
+    "originalPrice": 199.99,
+    "category": "sandálias",
+    "brand": "Arezzo",
+    "image": "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
+    "images": [
+      "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
+      "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
+    ],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Caramelo",
+      "Preto",
+      "Nude",
+      "Branco"
+    ],
+    "stock": 25,
+    "rating": 4.5,
+    "reviews": 89,
+    "features": [
+      "Plataforma 7cm",
+      "Corda trançada",
+      "Tiras ajustáveis"
+    ],
+    "gender": "feminino"
+  },
+  {
+    "id": "5516014d-8b41-47bc-b6c9-3a1806ed3974",
+    "name": "teste",
+    "description": "melhor teste",
+    "price": 599,
+    "originalPrice": 780,
+    "category": "tenis-esportivos",
+    "brand": "Mica",
+    "image": "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "vermelho"
+    ],
+    "stock": 500,
+    "features": [
+      "boa",
+      "zika"
+    ],
+    "images": [
+      "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ],
+    "rating": 4.5,
+    "reviews": 0,
+    "gender": "unisex",
+    "createdAt": "2025-06-14T06:24:21.607Z"
+  }
+]
