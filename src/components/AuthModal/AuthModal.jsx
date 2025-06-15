@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
+import { authService } from '../../services/api';
 import './AuthModal.css';
 
 const AuthModal = () => {
@@ -46,46 +47,33 @@ const AuthModal = () => {
         }
       }
 
-      const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-      const body = isLogin 
-        ? { email: formData.email, password: formData.password }
-        : { name: formData.name, email: formData.email, password: formData.password };
-
-      const response = await fetch(`http://localhost:3002${endpoint}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        setError(data.error || 'Erro no servidor');
-        return;
+      if (isLogin) {
+        // Login
+        const data = await authService.login({
+          email: formData.email,
+          password: formData.password
+        });
+        
+        if (data.user && data.token) {
+          login(data.user, data.token);
+          hideAuthModal();
+        }
+      } else {
+        // Registro
+        const data = await authService.register({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password
+        });
+        
+        if (data.user && data.token) {
+          login(data.user, data.token);
+          hideAuthModal();
+        }
       }
-
-      // Salvar token e dados do usuário
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
-      
-      // Atualizar contexto
-      login(data.user, data.token);
-      
-      // Fechar modal
-      hideAuthModal();
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      });
-
     } catch (error) {
-      setError('Erro de conexão com o servidor');
+      console.error('❌ Erro na autenticação:', error);
+      setError(error.message || 'Erro no servidor');
     } finally {
       setLoading(false);
     }

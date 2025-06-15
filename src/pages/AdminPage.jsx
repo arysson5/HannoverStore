@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import './AdminPage.css';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+
 const AdminPage = () => {
   const { user, showNotification } = useApp();
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -73,10 +75,10 @@ const AdminPage = () => {
     setLoading(true);
     try {
       const [statsRes, usersRes, productsRes, categoriesRes] = await Promise.all([
-        fetch('http://localhost:3002/api/admin/stats', { headers: getAuthHeaders() }),
-        fetch('http://localhost:3002/api/admin/users', { headers: getAuthHeaders() }),
-        fetch('http://localhost:3002/api/products'),
-        fetch('http://localhost:3002/api/categories')
+        fetch(`${API_BASE_URL}/api/admin/stats`, { headers: getAuthHeaders() }),
+        fetch(`${API_BASE_URL}/api/admin/users`, { headers: getAuthHeaders() }),
+        fetch(`${API_BASE_URL}/api/products`),
+        fetch(`${API_BASE_URL}/api/categories`)
       ]);
 
       const stats = await statsRes.json();
@@ -97,7 +99,7 @@ const AdminPage = () => {
     if (!confirm('Tem certeza que deseja deletar este usuário?')) return;
 
     try {
-      const response = await fetch(`http://localhost:3002/api/admin/users/${userId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/users/${userId}`, {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
@@ -131,7 +133,7 @@ const AdminPage = () => {
         gender: 'unisex'
       };
 
-      const response = await fetch('http://localhost:3002/api/admin/products', {
+      const response = await fetch(`${API_BASE_URL}/api/admin/products`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(productData)
@@ -157,7 +159,7 @@ const AdminPage = () => {
     if (!confirm('Tem certeza que deseja deletar este produto?')) return;
 
     try {
-      const response = await fetch(`http://localhost:3002/api/admin/products/${productId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/products/${productId}`, {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
@@ -177,7 +179,7 @@ const AdminPage = () => {
   const createCategory = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3002/api/admin/categories', {
+      const response = await fetch(`${API_BASE_URL}/api/admin/categories`, {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(categoryForm)
@@ -200,7 +202,7 @@ const AdminPage = () => {
     if (!confirm('Tem certeza que deseja deletar esta categoria?')) return;
 
     try {
-      const response = await fetch(`http://localhost:3002/api/admin/categories/${categoryId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/categories/${categoryId}`, {
         method: 'DELETE',
         headers: getAuthHeaders()
       });
@@ -257,7 +259,7 @@ const AdminPage = () => {
         images: [editProductForm.image]
       };
 
-      const response = await fetch(`http://localhost:3002/api/admin/products/${editingProduct}`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/products/${editingProduct}`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify(productData)
@@ -293,7 +295,7 @@ const AdminPage = () => {
   const updateCategory = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3002/api/admin/categories/${editingCategory}`, {
+      const response = await fetch(`${API_BASE_URL}/api/admin/categories/${editingCategory}`, {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify(editCategoryForm)

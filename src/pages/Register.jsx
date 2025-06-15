@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "../context/AppContext";
+import { authService } from "../services/api";
 import "./Auth.css";
 
 const Register = () => {
@@ -28,62 +29,43 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('🔍 handleSubmit register chamado');
-    console.log('🔍 Event:', e);
-    console.log('🔍 FormData:', formData);
-    
     setLoading(true);
     setError("");
 
-    // Validar se as senhas coincidem
+    // Validações
     if (formData.password !== formData.confirmPassword) {
       setError("As senhas não coincidem");
       setLoading(false);
       return;
     }
 
-    // Validar força da senha
     if (formData.password.length < 6) {
       setError("A senha deve ter pelo menos 6 caracteres");
       setLoading(false);
       return;
     }
 
+    if (!formData.name.trim()) {
+      setError("O nome é obrigatório");
+      setLoading(false);
+      return;
+    }
+
     try {
-      console.log('🔍 Fazendo requisição POST para:', "http://localhost:3002/api/auth/register");
-      console.log('🔍 Body da requisição:', JSON.stringify({
+      console.log('🔍 Fazendo registro através do authService');
+      
+      const data = await authService.register({
         name: formData.name,
         email: formData.email,
         password: formData.password
-      }));
-      
-      const response = await fetch("http://localhost:3002/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          password: formData.password
-        }),
       });
-
-      console.log('🔍 Response status:', response.status);
-      console.log('🔍 Response headers:', response.headers);
-
-      const data = await response.json();
       console.log('🔍 Response data:', data);
 
-      if (response.ok) {
-        showNotification("Conta criada com sucesso!", "success");
-        navigate("/login"); // Redirecionar para login
-      } else {
-        setError(data.message || "Erro ao criar conta");
-      }
+      showNotification("Conta criada com sucesso!", "success");
+      navigate("/login"); // Redirecionar para login
     } catch (error) {
       console.error("❌ Erro no registro:", error);
-      setError("Erro de conexão. Tente novamente.");
+      setError(error.message || "Erro ao criar conta");
     } finally {
       setLoading(false);
     }

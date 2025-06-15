@@ -1,8 +1,9 @@
-const API_BASE_URL = 'http://localhost:3002/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+const API_URL = `${API_BASE_URL}/api`;
 
 // Função auxiliar para fazer requisições HTTP
 const apiRequest = async (endpoint, options = {}) => {
-  const url = `${API_BASE_URL}${endpoint}`;
+  const url = `${API_URL}${endpoint}`;
   const config = {
     headers: {
       'Content-Type': 'application/json',
@@ -317,7 +318,7 @@ export const apiUtils = {
   // Verificar se a API está online
   checkHealth: async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/health`);
+      const response = await fetch(`${API_URL}/health`);
       return response.ok;
     } catch {
       return false;
