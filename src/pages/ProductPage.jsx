@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
+import { useApp } from "../context/AppContext";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import AddToCartAnimation from "../components/AddToCartAnimation/AddToCartAnimation";
@@ -9,7 +9,7 @@ import "./ProductPage.css";
 
 const ProductPage = () => {
   const { id } = useParams();
-  const { addToCart } = useCart();
+  const { addToCart } = useApp();
   const [showAnimation, setShowAnimation] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [animationProps, setAnimationProps] = useState(null);
@@ -63,8 +63,8 @@ const ProductPage = () => {
     );
   }
   
-  const handleAddToCart = () => {
-    // Adicionar ao carrinho e verificar se é a primeira adição
+  const handleAddToCart = async () => {
+    // Animação + adicionar via AppContext (cartService), que busca o produto na API
     if (buttonRef.current) {
       const buttonRect = buttonRef.current.getBoundingClientRect();
       const startPosition = {
@@ -72,7 +72,6 @@ const ProductPage = () => {
         left: buttonRect.left + buttonRect.width / 2
       };
       
-      // Buscar o elemento do carrinho no DOM para definir o destino
       const cartIcon = document.querySelector('.cart-icon');
       if (cartIcon) {
         const cartRect = cartIcon.getBoundingClientRect();
@@ -84,40 +83,23 @@ const ProductPage = () => {
         setAnimationProps({ startPosition, endPosition });
         setShowAnimation(true);
         
-        // Adicionar ao carrinho e verificar se é a primeira adição
-        const isFirstAddition = addToCart(product);
-        
-        // Se for a primeira adição, vai mostrar o modal após a animação
-        if (isFirstAddition) {
-          // O modal será exibido quando a animação terminar
-        }
+        await addToCart(product.id, 1);
       } else {
-        // Se não encontrar o ícone do carrinho, apenas adiciona ao carrinho
-        addToCart(product);
+        await addToCart(product.id, 1);
       }
     }
   };
 
   const handleAnimationComplete = () => {
     setShowAnimation(false);
-    
-    // Verificar novamente se é a primeira adição
-    // O localStorage já deve ter sido atualizado pelo addToCart
-    const hasShownModal = localStorage.getItem("hasShownCartModal");
-    const isFirstTimeShown = hasShownModal === "true" && !localStorage.getItem("modalAlreadyShown");
-    
-    if (isFirstTimeShown) {
-      setShowModal(true);
-      localStorage.setItem("modalAlreadyShown", "true");
-    }
   };
 
   const closeModal = () => {
     setShowModal(false);
   };
 
-  const handleBuyNow = () => {
-    addToCart(product);
+  const handleBuyNow = async () => {
+    await addToCart(product.id, 1);
   };
   
   return (

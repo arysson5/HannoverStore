@@ -19,7 +19,8 @@ const CartModal = () => {
   
   const [isCheckingOut, setIsCheckingOut] = useState(false);
 
-  if (!showCartModal) return null;
+  // Só mostrar o modal se showCartModal for true E se houver itens no carrinho
+  if (!showCartModal || cart.length === 0) return null;
 
   const handleQuantityChange = (productId, newQuantity, size, color) => {
     if (newQuantity <= 0) {

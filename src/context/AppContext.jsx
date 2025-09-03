@@ -31,8 +31,8 @@ const initialState = {
   authLoading: false,
   
   // UI
-  showCartModal: false,
   showAuthModal: false,
+  cartHighlighted: false,
   notification: null,
 };
 
@@ -63,10 +63,10 @@ const ACTIONS = {
   LOGOUT: 'LOGOUT',
   
   // UI
-  SHOW_CART_MODAL: 'SHOW_CART_MODAL',
-  HIDE_CART_MODAL: 'HIDE_CART_MODAL',
   SHOW_AUTH_MODAL: 'SHOW_AUTH_MODAL',
   HIDE_AUTH_MODAL: 'HIDE_AUTH_MODAL',
+  HIGHLIGHT_CART: 'HIGHLIGHT_CART',
+  UNHIGHLIGHT_CART: 'UNHIGHLIGHT_CART',
   SET_NOTIFICATION: 'SET_NOTIFICATION',
   CLEAR_NOTIFICATION: 'CLEAR_NOTIFICATION',
 };
@@ -152,17 +152,19 @@ const appReducer = (state, action) => {
       };
     
     // UI
-    case ACTIONS.SHOW_CART_MODAL:
-      return { ...state, showCartModal: true };
-    
-    case ACTIONS.HIDE_CART_MODAL:
-      return { ...state, showCartModal: false };
+
     
     case ACTIONS.SHOW_AUTH_MODAL:
       return { ...state, showAuthModal: true };
     
     case ACTIONS.HIDE_AUTH_MODAL:
       return { ...state, showAuthModal: false };
+    
+    case ACTIONS.HIGHLIGHT_CART:
+      return { ...state, cartHighlighted: true };
+    
+    case ACTIONS.UNHIGHLIGHT_CART:
+      return { ...state, cartHighlighted: false };
     
     case ACTIONS.SET_NOTIFICATION:
       return { ...state, notification: action.payload };
@@ -185,7 +187,7 @@ export const AppProvider = ({ children }) => {
   // Inicialização
   useEffect(() => {
     initializeApp();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Inicializar aplicação
   const initializeApp = async () => {
@@ -276,7 +278,13 @@ export const AppProvider = ({ children }) => {
   // Carregar carrinho
   const loadCart = () => {
     const cart = cartService.getCart();
-    dispatch({ type: ACTIONS.SET_CART, payload: cart });
+    // Só atualizar o estado se o carrinho não estiver vazio
+    if (cart.length > 0) {
+      dispatch({ type: ACTIONS.SET_CART, payload: cart });
+    } else {
+      // Garantir que o carrinho está vazio
+      dispatch({ type: ACTIONS.SET_CART, payload: [] });
+    }
   };
 
   // Adicionar ao carrinho
@@ -286,7 +294,18 @@ export const AppProvider = ({ children }) => {
     try {
       const cart = await cartService.addItem(productId, quantity, size, color);
       dispatch({ type: ACTIONS.ADD_TO_CART, payload: cart });
+      
+      // Destacar o ícone do carrinho
+      dispatch({ type: ACTIONS.HIGHLIGHT_CART });
+      
+      // Mostrar notificação
       showNotification('Produto adicionado ao carrinho!', 'success');
+      
+      // Remover destaque após 3 segundos
+      setTimeout(() => {
+        dispatch({ type: ACTIONS.UNHIGHLIGHT_CART });
+      }, 3000);
+      
       return cart;
     } catch (error) {
       showNotification('Erro ao adicionar produto ao carrinho', 'error');
@@ -377,10 +396,12 @@ export const AppProvider = ({ children }) => {
   };
 
   // Controles de modal
-  const showCartModal = () => dispatch({ type: ACTIONS.SHOW_CART_MODAL });
-  const hideCartModal = () => dispatch({ type: ACTIONS.HIDE_CART_MODAL });
   const showAuthModal = () => dispatch({ type: ACTIONS.SHOW_AUTH_MODAL });
   const hideAuthModal = () => dispatch({ type: ACTIONS.HIDE_AUTH_MODAL });
+  
+  // Controles de destaque do carrinho
+  const highlightCart = () => dispatch({ type: ACTIONS.HIGHLIGHT_CART });
+  const unhighlightCart = () => dispatch({ type: ACTIONS.UNHIGHLIGHT_CART });
 
   // Valores do contexto
   const value = {
@@ -407,15 +428,15 @@ export const AppProvider = ({ children }) => {
     logout,
     
     // Ações de UI
-    showCartModal,
-    hideCartModal,
     showAuthModal,
     hideAuthModal,
+    highlightCart,
+    unhighlightCart,
     showNotification,
     
     // Utilitários
-    cartTotal: cartService.getTotal(),
-    cartItemsCount: cartService.getTotalItems(),
+    cartTotal: state.cart.reduce((total, item) => total + (item.price * item.quantity), 0),
+    cartItemsCount: state.cart.reduce((total, item) => total + item.quantity, 0),
   };
 
   return (

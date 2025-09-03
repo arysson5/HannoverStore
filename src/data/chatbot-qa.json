@@ -1,0 +1,212 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Como faço para me cadastrar?",
+      "answer": "Para se cadastrar, clique no botão 'Registrar' no canto superior direito da tela. Preencha seus dados (nome, email e senha) e clique em 'Criar Conta'. Você receberá um email de confirmação.",
+      "keywords": ["cadastrar", "registrar", "criar conta", "signup", "novo usuário"]
+    },
+    {
+      "id": 2,
+      "question": "Como faço login?",
+      "answer": "Clique no botão 'Login' no canto superior direito da tela. Digite seu email e senha, depois clique em 'Entrar'. Se você esqueceu sua senha, use a opção 'Esqueci minha senha'.",
+      "keywords": ["login", "entrar", "acessar", "signin", "fazer login"]
+    },
+    {
+      "id": 3,
+      "question": "Como adiciono produtos ao carrinho?",
+      "answer": "Para adicionar produtos ao carrinho, navegue pelos produtos na página inicial ou use a busca. Clique no botão 'Adicionar ao Carrinho' do produto desejado. O ícone do carrinho na barra superior mostrará a quantidade de itens.",
+      "keywords": ["carrinho", "adicionar", "comprar", "produto", "adicionar ao carrinho"]
+    },
+    {
+      "id": 4,
+      "question": "Como vejo meus produtos no carrinho?",
+      "answer": "Clique no ícone do carrinho na barra superior (canto direito) para ver todos os produtos adicionados. Na página do carrinho você pode alterar quantidades, remover itens e finalizar a compra.",
+      "keywords": ["ver carrinho", "meu carrinho", "itens carrinho", "produtos carrinho"]
+    },
+    {
+      "id": 5,
+      "question": "Como finalizo minha compra?",
+      "answer": "Vá para a página do carrinho clicando no ícone do carrinho. Revise seus produtos, clique em 'Finalizar Compra' e preencha os dados de entrega e pagamento. Você receberá um email de confirmação do pedido.",
+      "keywords": ["finalizar compra", "checkout", "comprar", "finalizar pedido", "pagar"]
+    },
+    {
+      "id": 6,
+      "question": "Quais formas de pagamento vocês aceitam?",
+      "answer": "Aceitamos cartões de crédito (Visa, Mastercard, Elo), cartões de débito, PIX e boleto bancário. Todos os pagamentos são processados de forma segura.",
+      "keywords": ["pagamento", "cartão", "pix", "boleto", "formas de pagamento", "como pagar"]
+    },
+    {
+      "id": 7,
+      "question": "Qual o prazo de entrega?",
+      "answer": "O prazo de entrega varia de 3 a 7 dias úteis para a maioria das regiões. Para regiões mais distantes, pode levar até 10 dias úteis. Você receberá o código de rastreamento por email.",
+      "keywords": ["entrega", "prazo", "quando chega", "tempo entrega", "frete"]
+    },
+    {
+      "id": 8,
+      "question": "Como faço para trocar um produto?",
+      "answer": "Você tem até 7 dias para solicitar a troca. Entre em contato conosco pelo email contato@hannoverstore.com ou pelo WhatsApp. O produto deve estar em perfeito estado e com a nota fiscal.",
+      "keywords": ["troca", "trocar", "devolução", "trocar produto", "produto defeituoso"]
+    },
+    {
+      "id": 9,
+      "question": "Como cancelo um pedido?",
+      "answer": "Pedidos podem ser cancelados até 24 horas após a compra. Entre em contato conosco pelo email contato@hannoverstore.com informando o número do pedido. O estorno será processado em até 5 dias úteis.",
+      "keywords": ["cancelar", "cancelamento", "cancelar pedido", "estorno"]
+    },
+    {
+      "id": 10,
+      "question": "Como entro em contato com o suporte?",
+      "answer": "Você pode entrar em contato conosco pelo email contato@hannoverstore.com, pelo WhatsApp (11) 99999-9999 ou através do chat online. Nosso atendimento funciona de segunda a sexta, das 8h às 18h.",
+      "keywords": ["contato", "suporte", "ajuda", "atendimento", "falar com alguém", "telefone"]
+    },
+    {
+      "id": 11,
+      "question": "Vocês fazem entregas para todo o Brasil?",
+      "answer": "Sim, fazemos entregas para todo o território nacional. O frete é calculado automaticamente no checkout baseado no seu CEP. Algumas regiões podem ter prazos de entrega diferenciados.",
+      "keywords": ["entrega", "brasil", "todo país", "frete", "cep", "região"]
+    },
+    {
+      "id": 12,
+      "question": "Como funciona o programa de fidelidade?",
+      "answer": "Nosso programa de fidelidade oferece pontos a cada compra. A cada R$ 1,00 gasto você ganha 1 ponto. A partir de 100 pontos você pode trocar por descontos. Cadastre-se gratuitamente para participar.",
+      "keywords": ["fidelidade", "pontos", "programa", "desconto", "cashback"]
+    },
+    {
+      "id": 13,
+      "question": "Posso comprar no boleto?",
+      "answer": "Sim, aceitamos pagamento por boleto bancário. O boleto tem vencimento em 3 dias úteis. Após o pagamento, o pedido será processado em até 2 dias úteis.",
+      "keywords": ["boleto", "pagamento boleto", "como pagar boleto"]
+    },
+    {
+      "id": 14,
+      "question": "Como rastreio meu pedido?",
+      "answer": "Após a confirmação do pagamento, você receberá um email com o código de rastreamento. Use este código no site dos Correios ou da transportadora para acompanhar sua entrega.",
+      "keywords": ["rastreamento", "rastrear", "código rastreamento", "onde está meu pedido"]
+    },
+    {
+      "id": 15,
+      "question": "Vocês têm loja física?",
+      "answer": "Atualmente trabalhamos apenas com vendas online através do nosso site. Isso nos permite oferecer preços mais competitivos e entregar em todo o Brasil.",
+      "keywords": ["loja física", "loja", "endereço", "onde fica", "presencial"]
+    },
+    {
+      "id": 16,
+      "question": "Que produtos vocês vendem?",
+      "answer": "Somos especializados em produtos esportivos de alta qualidade! Temos tênis esportivos, roupas esportivas, equipamentos de fitness e acessórios. Confira nossa seleção completa na página inicial do site.",
+      "keywords": ["produtos", "o que vendem", "catalogo", "produtos disponíveis", "loja produtos"]
+    },
+    {
+      "id": 17,
+      "question": "Preciso de tênis para corrida",
+      "answer": "Perfeito! Temos uma excelente seleção de tênis para corrida com tecnologia de amortecimento e suporte. Recomendo dar uma olhada em nossa categoria de tênis esportivos. Que tipo de corrida você pratica?",
+      "keywords": ["tênis corrida", "tênis esportivo", "corrida", "tênis atletismo", "calçado esportivo"]
+    },
+    {
+      "id": 18,
+      "question": "Quero roupas para academia",
+      "answer": "Ótima escolha! Temos camisetas, shorts, leggings e jaquetas esportivas ideais para academia. Nossas roupas são feitas com tecidos respiráveis e tecnologia de secagem rápida. Confira nossa seção de roupas esportivas!",
+      "keywords": ["roupas academia", "roupas esportivas", "camiseta academia", "shorts academia", "legging academia"]
+    },
+    {
+      "id": 19,
+      "question": "Preciso de equipamentos para casa",
+      "answer": "Excelente! Temos halteres, esteiras, bicicletas ergométricas e outros equipamentos de fitness para você montar sua academia em casa. Todos os produtos vêm com garantia e instruções de uso.",
+      "keywords": ["equipamentos casa", "academia casa", "halteres", "esteira", "bicicleta ergométrica", "fitness casa"]
+    },
+    {
+      "id": 20,
+      "question": "Que marcas vocês trabalham?",
+      "answer": "Trabalhamos com as melhores marcas do mercado esportivo! Temos produtos de marcas reconhecidas por qualidade e tecnologia. Confira nossa seleção na página de produtos para ver todas as marcas disponíveis.",
+      "keywords": ["marcas", "quais marcas", "marca produtos", "fabricantes", "fornecedores"]
+    },
+    {
+      "id": 21,
+      "question": "Preciso de acessórios esportivos",
+      "answer": "Temos uma variedade incrível de acessórios! Mochilas esportivas, garrafas térmicas, relógios esportivos, faixas de cabelo e muito mais. Todos os acessórios são pensados para acompanhar sua prática esportiva.",
+      "keywords": ["acessórios", "acessórios esportivos", "mochila", "garrafa", "relógio esportivo", "faixa cabelo"]
+    },
+    {
+      "id": 22,
+      "question": "Qual o melhor produto para iniciantes?",
+      "answer": "Para iniciantes, recomendo começar com tênis confortáveis e roupas básicas de treino. Temos kits especiais para iniciantes com tudo que você precisa para começar sua jornada esportiva. Que esporte você quer praticar?",
+      "keywords": ["iniciante", "começar", "primeiro produto", "kit iniciante", "básico", "começar esporte"]
+    },
+    {
+      "id": 23,
+      "question": "Têm produtos para futebol?",
+      "answer": "Sim! Temos tênis de futebol, chuteiras, meias esportivas e acessórios específicos para futebol. Nossa linha de futebol é completa e de alta qualidade. Confira nossa seção de futebol!",
+      "keywords": ["futebol", "chuteira", "tênis futebol", "meia futebol", "acessórios futebol"]
+    },
+    {
+      "id": 24,
+      "question": "Preciso de produtos para basquete",
+      "answer": "Perfeito! Temos tênis de basquete com tecnologia de amortecimento, shorts e camisetas específicas para basquete, além de acessórios como tornozeleiras e faixas. Nossa linha de basquete é completa!",
+      "keywords": ["basquete", "tênis basquete", "shorts basquete", "camiseta basquete", "acessórios basquete"]
+    },
+    {
+      "id": 25,
+      "question": "Qual o melhor tênis para caminhada?",
+      "answer": "Para caminhada, recomendo tênis com bom amortecimento e suporte. Temos várias opções ideais para caminhada com tecnologia de conforto e durabilidade. Que tipo de caminhada você pratica?",
+      "keywords": ["caminhada", "tênis caminhada", "caminhar", "tênis conforto", "tênis amortecimento"]
+    },
+    {
+      "id": 26,
+      "question": "Preciso de roupas para correr",
+      "answer": "Ótima escolha! Temos camisetas, shorts e leggings específicos para corrida com tecnologia de secagem rápida e tecidos respiráveis. Nossas roupas são ideais para performance e conforto durante a corrida!",
+      "keywords": ["roupas corrida", "correr", "running", "camiseta corrida", "shorts corrida", "legging corrida"]
+    },
+    {
+      "id": 27,
+      "question": "Que tamanhos vocês têm?",
+      "answer": "Temos uma ampla variedade de tamanhos! Para tênis, trabalhamos do 35 ao 46. Para roupas, temos do P ao GG. Confira a tabela de medidas em cada produto para escolher o tamanho ideal!",
+      "keywords": ["tamanhos", "numeração", "tabela medidas", "tamanho tênis", "tamanho roupa", "P M G GG"]
+    },
+    {
+      "id": 28,
+      "question": "Vocês têm produtos em promoção?",
+      "answer": "Sim! Sempre temos promoções especiais e ofertas imperdíveis! Fique de olho na nossa página inicial e nas redes sociais para não perder nenhuma promoção. Temos descontos em várias categorias!",
+      "keywords": ["promoção", "desconto", "oferta", "promo", "sale", "liquidação", "preço baixo"]
+    },
+    {
+      "id": 29,
+      "question": "Como escolher o tênis ideal?",
+      "answer": "Para escolher o tênis ideal, considere: 1) O esporte que pratica, 2) Seu tipo de pisada, 3) O terreno onde usa, 4) Seu peso e 5) O conforto. Temos uma variedade que atende todas as necessidades!",
+      "keywords": ["escolher tênis", "tênis ideal", "qual tênis", "tipo pisada", "terreno", "conforto"]
+    },
+    {
+      "id": 30,
+      "question": "Preciso de produtos para yoga",
+      "answer": "Perfeito! Temos leggings, tops, shorts e acessórios ideais para yoga. Nossas roupas são flexíveis, confortáveis e permitem total liberdade de movimento. Também temos tapetes e acessórios de yoga!",
+      "keywords": ["yoga", "legging yoga", "top yoga", "shorts yoga", "tapete yoga", "acessórios yoga"]
+    },
+    {
+      "id": 31,
+      "question": "Que cores vocês têm?",
+      "answer": "Temos uma paleta incrível de cores! Preto, branco, cinza, azul, vermelho, verde, rosa e muitas outras. Cada produto tem suas cores disponíveis. Confira as opções na página do produto!",
+      "keywords": ["cores", "cor", "preto", "branco", "azul", "vermelho", "verde", "rosa", "cinza"]
+    },
+    {
+      "id": 32,
+      "question": "Preciso de produtos para ciclismo",
+      "answer": "Excelente! Temos roupas específicas para ciclismo, tênis adequados, luvas, óculos e acessórios. Nossa linha de ciclismo é completa e pensada para performance e conforto sobre a bike!",
+      "keywords": ["ciclismo", "bike", "bicicleta", "roupas ciclismo", "tênis ciclismo", "luvas ciclismo", "óculos ciclismo"]
+    }
+  ],
+  "greetings": [
+    "👟🤖 Olá! Eu sou o Hannovinho, seu tênis-robô! Como posso ajudá-lo hoje?",
+    "🤖👟 Oi! Hannovinho aqui! Pronto para encontrar os melhores produtos esportivos para você!",
+    "👟 Olá! Sou o Hannovinho, especialista em produtos esportivos! O que você está procurando?",
+    "🤖 Ei! Hannovinho na área! Vamos encontrar o produto perfeito para você!",
+    "👟 Salve! Hannovinho aqui, seu assistente tênis-robô! Como posso ajudar?",
+    "🤖 Olá! Eu sou o Hannovinho! Pronto para te ajudar a encontrar produtos incríveis!"
+  ],
+  "fallback_responses": [
+    "👟🤖 Opa, não entendi direito! Pode reformular? Enquanto isso, que tal dar uma olhada nos nossos produtos esportivos?",
+    "🤖👟 Cara, não tenho essa info agora! Entre em contato pelo email contato@hannoverstore.com. Mas confira nossos tênis esportivos, são show de bola!",
+    "👟🤖 Que pergunta interessante! Nossa equipe pode ajudar melhor. Entre em contato conosco. Temos produtos incríveis para você!",
+    "🤖👟 Não consegui encontrar uma resposta para isso. Que tal falar com nosso atendimento? Ou dar uma olhada na nossa seleção de roupas esportivas?",
+    "👟🤖 Que tal reformular sua pergunta? Enquanto isso, confira nossos equipamentos de fitness e acessórios esportivos!",
+    "🤖👟 Não entendi completamente. Pode tentar de outra forma? Temos produtos esportivos de alta qualidade esperando por você!"
+  ]
+}

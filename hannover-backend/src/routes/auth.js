@@ -1,4 +1,4 @@
-import { register, login, getProfile, updateProfile } from '../controllers/authController.js';
+import { register, login, getProfile, updateProfile, getAllUsers } from '../controllers/authController.js';
 import { authenticateToken } from '../middleware/auth.js';
 
 export default async function authRoutes(fastify) {
@@ -204,4 +204,48 @@ export default async function authRoutes(fastify) {
       }
     }
   }, updateProfile);
+
+  // Buscar todos os usuários (requer autenticação de admin)
+  fastify.get('/users', {
+    preHandler: authenticateToken,
+    schema: {
+      description: 'Buscar todos os usuários (apenas para administradores)',
+      tags: ['Auth'],
+      security: [{ Bearer: [] }],
+      response: {
+        200: {
+          type: 'object',
+          properties: {
+            users: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  id: { type: 'string', example: '1234567890' },
+                  name: { type: 'string', example: 'João Silva' },
+                  email: { type: 'string', example: 'joao@email.com' },
+                  role: { type: 'string', example: 'customer' },
+                  createdAt: { type: 'string', example: '2024-01-15T10:00:00Z' }
+                }
+              }
+            }
+          }
+        },
+        401: {
+          type: 'object',
+          properties: {
+            error: { type: 'string', example: 'Token de acesso requerido' },
+            code: { type: 'string', example: 'MISSING_TOKEN' }
+          }
+        },
+        403: {
+          type: 'object',
+          properties: {
+            error: { type: 'string', example: 'Acesso negado. Apenas administradores' },
+            code: { type: 'string', example: 'ACCESS_DENIED' }
+          }
+        }
+      }
+    }
+  }, getAllUsers);
 } 

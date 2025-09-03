@@ -185,7 +185,24 @@ export const cartService = {
   // Obter carrinho do localStorage
   getCart: () => {
     const cart = localStorage.getItem('cart');
-    return cart ? JSON.parse(cart) : [];
+    if (!cart) return [];
+    
+    try {
+      const parsedCart = JSON.parse(cart);
+      // Filtrar itens inválidos
+      return parsedCart.filter(item => 
+        item && 
+        item.id && 
+        item.name && 
+        item.price !== undefined && 
+        item.price !== null &&
+        item.quantity > 0
+      );
+    } catch (error) {
+      console.error('Erro ao parsear carrinho do localStorage:', error);
+      localStorage.removeItem('cart');
+      return [];
+    }
   },
 
   // Salvar carrinho no localStorage

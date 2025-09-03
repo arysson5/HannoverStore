@@ -1,9 +1,10 @@
 import Fastify from 'fastify';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, readFile, writeFile } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { v4 as uuidv4 } from 'uuid';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,7 +14,29 @@ const JWT_SECRET = process.env.JWT_SECRET || 'hannover-store-secret-key-2024';
 const PORT = process.env.PORT || 3002;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
+// Função para ler arquivos JSON
+async function readJsonFile(filename) {
+  try {
+    const data = await readFile(join(__dirname, '../data', filename), 'utf8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error(`Erro ao ler ${filename}:`, error);
+    return [];
+  }
+}
+
+// Função para escrever arquivos JSON
+async function writeJsonFile(filename, data) {
+  try {
+    await writeFile(join(__dirname, '../data', filename), JSON.stringify(data, null, 2));
+  } catch (error) {
+    console.error(`Erro ao escrever ${filename}:`, error);
+    throw error;
+  }
+}
+
 // Inicializar Fastify
+console.log('🚀 Iniciando servidor com src/server-simple.js');
 const fastify = Fastify({
   logger: NODE_ENV === 'development' ? {
     transport: {
@@ -320,6 +343,138 @@ fastify.get('/api/orders', { preHandler: authenticate }, async (request, reply) 
   } catch (error) {
     reply.code(500).send({ error: 'Erro ao buscar pedidos' });
   }
+});
+
+// Middleware para verificar admin
+const verifyAdmin = async (request, reply) => {
+  try {
+    const token = request.headers.authorization?.replace('Bearer ', '');
+    if (!token) {
+      reply.code(401).send({ error: 'Token não fornecido' });
+      return;
+    }
+
+    const decoded = jwt.verify(token, JWT_SECRET);
+    const users = JSON.parse(await fs.readFile(path.join(__dirname, '../data/users.json'), 'utf8'));
+    const user = users.find(u => u.id === decoded.userId);
+    
+    if (!user || user.role !== 'admin') {
+      reply.code(403).send({ error: 'Acesso negado. Apenas administradores.' });
+      return;
+    }
+
+    request.user = user;
+  } catch (error) {
+    reply.code(401).send({ error: 'Token inválido' });
+  }
+};
+
+// Rotas Admin
+fastify.get('/api/admin/stats', { preHandler: verifyAdmin }, async () => {
+  const [products, users, categories] = await Promise.all([
+    readJsonFile('products.json'),
+    readJsonFile('users.json'),
+    readJsonFile('categories.json')
+  ]);
+  
+  return {
+    totalProducts: products.length,
+    totalUsers: users.length,
+    totalCategories: categories.length,
+    totalOrders: 0
+  };
+});
+
+fastify.get('/api/admin/users', { preHandler: verifyAdmin }, async () => {
+  const users = await readJsonFile('users.json');
+  return users.map(user => ({
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    createdAt: user.createdAt,
+    password: user.password // Para visualização admin
+  }));
+});
+
+fastify.delete('/api/admin/users/:id', { preHandler: verifyAdmin }, async (request, reply) => {
+  const users = await readJsonFile('users.json');
+  const userIndex = users.findIndex(u => u.id === request.params.id);
+  
+  if (userIndex === -1) {
+    reply.code(404).send({ error: 'Usuário não encontrado' });
+    return;
+  }
+  
+  // Não permitir deletar o próprio usuário admin
+  if (users[userIndex].id === request.user.id) {
+    reply.code(400).send({ error: 'Não é possível deletar seu próprio usuário' });
+    return;
+  }
+  
+  users.splice(userIndex, 1);
+  await writeJsonFile('users.json', users);
+  
+  return { message: 'Usuário deletado com sucesso' };
+});
+
+fastify.post('/api/admin/products', { preHandler: verifyAdmin }, async (request) => {
+  const products = await readJsonFile('products.json');
+  const newProduct = {
+    id: uuidv4(),
+    ...request.body,
+    createdAt: new Date().toISOString()
+  };
+  
+  products.push(newProduct);
+  await writeJsonFile('products.json', products);
+  
+  return newProduct;
+});
+
+fastify.put('/api/admin/products/:id', { preHandler: verifyAdmin }, async (request, reply) => {
+  console.log('PUT /api/admin/products/:id - ID:', request.params.id);
+  console.log('Body:', request.body);
+  console.log('User:', request.user);
+  
+  const products = await readJsonFile('products.json');
+  const productIndex = products.findIndex(p => p.id === request.params.id);
+  
+  console.log('Produto encontrado no índice:', productIndex);
+  
+  if (productIndex === -1) {
+    console.log('Produto não encontrado com ID:', request.params.id);
+    reply.code(404).send({ error: 'Produto não encontrado' });
+    return;
+  }
+  
+  // Atualizar produto mantendo id e createdAt
+  products[productIndex] = {
+    ...products[productIndex],
+    ...request.body,
+    id: request.params.id,
+    updatedAt: new Date().toISOString()
+  };
+  
+  await writeJsonFile('products.json', products);
+  
+  console.log('Produto atualizado com sucesso');
+  return products[productIndex];
+});
+
+fastify.delete('/api/admin/products/:id', { preHandler: verifyAdmin }, async (request, reply) => {
+  const products = await readJsonFile('products.json');
+  const productIndex = products.findIndex(p => p.id === request.params.id);
+  
+  if (productIndex === -1) {
+    reply.code(404).send({ error: 'Produto não encontrado' });
+    return;
+  }
+  
+  products.splice(productIndex, 1);
+  await writeJsonFile('products.json', products);
+  
+  return { message: 'Produto deletado com sucesso' };
 });
 
 // Rota de health check

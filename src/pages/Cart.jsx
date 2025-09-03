@@ -62,7 +62,7 @@ const Cart = () => {
   useEffect(() => {
     const hasInvalidItems = cart.some(item => 
       !item.price || 
-      !item.title || 
+      (!item.title && !item.name) || 
       !item.id ||
       (typeof item.price !== 'number' && typeof item.price !== 'string')
     );
@@ -115,9 +115,9 @@ const Cart = () => {
             return (
               <div className="cart-item" key={`${item.id}-${item.size || ''}-${item.color || ''}`}>
                 <div className="cart-product">
-                  <img src={item.image} alt={item.title} />
+                  <img src={item.image} alt={item.name || item.title} />
                   <div className="cart-product-info">
-                    <h3>{item.title}</h3>
+                    <h3>{item.name || item.title}</h3>
                     {item.size && <p>Tamanho: {item.size}</p>}
                     {item.color && <p>Cor: {item.color}</p>}
                     {isMobile && (

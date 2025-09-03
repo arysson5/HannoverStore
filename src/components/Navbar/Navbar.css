@@ -131,6 +131,30 @@
     font-weight: bold;
 }
 
+/* Destaque do carrinho */
+.cart-highlighted {
+    animation: cartPulse 1s ease-in-out 3;
+    background-color: rgba(255, 215, 0, 0.2);
+    border-radius: 50%;
+    padding: 8px;
+    transform: scale(1.1);
+}
+
+@keyframes cartPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
 /* Botões como links */
 .btn-link {
     background: none !important;

@@ -30,5 +30,12 @@
     "password": "$2a$10$fIuyYSZaV97quZW69f0aBej3TD.3BBQA6VdPNH3draHWNarrlJNY6",
     "role": "admin",
     "createdAt": "2025-06-14T05:50:06.099Z"
+  },
+  {
+    "id": "1756916587734",
+    "name": "ruivo",
+    "email": "teste@gmail.com",
+    "password": "$2a$10$JFZvRpEnotUFEZ81Mlv0EuPjrJGi0q/DMh2/LB2oLSaWvgRftBg6q",
+    "createdAt": "2025-09-03T16:23:07.734Z"
   }
 ]

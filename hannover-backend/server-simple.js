@@ -356,10 +356,17 @@ app.post('/api/admin/products', { preHandler: verifyAdmin }, async (request) => 
 });
 
 app.put('/api/admin/products/:id', { preHandler: verifyAdmin }, async (request, reply) => {
+  console.log('PUT /api/admin/products/:id - ID:', request.params.id);
+  console.log('Body:', request.body);
+  console.log('User:', request.user);
+  
   const products = await readJsonFile('products.json');
   const productIndex = products.findIndex(p => p.id === request.params.id);
   
+  console.log('Produto encontrado no índice:', productIndex);
+  
   if (productIndex === -1) {
+    console.log('Produto não encontrado com ID:', request.params.id);
     reply.code(404).send({ error: 'Produto não encontrado' });
     return;
   }
@@ -374,6 +381,7 @@ app.put('/api/admin/products/:id', { preHandler: verifyAdmin }, async (request, 
   
   await writeJsonFile('products.json', products);
   
+  console.log('Produto atualizado com sucesso');
   return products[productIndex];
 });
 

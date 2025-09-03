@@ -85,16 +85,6 @@ const Card = ({
 
   const handleAnimationComplete = () => {
     setShowAnimation(false);
-    
-    // Verificar se é a primeira vez que adiciona algo ao carrinho
-    const hasAddedToCartBefore = localStorage.getItem("hasAddedToCartBefore");
-    
-    if (!hasAddedToCartBefore) {
-      // Primeira vez - mostrar modal convidando para checkout
-      setShowModal(true);
-      localStorage.setItem("hasAddedToCartBefore", "true");
-    }
-    // A partir da segunda vez, apenas mostra a notificação (já feito no addToCart)
   };
 
   const closeModal = () => {

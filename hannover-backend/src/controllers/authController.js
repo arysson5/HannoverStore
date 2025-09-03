@@ -170,4 +170,33 @@ export const updateProfile = async (request, reply) => {
       code: 'INTERNAL_ERROR'
     });
   }
+};
+
+export const getAllUsers = async (request, reply) => {
+  try {
+    // Verificar se o usuário é admin
+    if (request.user.role !== 'admin') {
+      return reply.status(403).send({
+        error: 'Acesso negado. Apenas administradores podem visualizar todos os usuários',
+        code: 'ACCESS_DENIED'
+      });
+    }
+
+    // Buscar todos os usuários
+    const users = await database.getAllUsers();
+    
+    // Remover senhas dos usuários
+    const usersWithoutPasswords = users.map(user => {
+      const { password: _, ...userWithoutPassword } = user;
+      return userWithoutPassword;
+    });
+
+    return reply.send({ users: usersWithoutPasswords });
+  } catch (error) {
+    console.error('Erro ao buscar usuários:', error);
+    return reply.status(500).send({
+      error: 'Erro interno do servidor',
+      code: 'INTERNAL_ERROR'
+    });
+  }
 }; 

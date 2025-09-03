@@ -24,14 +24,9 @@ class JSONDatabase {
   }
 
   async writeFile(filename, data) {
-    
-    try {
-      const filePath = path.join(this.dataPath, filename);
-      await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
-      return true;
-    } catch (error) {
-      throw error;
-    }
+    const filePath = path.join(this.dataPath, filename);
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+    return true;
   }
 
   // Produtos
@@ -93,6 +88,10 @@ class JSONDatabase {
   async getUserByEmail(email) {
     const users = await this.getUsers();
     return users.find(user => user.email === email);
+  }
+
+  async getAllUsers() {
+    return await this.getUsers();
   }
 
   async createUser(user) {
