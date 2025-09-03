@@ -9,7 +9,7 @@ const Chatbot = () => {
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [apiKey, setApiKey] = useState('');
-  const [showApiKeyInput, setShowApiKeyInput] = useState(false);
+
   const messagesEndRef = useRef(null);
 
   // Carregar mensagem de boas-vindas
@@ -33,13 +33,26 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Carregar API key do localStorage
+  // Carregar API key do backend
   useEffect(() => {
-    const savedApiKey = localStorage.getItem('google_ai_api_key');
-    console.log('API Key carregada:', savedApiKey ? 'Sim' : 'Não');
-    if (savedApiKey) {
-      setApiKey(savedApiKey);
-    }
+    const loadApiKey = async () => {
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/google-ai-key`);
+        if (response.ok) {
+          const data = await response.json();
+          console.log('API Key carregada do backend:', data.apiKey ? 'Sim' : 'Não');
+          setApiKey(data.apiKey || '');
+        } else {
+          console.log('API Key não configurada no backend');
+          setApiKey('');
+        }
+      } catch (error) {
+        console.error('Erro ao carregar API key:', error);
+        setApiKey('');
+      }
+    };
+
+    loadApiKey();
   }, []);
 
   const handleSendMessage = async () => {
@@ -290,13 +303,7 @@ Pergunta do usuário: ${question}`
     }
   };
 
-  const handleApiKeySubmit = (e) => {
-    e.preventDefault();
-    if (apiKey.trim()) {
-      localStorage.setItem('google_ai_api_key', apiKey);
-      setShowApiKeyInput(false);
-    }
-  };
+
 
   const toggleChatbot = () => {
     setIsOpen(!isOpen);
@@ -381,15 +388,6 @@ Pergunta do usuário: ${question}`
               <span>Hannovinho</span>
             </div>
             <div className="chatbot-controls">
-              {user?.role === 'admin' && (
-                <button 
-                  className="chatbot-btn" 
-                  onClick={() => setShowApiKeyInput(!showApiKeyInput)}
-                  title="Configurações da API (Admin)"
-                >
-                  ⚙️
-                </button>
-              )}
               <button 
                 className="chatbot-btn" 
                 onClick={clearChat}
@@ -407,29 +405,7 @@ Pergunta do usuário: ${question}`
             </div>
           </div>
 
-          {/* API Key Input - Apenas para Admins */}
-          {showApiKeyInput && user?.role === 'admin' && (
-            <div className="chatbot-api-key">
-              <form onSubmit={handleApiKeySubmit}>
-                <input
-                  type="password"
-                  placeholder="Cole sua chave da API do Google AI aqui"
-                  value={apiKey}
-                  onChange={(e) => setApiKey(e.target.value)}
-                  className="chatbot-api-input"
-                />
-                <button type="submit" className="chatbot-api-btn">
-                  Salvar
-                </button>
-              </form>
-              <p className="chatbot-api-help">
-                Para obter sua chave gratuita, acesse: 
-                <a href="https://makersuite.google.com/app/apikey" target="_blank" rel="noopener noreferrer">
-                  Google AI Studio
-                </a>
-              </p>
-            </div>
-          )}
+
 
           {/* Messages */}
           <div className="chatbot-messages">

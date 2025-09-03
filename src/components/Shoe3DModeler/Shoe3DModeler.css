@@ -1,0 +1,390 @@
+/* Modal de Modelagem 3D */
+.shoe-3d-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+.shoe-3d-content {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.shoe-3d-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shoe-3d-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.shoe-3d-body {
+  padding: 30px;
+  text-align: center;
+}
+
+/* Mensagem para Desktop */
+.mobile-only-message {
+  padding: 40px 20px;
+}
+
+.mobile-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.mobile-only-message h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.mobile-only-message p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Setup da Câmera */
+.camera-setup {
+  padding: 20px;
+}
+
+.setup-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.camera-setup h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.camera-setup p {
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.start-camera-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.start-camera-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.instructions {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.instructions h5 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions li {
+  color: #666;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.instructions li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+/* Visualização da Câmera */
+.camera-view {
+  padding: 0;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.camera-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Espelhar para parecer natural */
+}
+
+.detection-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.model-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Modelo 3D do Tênis */
+.shoe-3d-model {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1001;
+  animation: shoeFloat 2s ease-in-out infinite alternate;
+}
+
+@keyframes shoeFloat {
+  from {
+    transform: perspective(500px) rotateX(15deg) rotateY(10deg) translateY(0px);
+  }
+  to {
+    transform: perspective(500px) rotateX(15deg) rotateY(10deg) translateY(-5px);
+  }
+}
+
+/* Status de Detecção */
+.detection-status {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 1002;
+  backdrop-filter: blur(10px);
+}
+
+.detection-status.success {
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+.detection-status.waiting {
+  background: rgba(59, 130, 246, 0.9);
+  color: white;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+/* Controles da Câmera */
+.camera-controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stop-camera-btn,
+.retry-detection-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.3);
+}
+
+.retry-detection-btn {
+  background: #3b82f6;
+  box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
+}
+
+.stop-camera-btn:hover,
+.retry-detection-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .shoe-3d-content {
+    width: 95%;
+    margin: 10px;
+  }
+  
+  .shoe-3d-header {
+    padding: 15px;
+  }
+  
+  .shoe-3d-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .shoe-3d-body {
+    padding: 20px;
+  }
+  
+  .video-container {
+    height: 250px;
+  }
+  
+  .camera-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stop-camera-btn,
+  .retry-detection-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .shoe-3d-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    max-height: none;
+  }
+  
+  .video-container {
+    height: 200px;
+  }
+  
+  .detection-status {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+}
+
+/* Animações de Loading */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Efeitos de Partículas */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #667eea;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloat 3s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+}

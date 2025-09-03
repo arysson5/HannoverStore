@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useApp } from "../../context/AppContext";
 import AddToCartAnimation from "../AddToCartAnimation/AddToCartAnimation";
 import CartConfirmModal from "../CartConfirmModal/CartConfirmModal";
+import Shoe3DModeler from "../Shoe3DModeler/Shoe3DModeler";
 import "./card.css";
 
 const Card = ({ 
@@ -19,6 +20,7 @@ const Card = ({
   const { addToCart, showNotification } = useApp();
   const [showAnimation, setShowAnimation] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [show3DModal, setShow3DModal] = useState(false);
   const [animationProps, setAnimationProps] = useState(null);
   const [addedProduct, setAddedProduct] = useState(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -89,6 +91,14 @@ const Card = ({
 
   const closeModal = () => {
     setShowModal(false);
+  };
+
+  const open3DModal = () => {
+    setShow3DModal(true);
+  };
+
+  const close3DModal = () => {
+    setShow3DModal(false);
   };
 
   const handleCardClick = (e) => {
@@ -170,22 +180,33 @@ const Card = ({
               <span className="current-price">{price}</span>
             </div>
             
-            <button 
-              className={`add-to-cart-btn ${isTouchDevice ? 'touch-device' : ''} ${isLoading ? 'loading' : ''}`}
-              onClick={handleAddToCart}
-              ref={buttonRef}
-              disabled={isLoading}
-              aria-label="Adicionar ao Carrinho"
-            >
-              {isLoading ? (
-                <>
-                  <span className="loading-spinner"></span>
-                  Adicionando...
-                </>
-              ) : (
-                'Adicionar ao Carrinho'
-              )}
-            </button>
+            <div className="card-buttons">
+              <button 
+                className={`add-to-cart-btn ${isTouchDevice ? 'touch-device' : ''} ${isLoading ? 'loading' : ''}`}
+                onClick={handleAddToCart}
+                ref={buttonRef}
+                disabled={isLoading}
+                aria-label="Adicionar ao Carrinho"
+              >
+                {isLoading ? (
+                  <>
+                    <span className="loading-spinner"></span>
+                    Adicionando...
+                  </>
+                ) : (
+                  'Adicionar ao Carrinho'
+                )}
+              </button>
+              
+              <button 
+                className="try-3d-btn"
+                onClick={open3DModal}
+                aria-label="Experimentar em 3D"
+                title="Experimentar tênis em 3D"
+              >
+                👟 3D
+              </button>
+            </div>
           </div>
         </div>
       </Link>
@@ -203,6 +224,13 @@ const Card = ({
         <CartConfirmModal 
           product={addedProduct} 
           onClose={closeModal} 
+        />
+      )}
+      
+      {show3DModal && (
+        <Shoe3DModeler 
+          product={product || { id, name: title, image, price, brand }} 
+          onClose={close3DModal} 
         />
       )}
     </>

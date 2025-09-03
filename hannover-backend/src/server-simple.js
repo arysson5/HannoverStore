@@ -477,6 +477,112 @@ fastify.delete('/api/admin/products/:id', { preHandler: verifyAdmin }, async (re
   return { message: 'Produto deletado com sucesso' };
 });
 
+// Rotas para gerenciar chave API do Google AI
+fastify.get('/api/admin/google-ai-key', { preHandler: verifyAdmin }, async (request, reply) => {
+  try {
+    const settings = await readJsonFile('settings.json');
+    const apiKey = settings.googleAiApiKey || null;
+    
+    return {
+      hasApiKey: !!apiKey,
+      apiKey: apiKey ? `${apiKey.substring(0, 8)}...${apiKey.substring(apiKey.length - 4)}` : null
+    };
+  } catch (error) {
+    console.error('Erro ao buscar chave API:', error);
+    reply.code(500).send({ error: 'Erro interno do servidor' });
+  }
+});
+
+fastify.post('/api/admin/google-ai-key', { preHandler: verifyAdmin }, async (request, reply) => {
+  try {
+    const { apiKey } = request.body;
+    
+    if (!apiKey || typeof apiKey !== 'string' || apiKey.trim().length === 0) {
+      return reply.code(400).send({ error: 'Chave API é obrigatória' });
+    }
+    
+    // Validar formato básico da chave (deve começar com AIza)
+    if (!apiKey.startsWith('AIza')) {
+      return reply.code(400).send({ error: 'Formato de chave API inválido' });
+    }
+    
+    // Ler configurações existentes
+    let settings = {};
+    try {
+      settings = await readJsonFile('settings.json');
+    } catch (error) {
+      // Arquivo não existe, criar novo
+      settings = {};
+    }
+    
+    // Atualizar chave API
+    settings.googleAiApiKey = apiKey.trim();
+    settings.updatedAt = new Date().toISOString();
+    settings.updatedBy = request.user?.email || 'admin';
+    
+    // Salvar configurações
+    await writeJsonFile('settings.json', settings);
+    
+    console.log('✅ Chave API do Google AI atualizada por:', request.user?.email);
+    
+    return {
+      message: 'Chave API atualizada com sucesso',
+      hasApiKey: true,
+      apiKey: `${apiKey.substring(0, 8)}...${apiKey.substring(apiKey.length - 4)}`
+    };
+  } catch (error) {
+    console.error('Erro ao salvar chave API:', error);
+    reply.code(500).send({ error: 'Erro interno do servidor' });
+  }
+});
+
+fastify.delete('/api/admin/google-ai-key', { preHandler: verifyAdmin }, async (request, reply) => {
+  try {
+    // Ler configurações existentes
+    let settings = {};
+    try {
+      settings = await readJsonFile('settings.json');
+    } catch (error) {
+      return reply.code(404).send({ error: 'Chave API não encontrada' });
+    }
+    
+    // Remover chave API
+    delete settings.googleAiApiKey;
+    settings.updatedAt = new Date().toISOString();
+    settings.updatedBy = request.user?.email || 'admin';
+    
+    // Salvar configurações
+    await writeJsonFile('settings.json', settings);
+    
+    console.log('🗑️ Chave API do Google AI removida por:', request.user?.email);
+    
+    return {
+      message: 'Chave API removida com sucesso',
+      hasApiKey: false
+    };
+  } catch (error) {
+    console.error('Erro ao remover chave API:', error);
+    reply.code(500).send({ error: 'Erro interno do servidor' });
+  }
+});
+
+// Rota pública para obter chave API (para o chatbot)
+fastify.get('/api/google-ai-key', async (request, reply) => {
+  try {
+    const settings = await readJsonFile('settings.json');
+    const apiKey = settings.googleAiApiKey;
+    
+    if (!apiKey) {
+      return reply.code(404).send({ error: 'Chave API não configurada' });
+    }
+    
+    return { apiKey };
+  } catch (error) {
+    console.error('Erro ao buscar chave API:', error);
+    reply.code(500).send({ error: 'Erro interno do servidor' });
+  }
+});
+
 // Rota de health check
 fastify.get('/api/health', async (request, reply) => {
   reply.send({ status: 'OK', timestamp: new Date().toISOString() });

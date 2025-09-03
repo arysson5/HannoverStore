@@ -1,350 +1,226 @@
-# Hannover Store
+# 👟 Hannover Store
 
-Uma loja virtual moderna de calçados esportivos construída com React e Vite.
+Uma loja online moderna de produtos esportivos com funcionalidades avançadas de IA e realidade aumentada.
 
 ## 🚀 Funcionalidades
 
-- **Catálogo de Produtos**: Navegação por categorias (tênis, chuteiras, sandálias, botas)
-- **Sistema de Carrinho**: Adicionar/remover produtos com animações
-- **Autenticação**: Login e registro de usuários
-- **Painel Admin**: Gerenciamento de produtos e categorias (CRUD completo)
-- **Portal de Dicas**: Guias sobre tipos de pisada e escolha de calçados
-- **Filtros Avançados**: Por categoria, marca, preço e busca textual
-- **Design Responsivo**: Funciona perfeitamente em desktop e mobile
+### 🛍️ E-commerce
+- ✅ Catálogo de produtos com filtros
+- ✅ Carrinho de compras
+- ✅ Sistema de autenticação
+- ✅ Painel administrativo
+- ✅ Gerenciamento de usuários
 
-## 🚀 Deploy Completo (Frontend + Backend)
+### 🤖 IA e Chatbot
+- ✅ Chatbot "Hannovinho" com Google AI
+- ✅ Recomendações de produtos
+- ✅ Respostas inteligentes
+- ✅ Configuração de API key por admin
 
-### ✅ Seu projeto ESTÁ PRONTO para deploy!
+### 📱 Realidade Aumentada
+- ✅ Modelagem 3D de calçados
+- ✅ Detecção de pé via câmera
+- ✅ Visualização em tempo real
+- ✅ Otimizado para dispositivos móveis
 
-## 📦 Deploy do Backend no Render (GRATUITO)
-
-### **Passo 1: Preparar o repositório**
-```bash
-git add .
-git commit -m "Deploy ready for Render"
-git push origin main
-```
-
-### **Passo 2: Deploy no Render**
-
-1. **Acesse [render.com](https://render.com)** e faça login com GitHub
-2. **Clique em "New +"** → **"Web Service"**
-3. **Conecte seu repositório** GitHub
-4. **Configure o serviço:**
-   - **Name**: `hannover-backend`
-   - **Root Directory**: `hannover-backend`
-   - **Environment**: `Node`
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-   - **Instance Type**: `Free`
-
-5. **Variáveis de Ambiente:**
-   - `NODE_ENV` = `production`
-   - `JWT_SECRET` = `hannover-store-secret-2024-render`
-   - `PORT` = (deixe vazio - Render define automaticamente)
-
-6. **Clique em "Create Web Service"**
-
-### **Passo 3: Aguardar o deploy**
-- ⏱️ Primeiro deploy: ~2-3 minutos
-- ✅ URL será algo como: `https://hannover-backend.onrender.com`
-
-## 🌐 Deploy do Frontend no Vercel
-
-### **Passo 1: Configurar URL do backend**
-
-Crie um arquivo `.env` na raiz do projeto:
-```env
-VITE_API_URL=https://seu-backend.onrender.com
-```
-
-### **Passo 2: Deploy no Vercel**
-
-1. **Acesse [vercel.com](https://vercel.com)**
-2. **Conecte seu GitHub**
-3. **Configure:**
-   - Framework: **Vite**
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-4. **Adicione a variável de ambiente:**
-   - `VITE_API_URL` = `https://seu-backend.onrender.com`
-
-## ⚡ Configurações Incluídas
-
-### Backend (Render):
-- ✅ Configuração de porta dinâmica
-- ✅ Host 0.0.0.0 para Render
-- ✅ Health check endpoint
-- ✅ Variáveis de ambiente
-- ✅ CORS configurado
-
-### Frontend (Vercel):
-- ✅ `vercel.json` - Roteamento SPA
-- ✅ Build otimizado com Vite
-- ✅ Configuração de variáveis de ambiente
-
-## 🔧 URLs Finais
-
-Após o deploy, você terá:
-- **Frontend**: `https://seu-projeto.vercel.app`
-- **Backend**: `https://hannover-backend.onrender.com`
-- **API Health**: `https://hannover-backend.onrender.com/api/health`
+### ⚙️ Administração
+- ✅ Dashboard completo
+- ✅ CRUD de produtos e categorias
+- ✅ Gerenciamento de usuários
+- ✅ Configurações do sistema
+- ✅ Estatísticas em tempo real
 
 ## 🛠️ Tecnologias
 
-- React 19 + Vite
-- React Router DOM
-- Bootstrap 5
-- Fastify (backend)
+### Frontend
+- **React 19** - Framework principal
+- **Vite** - Build tool
+- **React Router** - Roteamento
+- **Bootstrap** - UI framework
+- **CSS3** - Estilização avançada
 
-## 📦 Desenvolvimento Local
+### Backend
+- **Node.js** - Runtime
+- **Fastify** - Framework web
+- **JWT** - Autenticação
+- **bcryptjs** - Hash de senhas
+- **JSON** - Banco de dados simples
 
-```bash
-# Frontend
-npm install
-npm run dev
+### IA e AR
+- **Google AI Studio** - Chatbot inteligente
+- **Canvas API** - Processamento de imagem
+- **MediaDevices API** - Acesso à câmera
+- **CSS 3D Transforms** - Renderização 3D
 
-# Backend (terminal separado)
-cd hannover-backend
-npm install
-npm start
+## 📁 Estrutura do Projeto
+
+```
+HannoverStore/
+├── hannover-backend/          # Backend (Render)
+│   ├── src/
+│   │   ├── server-simple.js   # Servidor principal
+│   │   ├── controllers/       # Controladores
+│   │   ├── routes/           # Rotas da API
+│   │   ├── middleware/       # Middlewares
+│   │   └── utils/            # Utilitários
+│   ├── data/                 # Dados JSON
+│   │   ├── products.json     # Produtos
+│   │   ├── users.json        # Usuários
+│   │   ├── categories.json   # Categorias
+│   │   └── settings.json     # Configurações
+│   ├── package.json
+│   └── render.yaml           # Config Render
+├── src/                      # Frontend (Vercel)
+│   ├── components/           # Componentes React
+│   │   ├── Chatbot/         # Chatbot com IA
+│   │   ├── Shoe3DModeler/   # Modelagem 3D
+│   │   ├── AdminSettings/   # Configurações admin
+│   │   └── ...
+│   ├── pages/               # Páginas
+│   ├── context/             # Context API
+│   ├── services/            # Serviços
+│   └── data/                # Dados estáticos
+├── package.json
+├── vercel.json              # Config Vercel
+└── DEPLOY.md                # Guia de deploy
 ```
 
-## ⚠️ Importante sobre o Render Gratuito
+## 🚀 Deploy
 
-- **Sleep após inatividade**: O serviço "dorme" após 15 minutos sem uso
-- **Cold start**: Primeira requisição pode demorar ~30 segundos
-- **Solução**: Usar um serviço de ping ou upgrade para plano pago
+### Render (Backend)
+1. Conecte o repositório no [Render](https://render.com)
+2. Selecione o diretório `hannover-backend`
+3. Configure as variáveis de ambiente
+4. Deploy automático
 
----
+### Vercel (Frontend)
+1. Conecte o repositório no [Vercel](https://vercel.com)
+2. Configure a variável `VITE_API_URL`
+3. Deploy automático
 
-**🎯 Resultado:** Sua loja completa funcionando online gratuitamente!
+**📖 Guia completo:** [DEPLOY.md](./DEPLOY.md)
 
-## 🚀 Deploy no Vercel
+## 🔧 Desenvolvimento Local
 
-### ✅ Seu projeto ESTÁ PRONTO para o Vercel!
+### Pré-requisitos
+- Node.js 18+
+- npm ou yarn
 
-**Passos para fazer o deploy:**
-
-1. **Suba para o GitHub:**
+### Instalação
 ```bash
-git add .
-git commit -m "Deploy ready"
-git push origin main
-```
-
-2. **No Vercel:**
-   - Acesse [vercel.com](https://vercel.com)
-   - Conecte seu GitHub
-   - Selecione o repositório
-   - Configure:
-     - Framework: **Vite**
-     - Build Command: `npm run build`
-     - Output Directory: `dist`
-
-3. **Deploy automático!** ✨
-
-## 📦 Deploy do Backend no Render (GRATUITO)
-
-### **Passo a passo completo:**
-
-1. **Acesse [render.com](https://render.com)** e faça login com GitHub
-2. **Clique em "New +"** → **"Web Service"**
-3. **Conecte seu repositório** GitHub
-4. **Configure:**
-   - **Name**: `hannover-backend`
-   - **Root Directory**: `hannover-backend`
-   - **Environment**: `Node`
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-   - **Instance Type**: `Free`
-
-5. **Variáveis de Ambiente:**
-   - `NODE_ENV` = `production`
-   - `JWT_SECRET` = `hannover-store-secret-2024`
-
-6. **Deploy automático!** ✅
-
-**URL final:** `https://hannover-backend.onrender.com`
-
-### 🔧 Configurações Incluídas
-
-- ✅ `vercel.json` - Roteamento SPA
-- ✅ `package.json` - Scripts corretos
-- ✅ `vite.config.js` - Configuração otimizada
-
-## 🛠️ Tecnologias
-
-- **Frontend**: React 19, React Router DOM, Bootstrap 5
-- **Backend**: Fastify (Node.js)
-- **Autenticação**: JWT + bcrypt
-- **Build Tool**: Vite
-- **Styling**: CSS3 + Bootstrap
-
-## 📦 Instalação Local
-
-1. Clone o repositório:
-```bash
+# Clone o repositório
 git clone https://github.com/seu-usuario/hannover-store.git
 cd hannover-store
-```
 
-2. Instale as dependências do frontend:
-```bash
+# Instalar dependências do frontend
 npm install
-```
 
-3. Instale as dependências do backend:
-```bash
+# Instalar dependências do backend
 cd hannover-backend
 npm install
-cd ..
 ```
 
-4. Inicie os servidores:
+### Executar
 ```bash
-# Opção 1: Script automático (Windows)
-./start-servers.ps1
+# Frontend (terminal 1)
+npm run dev
 
-# Opção 2: Manual
-# Terminal 1 - Backend
+# Backend (terminal 2)
 cd hannover-backend
-npm start
-
-# Terminal 2 - Frontend
 npm run dev
 ```
 
-5. Acesse:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:3002
+## 🔐 Acesso Admin
 
-## 🌐 Deploy no Vercel
+### Credenciais Padrão
+- **Email:** `admin@hannover.com`
+- **Senha:** `password`
 
-### Preparação do Projeto
+### Funcionalidades Admin
+- Gerenciar produtos e categorias
+- Visualizar usuários registrados
+- Configurar chave API do Google AI
+- Acessar estatísticas do sistema
 
-1. **Certifique-se de que todos os arquivos estão commitados**:
-```bash
-git add .
-git commit -m "Preparando para deploy"
-git push origin main
+## 🤖 Configuração do Chatbot
+
+1. Acesse o painel admin
+2. Vá para Configurações
+3. Adicione sua chave API do Google AI
+4. O chatbot funcionará automaticamente
+
+**Obter chave:** [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+## 📱 Modelagem 3D
+
+### Como Usar
+1. Abra o site em um dispositivo móvel
+2. Navegue até qualquer produto
+3. Clique no botão "👟 3D"
+4. Permita acesso à câmera
+5. Posicione seu pé na tela
+6. Veja o tênis em 3D!
+
+### Compatibilidade
+- ✅ iOS Safari (iOS 11+)
+- ✅ Android Chrome (Android 7+)
+- ✅ Samsung Internet
+- ✅ Firefox Mobile
+
+## 🔍 API Endpoints
+
+### Públicos
+```
+GET  /api/health              # Health check
+GET  /api/products            # Listar produtos
+GET  /api/categories          # Listar categorias
+POST /api/auth/login          # Login
+POST /api/auth/register       # Registro
+GET  /api/google-ai-key       # Chave API (pública)
 ```
 
-2. **Estrutura necessária**:
-- ✅ `vercel.json` (já criado)
-- ✅ `package.json` com scripts de build
-- ✅ Configuração do Vite
-
-### Deploy do Frontend
-
-1. Acesse [vercel.com](https://vercel.com) e faça login
-2. Clique em "New Project"
-3. Conecte seu repositório GitHub
-4. Configure o projeto:
-   - **Framework Preset**: Vite
-   - **Root Directory**: `.` (raiz do projeto)
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-
-### Deploy do Backend
-
-Para o backend, você tem algumas opções:
-
-#### Opção 1: Railway
-1. Acesse [railway.app](https://railway.app)
-2. Conecte seu GitHub
-3. Deploy o diretório `hannover-backend`
-4. Configure as variáveis de ambiente
-
-#### Opção 2: Render
-1. Acesse [render.com](https://render.com)
-2. Crie um novo Web Service
-3. Conecte seu repositório
-4. Configure:
-   - **Root Directory**: `hannover-backend`
-   - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
-
-#### Opção 3: Heroku
-```bash
-# No diretório hannover-backend
-heroku create seu-app-backend
-git subtree push --prefix hannover-backend heroku main
+### Admin
+```
+GET    /api/admin/stats           # Estatísticas
+GET    /api/admin/users           # Listar usuários
+DELETE /api/admin/users/:id       # Deletar usuário
+GET    /api/admin/google-ai-key   # Status da chave API
+POST   /api/admin/google-ai-key   # Salvar chave API
+DELETE /api/admin/google-ai-key   # Remover chave API
+POST   /api/admin/products        # Criar produto
+PUT    /api/admin/products/:id    # Atualizar produto
+DELETE /api/admin/products/:id    # Deletar produto
 ```
 
-### Configuração de URLs
+## 🎯 Roadmap
 
-Após o deploy do backend, atualize as URLs no frontend:
+### Próximas Funcionalidades
+- [ ] Sistema de pagamento
+- [ ] Notificações push
+- [ ] App mobile nativo
+- [ ] Integração com redes sociais
+- [ ] Sistema de avaliações
+- [ ] Programa de fidelidade
+- [ ] Chat em tempo real
+- [ ] Análise de dados avançada
 
-1. Crie um arquivo `.env` na raiz do projeto:
-```env
-VITE_API_URL=https://seu-backend.railway.app
-```
+## 🤝 Contribuição
 
-2. Atualize o arquivo de configuração da API se necessário.
-
-## 🔧 Configurações Importantes
-
-### Variáveis de Ambiente
-
-**Frontend (.env)**:
-```env
-VITE_API_URL=http://localhost:3002
-```
-
-**Backend (.env)**:
-```env
-PORT=3002
-JWT_SECRET=seu_jwt_secret_super_seguro
-```
-
-### Arquivos Importantes
-
-- `vercel.json`: Configuração do Vercel para SPA routing
-- `vite.config.js`: Configuração do Vite
-- `package.json`: Scripts e dependências
-
-## 👤 Contas de Teste
-
-**Admin**:
-- Email: `admin@hannover.com`
-- Senha: `hello`
-
-**Usuário**:
-- Email: `test@admin.com`
-- Senha: `test123`
-
-## 🎯 Funcionalidades Principais
-
-### Para Usuários
-- Navegação por produtos
-- Filtros e busca
-- Carrinho de compras
-- Portal de dicas sobre calçados
-
-### Para Administradores
-- Gerenciamento de produtos
-- Gerenciamento de categorias
-- Dashboard administrativo
-
-## 📱 Responsividade
-
-O projeto é totalmente responsivo e funciona em:
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (até 767px)
-
-## 🚀 Performance
-
-- Lazy loading de imagens
-- Otimização de bundle com Vite
-- CSS otimizado
-- Componentes React otimizados
+1. Fork o projeto
+2. Crie uma branch para sua feature
+3. Commit suas mudanças
+4. Push para a branch
+5. Abra um Pull Request
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT.
+Este projeto está sob a licença ISC. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 📞 Suporte
+
+- **Email:** contato@hannoverstore.com
+- **GitHub Issues:** [Abrir issue](https://github.com/seu-usuario/hannover-store/issues)
 
 ---
 
-Desenvolvido com ❤️ para a Hannover Store
+**🎉 Desenvolvido com ❤️ para a Hannover Store**

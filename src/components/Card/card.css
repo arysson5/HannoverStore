@@ -202,6 +202,50 @@
   background-color: #6c757d;
 }
 
+/* Card Buttons Container */
+.card-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.card-buttons .add-to-cart-btn {
+  flex: 1;
+  margin-top: 0;
+}
+
+/* 3D Button */
+.try-3d-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 44px;
+  min-width: 60px;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.try-3d-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.try-3d-btn:active {
+  transform: scale(0.98);
+  background: linear-gradient(135deg, #4e5bc6 0%, #5e377e 100%);
+}
+
 /* Loading Spinner */
 .loading-spinner {
   width: 16px;
@@ -266,6 +310,13 @@
     height: 40px;
   }
 
+  .try-3d-btn {
+    padding: 10px 12px;
+    font-size: 12px;
+    height: 40px;
+    min-width: 50px;
+  }
+
   .discount-badge,
   .brand-badge {
     font-size: 10px;
@@ -311,6 +362,13 @@
     padding: 8px 12px;
     font-size: 12px;
     height: 36px;
+  }
+
+  .try-3d-btn {
+    padding: 8px 10px;
+    font-size: 11px;
+    height: 36px;
+    min-width: 45px;
   }
 
   .rating-text {

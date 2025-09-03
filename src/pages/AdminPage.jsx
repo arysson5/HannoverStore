@@ -398,6 +398,12 @@ const AdminPage = () => {
         >
           Categorias
         </button>
+        <button 
+          className={activeTab === 'settings' ? 'active' : ''}
+          onClick={() => setActiveTab('settings')}
+        >
+          ⚙️ Configurações
+        </button>
       </div>
 
       <div className="admin-content">
@@ -983,6 +989,77 @@ const AdminPage = () => {
                 </div>
               </div>
             )}
+          </div>
+        )}
+
+        {activeTab === 'settings' && (
+          <div className="settings-tab">
+            <div className="settings-header">
+              <h2>⚙️ Configurações do Sistema</h2>
+              <p>Gerencie as configurações globais do sistema</p>
+            </div>
+            
+            <div className="settings-content">
+              <div className="settings-card">
+                <div className="settings-card-header">
+                  <h3>🤖 Configurações do Chatbot</h3>
+                  <p>Configure a chave API do Google AI para o funcionamento do chatbot</p>
+                </div>
+                
+                <div className="settings-card-content">
+                  <div className="settings-info">
+                    <p>Para configurar a chave API do Google AI, acesse a página dedicada de configurações:</p>
+                    <a 
+                      href="/admin/settings" 
+                      className="settings-link-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      🔧 Abrir Configurações Avançadas
+                    </a>
+                  </div>
+                  
+                  <div className="settings-features">
+                    <h4>Funcionalidades disponíveis:</h4>
+                    <ul>
+                      <li>✅ Configuração segura da chave API</li>
+                      <li>✅ Validação automática da chave</li>
+                      <li>✅ Status em tempo real</li>
+                      <li>✅ Gerenciamento por administradores</li>
+                      <li>✅ Histórico de alterações</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="settings-card">
+                <div className="settings-card-header">
+                  <h3>🔮 Configurações Futuras</h3>
+                  <p>Mais configurações serão adicionadas em breve</p>
+                </div>
+                
+                <div className="settings-card-content">
+                  <div className="coming-soon-grid">
+                    <div className="coming-soon-item">
+                      <span className="coming-soon-icon">📧</span>
+                      <span>Configurações de Email</span>
+                    </div>
+                    <div className="coming-soon-item">
+                      <span className="coming-soon-icon">💳</span>
+                      <span>Configurações de Pagamento</span>
+                    </div>
+                    <div className="coming-soon-item">
+                      <span className="coming-soon-icon">📊</span>
+                      <span>Configurações de Analytics</span>
+                    </div>
+                    <div className="coming-soon-item">
+                      <span className="coming-soon-icon">🔔</span>
+                      <span>Configurações de Notificações</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </div>
