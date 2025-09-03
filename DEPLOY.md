@@ -165,6 +165,13 @@ npm start
 - ✅ **NÃO** use a sintaxe `@secret_name` no vercel.json
 - ✅ Faça redeploy após configurar
 
+#### 6. Erro "Expected a JavaScript module script but server responded with HTML"
+- ✅ **Causa:** Problemas de roteamento no Vercel
+- ✅ **Solução:** Verificar configuração do vercel.json
+- ✅ **Verificar:** Se os arquivos JS estão sendo servidos corretamente
+- ✅ **Testar:** Acessar diretamente um arquivo JS (ex: /assets/index-xxx.js)
+- ✅ **Redeploy:** Fazer novo deploy após correções
+
 ## 📊 Monitoramento
 
 ### Render (Backend)
