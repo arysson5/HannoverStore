@@ -37,7 +37,8 @@ const Chatbot = () => {
   useEffect(() => {
     const loadApiKey = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/google-ai-key`);
+        const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+        const response = await fetch(`${API_BASE_URL}/api/google-ai-key`);
         if (response.ok) {
           const data = await response.json();
           console.log('API Key carregada do backend:', data.apiKey ? 'Sim' : 'Não');

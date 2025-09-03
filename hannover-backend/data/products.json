@@ -45,10 +45,9 @@
     "originalPrice": 999.99,
     "category": "tenis-esportivos",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",
+    "image": "https://m.media-amazon.com/images/I/51H1CmcVxcL._SY300_.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500"
+      "https://m.media-amazon.com/images/I/51H1CmcVxcL._SY300_.jpg"
     ],
     "sizes": [
       "38",
@@ -73,7 +72,8 @@
       "Cabedal Primeknit",
       "Continental Rubber"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:59:39.070Z"
   },
   {
     "id": "chuteira-nike",
@@ -158,10 +158,9 @@
     "originalPrice": 449.99,
     "category": "chuteiras",
     "brand": "Puma",
-    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "image": "https://images.unsplash.com/photo-1612387605285-7ee92eae6958?q=80&w=787&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "images": [
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+      "https://images.unsplash.com/photo-1612387605285-7ee92eae6958?q=80&w=787&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ],
     "sizes": [
       "37",
@@ -186,7 +185,8 @@
       "Solado FG/AG",
       "Cabedal adaptativo"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:54:36.851Z"
   },
   {
     "id": "chuteira-umbro",
@@ -196,10 +196,9 @@
     "originalPrice": 599.99,
     "category": "chuteiras",
     "brand": "Umbro",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "image": "https://www.kompletacalcados.com.br/14575-thickbox_default/chuteira-masculina-campo-umbro-ultraskin--pretoverdegrafite-u01fb037.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+      "https://www.kompletacalcados.com.br/14575-thickbox_default/chuteira-masculina-campo-umbro-ultraskin--pretoverdegrafite-u01fb037.jpg"
     ],
     "sizes": [
       "37",
@@ -224,7 +223,8 @@
       "Solado FG",
       "Cabedal sintético"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:58:59.187Z"
   },
   {
     "id": "nike-mercurial-vapor",
@@ -234,10 +234,9 @@
     "originalPrice": 849.99,
     "category": "chuteiras",
     "brand": "Nike",
-    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "image": "https://acstorechuteiras.com/cdn/shop/products/d444160c_2048x.jpg?v=1660565400",
     "images": [
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+      "https://acstorechuteiras.com/cdn/shop/products/d444160c_2048x.jpg?v=1660565400"
     ],
     "sizes": [
       "37",
@@ -262,7 +261,8 @@
       "Cabedal sintético",
       "Ajuste anatômico"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:58:34.252Z"
   },
   {
     "id": "chuteira-nike-tiempo",
@@ -272,10 +272,9 @@
     "originalPrice": 749.99,
     "category": "chuteiras",
     "brand": "Nike",
-    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "image": "https://acdn-us.mitiendanube.com/stores/002/811/067/products/89-eb94cdc56bd6d2001317128419648975-1024-1024.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+      "https://acdn-us.mitiendanube.com/stores/002/811/067/products/89-eb94cdc56bd6d2001317128419648975-1024-1024.jpg"
     ],
     "sizes": [
       "37",
@@ -300,7 +299,8 @@
       "Solado FG",
       "Tecnologia Tiempo"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:57:55.801Z"
   },
   {
     "id": "chuteira-adidas-x",
@@ -310,10 +310,9 @@
     "originalPrice": 899.99,
     "category": "chuteiras",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "image": "https://shopgazetinha.com.br/wp-content/uploads/2023/06/c3ef3dd5.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+      "https://shopgazetinha.com.br/wp-content/uploads/2023/06/c3ef3dd5.jpeg"
     ],
     "sizes": [
       "37",
@@ -330,7 +329,7 @@
       "Branco/Azul",
       "Rosa/Preto"
     ],
-    "stock": 16,
+    "stock": 161,
     "rating": 4.6,
     "reviews": 78,
     "features": [
@@ -338,7 +337,8 @@
       "Solado Speedframe",
       "Cabedal Speedskin"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:56:52.757Z"
   },
   {
     "id": "chuteira-society-nike",
@@ -348,10 +348,9 @@
     "originalPrice": 519.99,
     "category": "chuteiras",
     "brand": "Nike",
-    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "image": "https://imgnike-a.akamaihd.net/1300x1300/0231100UA9.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+      "https://imgnike-a.akamaihd.net/1300x1300/0231100UA9.jpg"
     ],
     "sizes": [
       "37",
@@ -376,7 +375,8 @@
       "Cabedal sintético",
       "Múltiplas travas"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:57:23.654Z"
   },
   {
     "id": "chuteira-futsal-adidas",
@@ -386,10 +386,9 @@
     "originalPrice": 399.99,
     "category": "chuteiras",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "image": "https://imgcentauro-a.akamaihd.net/1200x1200/96487602A9.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+      "https://imgcentauro-a.akamaihd.net/1200x1200/96487602A9.jpg"
     ],
     "sizes": [
       "37",
@@ -414,7 +413,8 @@
       "Demonskin",
       "Controle de bola"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:55:42.385Z"
   },
   {
     "id": "chuteira-puma-king",
@@ -424,10 +424,9 @@
     "originalPrice": 649.99,
     "category": "chuteiras",
     "brand": "Puma",
-    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "image": "https://about.puma.com/sites/default/files/styles/dd_image_slider/public/media/news/images/64a6e0164f9a9.jpg?itok=hPK7w0tL",
     "images": [
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+      "https://about.puma.com/sites/default/files/styles/dd_image_slider/public/media/news/images/64a6e0164f9a9.jpg?itok=hPK7w0tL"
     ],
     "sizes": [
       "37",
@@ -452,7 +451,8 @@
       "Solado FG",
       "Design clássico"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-03T22:56:12.190Z"
   },
   {
     "id": "jordan-1-retro-high",
@@ -937,5 +937,32 @@
     "reviews": 0,
     "gender": "unisex",
     "createdAt": "2025-06-14T06:24:21.607Z"
+  },
+  {
+    "id": "88185ce1-2504-4156-96c1-56999921c62d",
+    "name": "Tênis Teste Atualizado",
+    "description": "Tênis para teste",
+    "price": 249.99,
+    "category": "tenis",
+    "brand": "Nike",
+    "images": [
+      "teste.jpg"
+    ],
+    "stock": 10,
+    "createdAt": "2025-09-03T22:49:10.873Z",
+    "updatedAt": "2025-09-03T22:49:10.904Z"
+  },
+  {
+    "id": "fe2b4f76-fe29-40b8-b83a-9c6fc8448a1d",
+    "name": "Teste Token",
+    "description": "Teste de token",
+    "price": 99.99,
+    "category": "tenis",
+    "brand": "Teste",
+    "images": [
+      "teste.jpg"
+    ],
+    "stock": 5,
+    "createdAt": "2025-09-03T22:50:14.319Z"
   }
 ]

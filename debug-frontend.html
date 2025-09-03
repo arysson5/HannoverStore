@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Frontend</title>
+</head>
+<body>
+    <h1>Debug Frontend Hannover Store</h1>
+    
+    <div id="debug-info"></div>
+    
+    <script>
+        // Verificar estado do localStorage
+        const token = localStorage.getItem('authToken');
+        const user = localStorage.getItem('user');
+        
+        const debugInfo = document.getElementById('debug-info');
+        debugInfo.innerHTML = `
+            <h2>Estado do Frontend:</h2>
+            <p><strong>Token:</strong> ${token ? 'Presente (' + token.substring(0, 20) + '...)' : 'Ausente'}</p>
+            <p><strong>User:</strong> ${user ? JSON.parse(user).name + ' (' + JSON.parse(user).role + ')' : 'Ausente'}</p>
+            <p><strong>API URL:</strong> ${import.meta?.env?.VITE_API_URL || 'http://localhost:3002'}</p>
+        `;
+        
+        // Testar endpoint
+        if (token) {
+            fetch('http://127.0.0.1:3002/api/auth/profile', {
+                headers: { 'Authorization': `Bearer ${token}` }
+            })
+            .then(response => response.json())
+            .then(data => {
+                debugInfo.innerHTML += `<p><strong>Perfil API:</strong> ${data.name} (${data.role})</p>`;
+            })
+            .catch(error => {
+                debugInfo.innerHTML += `<p><strong>Erro API:</strong> ${error.message}</p>`;
+            });
+        }
+    </script>
+</body>
+</html>

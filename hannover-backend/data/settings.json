@@ -1,6 +1,6 @@
 {
-  "googleAiApiKey": null,
-  "updatedAt": null,
-  "updatedBy": null,
+  "googleAiApiKey": "AIzaTestKey123456789",
+  "updatedAt": "2025-09-03T22:26:13.350Z",
+  "updatedBy": "admin-default-001",
   "createdAt": "2024-01-01T00:00:00.000Z"
 }

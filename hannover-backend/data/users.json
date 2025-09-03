@@ -37,5 +37,13 @@
     "email": "teste@gmail.com",
     "password": "$2a$10$JFZvRpEnotUFEZ81Mlv0EuPjrJGi0q/DMh2/LB2oLSaWvgRftBg6q",
     "createdAt": "2025-09-03T16:23:07.734Z"
+  },
+  {
+    "id": "68c6adaf-a23e-4e42-ba44-82511414f6fe",
+    "name": "marcolino",
+    "email": "marcolino@hannover.com",
+    "password": "$2a$10$VcSNbyGM9qvVK8KXdK8GBuHvsD5i2yvUrHMUgTv7WPVaw83ecc.RW",
+    "role": "user",
+    "createdAt": "2025-09-03T22:49:51.397Z"
   }
 ]
