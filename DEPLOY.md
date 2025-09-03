@@ -57,9 +57,16 @@ https://hannover-backend-xxxx.onrender.com
 2. **Conecte seu repositório GitHub**
 3. **Selecione o projeto raiz** (não o hannover-backend)
 4. **Configure as variáveis de ambiente:**
-   ```
-   VITE_API_URL=https://hannover-backend-xxxx.onrender.com
-   ```
+   - Vá para **Settings** → **Environment Variables**
+   - Clique em **"Add New"**
+   - **Name:** `VITE_API_URL`
+   - **Value:** `https://hannover-backend-xxxx.onrender.com` (substitua pela URL real)
+   - **Environments:** Marque **Production**, **Preview** e **Development**
+   - Clique em **"Save"**
+5. **Faça redeploy:**
+   - Vá para **Deployments**
+   - Clique nos três pontos do último deploy
+   - Clique em **"Redeploy"**
 
 ### 3. Configurações do Vercel
 - **Framework Preset:** Vite
@@ -150,6 +157,13 @@ npm start
 - ✅ Verificar se todas as dependências estão no package.json
 - ✅ Verificar scripts de build
 - ✅ Verificar variáveis de ambiente
+
+#### 5. Erro "Environment Variable references Secret which does not exist"
+- ✅ **Solução:** Configure a variável diretamente no dashboard do Vercel
+- ✅ Vá para Settings → Environment Variables
+- ✅ Adicione `VITE_API_URL` com a URL do seu backend
+- ✅ **NÃO** use a sintaxe `@secret_name` no vercel.json
+- ✅ Faça redeploy após configurar
 
 ## 📊 Monitoramento
 
