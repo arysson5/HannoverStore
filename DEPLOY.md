@@ -167,14 +167,28 @@ npm start
 
 #### 6. Erro "Expected a JavaScript module script but server responded with HTML"
 - ✅ **Causa:** Problemas de roteamento no Vercel
-- ✅ **Solução 1:** Verificar configuração do vercel.json
-- ✅ **Solução 2:** Usar vercel-alternative.json (mais simples)
+- ✅ **Solução 1:** Configuração simplificada do vercel.json
+- ✅ **Solução 2:** Usar vercel-simple.json (mínima)
 - ✅ **Solução 3:** Verificar se os arquivos JS estão sendo servidos corretamente
 - ✅ **Testar:** Acessar diretamente um arquivo JS (ex: /assets/index-xxx.js)
 - ✅ **Redeploy:** Fazer novo deploy após correções
 
-**Solução Alternativa:**
-Se o problema persistir, substitua o `vercel.json` pelo `vercel-alternative.json`:
+#### 7. Erro "terser not found" no build
+- ✅ **Causa:** Terser não está instalado como dependência
+- ✅ **Solução 1:** Adicionar terser ao package.json
+- ✅ **Solução 2:** Usar esbuild como minificador (mais rápido)
+- ✅ **Configuração:** minify: 'esbuild' no vite.config.js
+
+**Soluções Alternativas:**
+1. **Configuração simples:**
+```bash
+mv vercel-simple.json vercel.json
+git add vercel.json
+git commit -m "Use simple Vercel config"
+git push
+```
+
+2. **Configuração alternativa:**
 ```bash
 mv vercel-alternative.json vercel.json
 git add vercel.json
