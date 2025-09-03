@@ -167,10 +167,20 @@ npm start
 
 #### 6. Erro "Expected a JavaScript module script but server responded with HTML"
 - ✅ **Causa:** Problemas de roteamento no Vercel
-- ✅ **Solução:** Verificar configuração do vercel.json
-- ✅ **Verificar:** Se os arquivos JS estão sendo servidos corretamente
+- ✅ **Solução 1:** Verificar configuração do vercel.json
+- ✅ **Solução 2:** Usar vercel-alternative.json (mais simples)
+- ✅ **Solução 3:** Verificar se os arquivos JS estão sendo servidos corretamente
 - ✅ **Testar:** Acessar diretamente um arquivo JS (ex: /assets/index-xxx.js)
 - ✅ **Redeploy:** Fazer novo deploy após correções
+
+**Solução Alternativa:**
+Se o problema persistir, substitua o `vercel.json` pelo `vercel-alternative.json`:
+```bash
+mv vercel-alternative.json vercel.json
+git add vercel.json
+git commit -m "Use alternative Vercel config"
+git push
+```
 
 ## 📊 Monitoramento
 
