@@ -1,5 +1,5 @@
 import Fastify from 'fastify';
-import { readFileSync, writeFileSync, readFile, writeFile } from 'fs';
+import { readFile, writeFile } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
@@ -355,14 +355,15 @@ const verifyAdmin = async (request, reply) => {
     }
 
     const decoded = jwt.verify(token, JWT_SECRET);
-    const users = JSON.parse(await fs.readFile(path.join(__dirname, '../data/users.json'), 'utf8'));
+    const users = await readJsonFile('users.json');
     const user = users.find(u => u.id === decoded.userId);
     
     if (!user || user.role !== 'admin') {
       reply.code(403).send({ error: 'Acesso negado. Apenas administradores.' });
       return;
     }
-
+    
+    // Adicionar informações do usuário à requisição
     request.user = user;
   } catch (error) {
     reply.code(401).send({ error: 'Token inválido' });

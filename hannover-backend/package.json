@@ -2,12 +2,13 @@
   "name": "hannover-backend",
   "version": "1.0.0",
   "description": "Backend da Hannover Store - API REST com Fastify",
-  "main": "src/server-simple.js",
+  "main": "src/server-unified.js",
   "type": "module",
   "scripts": {
-    "start": "node src/server-simple.js",
+    "start": "node src/server-unified.js",
+    "start-simple": "node src/server-simple.js",
     "start-full": "node src/server.js",
-    "dev": "nodemon src/server-simple.js",
+    "dev": "nodemon src/server-unified.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,6 +27,7 @@
     "bcryptjs": "^2.4.3",
     "fastify": "^5.4.0",
     "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^3.3.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

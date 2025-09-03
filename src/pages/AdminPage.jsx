@@ -69,7 +69,7 @@ const AdminPage = () => {
   }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getAuthHeaders = () => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('authToken');
     console.log('Token encontrado:', token ? 'Sim' : 'Não');
     return {
       'Authorization': `Bearer ${token}`,

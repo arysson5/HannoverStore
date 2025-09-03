@@ -179,6 +179,13 @@ npm start
 - ✅ **Solução 2:** Usar esbuild como minificador (mais rápido)
 - ✅ **Configuração:** minify: 'esbuild' no vite.config.js
 
+#### 8. Erro 401 (Unauthorized) em endpoints admin
+- ✅ **Causa:** Inconsistência nos nomes das chaves do localStorage
+- ✅ **Problema:** Frontend usando 'token' vs 'authToken'
+- ✅ **Solução:** Padronizar uso de 'authToken' em todo o frontend
+- ✅ **Backend:** Corrigir imports e middleware verifyAdmin
+- ✅ **Teste:** Usar test-auth.js para verificar autenticação
+
 **Soluções Alternativas:**
 1. **Configuração simples:**
 ```bash
