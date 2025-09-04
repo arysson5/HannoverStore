@@ -330,7 +330,9 @@
 
   .product-title {
     font-size: 15px;
-    height: 38px;
+    height: 45px;
+    -webkit-line-clamp: 3;
+    line-height: 1.2;
   }
 
   .rating-container {
@@ -382,8 +384,9 @@
 
   .product-title {
     font-size: 14px;
-    -webkit-line-clamp: 2;
-    height: 36px;
+    -webkit-line-clamp: 3;
+    height: 42px;
+    line-height: 1.2;
   }
 
   .rating-container {

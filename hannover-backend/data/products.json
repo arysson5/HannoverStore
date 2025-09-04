@@ -83,10 +83,9 @@
     "originalPrice": 249.99,
     "category": "chuteiras",
     "brand": "Nike",
-    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "image": "https://d2p7wtszppk2p4.cloudfront.net/Custom/Content/Products/54/63/54633_chuteira-superfly-club-campo-pr-7852-cv0852004_m4_637790545477859238.webp",
     "images": [
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
+      "https://d2p7wtszppk2p4.cloudfront.net/Custom/Content/Products/54/63/54633_chuteira-superfly-club-campo-pr-7852-cv0852004_m4_637790545477859238.webp"
     ],
     "sizes": [
       "37",
@@ -111,7 +110,8 @@
       "Tecnologia Phantom",
       "Cabedal texturizado"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-04T18:49:36.603Z"
   },
   {
     "id": "chuteira-adidas",
@@ -121,10 +121,9 @@
     "originalPrice": 349.99,
     "category": "chuteiras",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "image": "https://www.tkaesportes.com.br/estatico/tka/images/temp/620_21694.jpeg?v=1575247722",
     "images": [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+      "https://www.tkaesportes.com.br/estatico/tka/images/temp/620_21694.jpeg?v=1575247722"
     ],
     "sizes": [
       "37",
@@ -148,7 +147,8 @@
       "Solado FG",
       "Design clássico"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-04T18:50:06.134Z"
   },
   {
     "id": "chuteira-puma",
@@ -499,10 +499,9 @@
     "originalPrice": 399.99,
     "category": "sapatos-sociais",
     "brand": "Democrata",
-    "image": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500",
+    "image": "https://img.irroba.com.br/fit-in/1100x1100/filters:fill(fff):quality(80)/lojakeff/catalog/berlim/berlim-19580-7735m-2.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500",
-      "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500"
+      "https://img.irroba.com.br/fit-in/1100x1100/filters:fill(fff):quality(80)/lojakeff/catalog/berlim/berlim-19580-7735m-2.jpg"
     ],
     "sizes": [
       "38",
@@ -526,7 +525,8 @@
       "Solado em couro",
       "Forro em couro"
     ],
-    "gender": "masculino"
+    "gender": "masculino",
+    "updatedAt": "2025-09-04T18:54:16.293Z"
   },
   {
     "id": "havaianas-top",
@@ -573,10 +573,9 @@
     "originalPrice": 549.99,
     "category": "botas",
     "brand": "Caterpillar",
-    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
+    "image": "https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/lacasado/catalog/api/lacasado_blingirr/whatsapp-image-2022-07-11-at-120608.jpeg",
     "images": [
-      "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
-      "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
+      "https://img.irroba.com.br/fit-in/600x600/filters:fill(fff):quality(80)/lacasado/catalog/api/lacasado_blingirr/whatsapp-image-2022-07-11-at-120608.jpeg"
     ],
     "sizes": [
       "38",
@@ -601,7 +600,8 @@
       "Solado antiderrapante",
       "Couro resistente"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-04T18:54:48.650Z"
   },
   {
     "id": "scarpin-salto-alto",
@@ -978,12 +978,29 @@
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Preto/Branco", "Azul/Verde", "Cinza/Rosa"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Azul/Verde",
+      "Cinza/Rosa"
+    ],
     "stock": 22,
     "rating": 4.7,
     "reviews": 156,
-    "features": ["Zoom Air", "React foam", "Flywire"],
+    "features": [
+      "Zoom Air",
+      "React foam",
+      "Flywire"
+    ],
     "gender": "unisex"
   },
   {
@@ -999,12 +1016,29 @@
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Preto/Prata", "Azul/Branco", "Verde/Preto"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Preto/Prata",
+      "Azul/Branco",
+      "Verde/Preto"
+    ],
     "stock": 18,
     "rating": 4.8,
     "reviews": 89,
-    "features": ["Gel Technology", "FlyteFoam", "Dynamic DuoMax"],
+    "features": [
+      "Gel Technology",
+      "FlyteFoam",
+      "Dynamic DuoMax"
+    ],
     "gender": "unisex"
   },
   {
@@ -1020,12 +1054,29 @@
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Cinza/Verde", "Preto/Branco", "Azul/Rosa"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Cinza/Verde",
+      "Preto/Branco",
+      "Azul/Rosa"
+    ],
     "stock": 15,
     "rating": 4.6,
     "reviews": 67,
-    "features": ["Fresh Foam X", "Hypoknit upper", "Blown rubber outsole"],
+    "features": [
+      "Fresh Foam X",
+      "Hypoknit upper",
+      "Blown rubber outsole"
+    ],
     "gender": "unisex"
   },
   {
@@ -1041,12 +1092,29 @@
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Preto/Cinza", "Azul/Branco", "Verde/Preto"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Preto/Cinza",
+      "Azul/Branco",
+      "Verde/Preto"
+    ],
     "stock": 20,
     "rating": 4.7,
     "reviews": 134,
-    "features": ["DNA Loft v3", "Segmented crash pad", "3D Fit Print"],
+    "features": [
+      "DNA Loft v3",
+      "Segmented crash pad",
+      "3D Fit Print"
+    ],
     "gender": "unisex"
   },
   {
@@ -1062,12 +1130,29 @@
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Preto/Dourado", "Azul/Prata", "Verde/Preto"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Preto/Dourado",
+      "Azul/Prata",
+      "Verde/Preto"
+    ],
     "stock": 12,
     "rating": 4.9,
     "reviews": 78,
-    "features": ["Speedroll Technology", "PWRRUN PB", "Carbon fiber plate"],
+    "features": [
+      "Speedroll Technology",
+      "PWRRUN PB",
+      "Carbon fiber plate"
+    ],
     "gender": "unisex"
   },
   {
@@ -1083,12 +1168,31 @@
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
     ],
-    "sizes": ["35", "36", "37", "38", "39", "40", "41", "42", "43"],
-    "colors": ["Preto", "Branco", "Azul Marinho", "Vermelho"],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "Preto",
+      "Branco",
+      "Azul Marinho",
+      "Vermelho"
+    ],
     "stock": 45,
     "rating": 4.5,
     "reviews": 234,
-    "features": ["Canvas upper", "Rubber sole", "Classic design"],
+    "features": [
+      "Canvas upper",
+      "Rubber sole",
+      "Classic design"
+    ],
     "gender": "unisex"
   },
   {
@@ -1104,12 +1208,30 @@
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
     ],
-    "sizes": ["35", "36", "37", "38", "39", "40", "41", "42", "43"],
-    "colors": ["Preto/Branco", "Branco/Preto", "Azul/Branco"],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Branco/Preto",
+      "Azul/Branco"
+    ],
     "stock": 38,
     "rating": 4.6,
     "reviews": 189,
-    "features": ["Leather upper", "Gum sole", "Classic stripes"],
+    "features": [
+      "Leather upper",
+      "Gum sole",
+      "Classic stripes"
+    ],
     "gender": "unisex"
   },
   {
@@ -1125,12 +1247,31 @@
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
     ],
-    "sizes": ["35", "36", "37", "38", "39", "40", "41", "42", "43"],
-    "colors": ["Preto", "Branco", "Azul", "Rosa"],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "Preto",
+      "Branco",
+      "Azul",
+      "Rosa"
+    ],
     "stock": 32,
     "rating": 4.4,
     "reviews": 156,
-    "features": ["Suede upper", "Rubber sole", "Puma logo"],
+    "features": [
+      "Suede upper",
+      "Rubber sole",
+      "Puma logo"
+    ],
     "gender": "unisex"
   },
   {
@@ -1146,12 +1287,31 @@
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
     ],
-    "sizes": ["35", "36", "37", "38", "39", "40", "41", "42", "43"],
-    "colors": ["Branco", "Preto", "Azul", "Vermelho"],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "Branco",
+      "Preto",
+      "Azul",
+      "Vermelho"
+    ],
     "stock": 28,
     "rating": 4.5,
     "reviews": 98,
-    "features": ["Leather upper", "EVA midsole", "Rubber outsole"],
+    "features": [
+      "Leather upper",
+      "EVA midsole",
+      "Rubber outsole"
+    ],
     "gender": "unisex"
   },
   {
@@ -1167,12 +1327,31 @@
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
     ],
-    "sizes": ["35", "36", "37", "38", "39", "40", "41", "42", "43"],
-    "colors": ["Branco", "Preto", "Rosa", "Azul"],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43"
+    ],
+    "colors": [
+      "Branco",
+      "Preto",
+      "Rosa",
+      "Azul"
+    ],
     "stock": 25,
     "rating": 4.3,
     "reviews": 67,
-    "features": ["Platform sole", "Mesh upper", "Retro design"],
+    "features": [
+      "Platform sole",
+      "Mesh upper",
+      "Retro design"
+    ],
     "gender": "unisex"
   },
   {
@@ -1188,12 +1367,29 @@
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
     ],
-    "sizes": ["37", "38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto/Rosa", "Branco/Azul", "Verde/Preto"],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Rosa",
+      "Branco/Azul",
+      "Verde/Preto"
+    ],
     "stock": 16,
     "rating": 4.8,
     "reviews": 45,
-    "features": ["Gripknit", "Solado FG", "Dynamic Fit"],
+    "features": [
+      "Gripknit",
+      "Solado FG",
+      "Dynamic Fit"
+    ],
     "gender": "unisex"
   },
   {
@@ -1209,12 +1405,29 @@
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
     ],
-    "sizes": ["37", "38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto/Branco", "Branco/Preto", "Azul/Branco"],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Branco/Preto",
+      "Azul/Branco"
+    ],
     "stock": 14,
     "rating": 4.7,
     "reviews": 38,
-    "features": ["Primeknit", "Solado FG", "Copa Sense"],
+    "features": [
+      "Primeknit",
+      "Solado FG",
+      "Copa Sense"
+    ],
     "gender": "unisex"
   },
   {
@@ -1229,12 +1442,29 @@
     "images": [
       "https://images.unsplash.com/photo-1612387605285-7ee92eae6958?q=80&w=787&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ],
-    "sizes": ["37", "38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Laranja/Preto", "Azul/Amarelo", "Verde/Branco"],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Laranja/Preto",
+      "Azul/Amarelo",
+      "Verde/Branco"
+    ],
     "stock": 18,
     "rating": 4.6,
     "reviews": 52,
-    "features": ["FUZIONFIT+", "Solado FG/AG", "Adaptive Fit"],
+    "features": [
+      "FUZIONFIT+",
+      "Solado FG/AG",
+      "Adaptive Fit"
+    ],
     "gender": "unisex"
   },
   {
@@ -1250,12 +1480,29 @@
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
     ],
-    "sizes": ["37", "38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto/Branco", "Branco/Azul", "Vermelho/Preto"],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Branco/Azul",
+      "Vermelho/Preto"
+    ],
     "stock": 12,
     "rating": 4.9,
     "reviews": 29,
-    "features": ["K-leather", "Solado FG", "Morelia Neo"],
+    "features": [
+      "K-leather",
+      "Solado FG",
+      "Morelia Neo"
+    ],
     "gender": "unisex"
   },
   {
@@ -1271,12 +1518,29 @@
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
     ],
-    "sizes": ["37", "38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Branco/Azul", "Preto/Vermelho", "Amarelo/Preto"],
+    "sizes": [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Branco/Azul",
+      "Preto/Vermelho",
+      "Amarelo/Preto"
+    ],
     "stock": 20,
     "rating": 4.4,
     "reviews": 41,
-    "features": ["Synthetic upper", "Solado FG", "Speed design"],
+    "features": [
+      "Synthetic upper",
+      "Solado FG",
+      "Speed design"
+    ],
     "gender": "unisex"
   },
   {
@@ -1292,12 +1556,26 @@
       "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500",
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Chicago (Vermelho/Branco/Preto)"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Chicago (Vermelho/Branco/Preto)"
+    ],
     "stock": 2,
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 8,
-    "features": ["Leather upper", "Deconstructed design", "Limited edition"],
+    "features": [
+      "Leather upper",
+      "Deconstructed design",
+      "Limited edition"
+    ],
     "gender": "unisex"
   },
   {
@@ -1313,12 +1591,26 @@
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500",
       "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Cactus Jack (Marrom/Preto/Branco)"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Cactus Jack (Marrom/Preto/Branco)"
+    ],
     "stock": 3,
     "rating": 4.9,
     "reviews": 12,
-    "features": ["Reverse swoosh", "Cactus Jack branding", "Limited edition"],
+    "features": [
+      "Reverse swoosh",
+      "Cactus Jack branding",
+      "Limited edition"
+    ],
     "gender": "unisex"
   },
   {
@@ -1334,12 +1626,26 @@
       "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500",
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Dior Gray/White"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Dior Gray/White"
+    ],
     "stock": 1,
-    "rating": 5.0,
+    "rating": 5,
     "reviews": 3,
-    "features": ["Luxury leather", "Dior branding", "Ultra limited"],
+    "features": [
+      "Luxury leather",
+      "Dior branding",
+      "Ultra limited"
+    ],
     "gender": "unisex"
   },
   {
@@ -1355,12 +1661,28 @@
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500",
       "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Sail/Black", "Green/White", "Blue/White"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Sail/Black",
+      "Green/White",
+      "Blue/White"
+    ],
     "stock": 4,
     "rating": 4.8,
     "reviews": 15,
-    "features": ["Double swoosh", "Layered design", "Sacai aesthetic"],
+    "features": [
+      "Double swoosh",
+      "Layered design",
+      "Sacai aesthetic"
+    ],
     "gender": "unisex"
   },
   {
@@ -1376,12 +1698,26 @@
       "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500",
       "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Storm Blue/White"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Storm Blue/White"
+    ],
     "stock": 3,
     "rating": 4.7,
     "reviews": 9,
-    "features": ["Union branding", "Vintage aesthetic", "Limited release"],
+    "features": [
+      "Union branding",
+      "Vintage aesthetic",
+      "Limited release"
+    ],
     "gender": "unisex"
   },
   {
@@ -1397,12 +1733,29 @@
       "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500",
       "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto", "Marrom Escuro", "Whisky", "Cognac"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom Escuro",
+      "Whisky",
+      "Cognac"
+    ],
     "stock": 8,
     "rating": 4.9,
     "reviews": 23,
-    "features": ["Couro italiano", "Acabamento artesanal", "Solado em couro"],
+    "features": [
+      "Couro italiano",
+      "Acabamento artesanal",
+      "Solado em couro"
+    ],
     "gender": "masculino"
   },
   {
@@ -1418,12 +1771,28 @@
       "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500",
       "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto", "Marrom", "Azul Marinho"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Azul Marinho"
+    ],
     "stock": 15,
     "rating": 4.6,
     "reviews": 67,
-    "features": ["Couro premium", "Palmilha acolchoada", "Design clássico"],
+    "features": [
+      "Couro premium",
+      "Palmilha acolchoada",
+      "Design clássico"
+    ],
     "gender": "masculino"
   },
   {
@@ -1439,12 +1808,29 @@
       "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500",
       "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto", "Marrom", "Nude", "Azul"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Nude",
+      "Azul"
+    ],
     "stock": 22,
     "rating": 4.5,
     "reviews": 89,
-    "features": ["Couro legítimo", "Sem cadarço", "Confortável"],
+    "features": [
+      "Couro legítimo",
+      "Sem cadarço",
+      "Confortável"
+    ],
     "gender": "unisex"
   },
   {
@@ -1460,12 +1846,28 @@
       "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500",
       "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto", "Marrom", "Cognac"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Cognac"
+    ],
     "stock": 10,
     "rating": 4.8,
     "reviews": 34,
-    "features": ["Perfurações decorativas", "Couro premium", "Acabamento artesanal"],
+    "features": [
+      "Perfurações decorativas",
+      "Couro premium",
+      "Acabamento artesanal"
+    ],
     "gender": "masculino"
   },
   {
@@ -1481,12 +1883,28 @@
       "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=500",
       "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44"],
-    "colors": ["Preto", "Marrom", "Azul Marinho"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Azul Marinho"
+    ],
     "stock": 6,
     "rating": 4.7,
     "reviews": 18,
-    "features": ["Fivela lateral", "Couro premium", "Design moderno"],
+    "features": [
+      "Fivela lateral",
+      "Couro premium",
+      "Design moderno"
+    ],
     "gender": "masculino"
   },
   {
@@ -1502,12 +1920,28 @@
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500",
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500"
     ],
-    "sizes": ["35/36", "37/38", "39/40", "41/42", "43/44"],
-    "colors": ["Preto", "Branco", "Azul", "Rosa", "Verde"],
+    "sizes": [
+      "35/36",
+      "37/38",
+      "39/40",
+      "41/42",
+      "43/44"
+    ],
+    "colors": [
+      "Preto",
+      "Branco",
+      "Azul",
+      "Rosa",
+      "Verde"
+    ],
     "stock": 60,
     "rating": 4.6,
     "reviews": 145,
-    "features": ["Borracha natural", "Design slim", "Antiderrapante"],
+    "features": [
+      "Borracha natural",
+      "Design slim",
+      "Antiderrapante"
+    ],
     "gender": "unisex"
   },
   {
@@ -1523,12 +1957,31 @@
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
     ],
-    "sizes": ["35", "36", "37", "38", "39", "40", "41", "42"],
-    "colors": ["Preto", "Branco", "Azul", "Rosa", "Verde"],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42"
+    ],
+    "colors": [
+      "Preto",
+      "Branco",
+      "Azul",
+      "Rosa",
+      "Verde"
+    ],
     "stock": 45,
     "rating": 4.7,
     "reviews": 98,
-    "features": ["Material reciclado", "Design Gisele", "Confortável"],
+    "features": [
+      "Material reciclado",
+      "Design Gisele",
+      "Confortável"
+    ],
     "gender": "feminino"
   },
   {
@@ -1544,12 +1997,30 @@
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
     ],
-    "sizes": ["34", "35", "36", "37", "38", "39", "40"],
-    "colors": ["Preto", "Branco", "Rosa", "Azul", "Vermelho"],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Preto",
+      "Branco",
+      "Rosa",
+      "Azul",
+      "Vermelho"
+    ],
     "stock": 35,
     "rating": 4.5,
     "reviews": 76,
-    "features": ["Material Melflex", "Perfumada", "Design feminino"],
+    "features": [
+      "Material Melflex",
+      "Perfumada",
+      "Design feminino"
+    ],
     "gender": "feminino"
   },
   {
@@ -1565,12 +2036,30 @@
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
     ],
-    "sizes": ["35", "36", "37", "38", "39", "40", "41", "42"],
-    "colors": ["Preto", "Marrom", "Nude", "Azul"],
+    "sizes": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Nude",
+      "Azul"
+    ],
     "stock": 28,
     "rating": 4.4,
     "reviews": 52,
-    "features": ["Design moderno", "Confortável", "Versátil"],
+    "features": [
+      "Design moderno",
+      "Confortável",
+      "Versátil"
+    ],
     "gender": "unisex"
   },
   {
@@ -1586,12 +2075,30 @@
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
     ],
-    "sizes": ["34", "35", "36", "37", "38", "39", "40"],
-    "colors": ["Rosa", "Azul", "Verde", "Amarelo", "Roxo"],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Rosa",
+      "Azul",
+      "Verde",
+      "Amarelo",
+      "Roxo"
+    ],
     "stock": 40,
     "rating": 4.3,
     "reviews": 67,
-    "features": ["Design colorido", "Confortável", "Verão"],
+    "features": [
+      "Design colorido",
+      "Confortável",
+      "Verão"
+    ],
     "gender": "feminino"
   },
   {
@@ -1607,12 +2114,29 @@
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Amarelo", "Preto", "Marrom"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Amarelo",
+      "Preto",
+      "Marrom"
+    ],
     "stock": 25,
     "rating": 4.7,
     "reviews": 89,
-    "features": ["Biqueira de aço", "Antiderrapante", "Resistente"],
+    "features": [
+      "Biqueira de aço",
+      "Antiderrapante",
+      "Resistente"
+    ],
     "gender": "unisex"
   },
   {
@@ -1628,12 +2152,29 @@
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Marrom", "Preto", "Cognac"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Marrom",
+      "Preto",
+      "Cognac"
+    ],
     "stock": 12,
     "rating": 4.9,
     "reviews": 34,
-    "features": ["Couro premium", "Acabamento artesanal", "Heritage"],
+    "features": [
+      "Couro premium",
+      "Acabamento artesanal",
+      "Heritage"
+    ],
     "gender": "masculino"
   },
   {
@@ -1649,12 +2190,30 @@
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Preto", "Marrom", "Branco", "Vermelho"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Branco",
+      "Vermelho"
+    ],
     "stock": 30,
     "rating": 4.6,
     "reviews": 156,
-    "features": ["Solado AirWair", "Design icônico", "Resistente"],
+    "features": [
+      "Solado AirWair",
+      "Design icônico",
+      "Resistente"
+    ],
     "gender": "unisex"
   },
   {
@@ -1670,12 +2229,29 @@
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Marrom", "Preto", "Cognac"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Marrom",
+      "Preto",
+      "Cognac"
+    ],
     "stock": 8,
     "rating": 4.8,
     "reviews": 23,
-    "features": ["Couro premium", "Solado de couro", "1000 Mile"],
+    "features": [
+      "Couro premium",
+      "Solado de couro",
+      "1000 Mile"
+    ],
     "gender": "masculino"
   },
   {
@@ -1691,12 +2267,29 @@
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
     ],
-    "sizes": ["38", "39", "40", "41", "42", "43", "44", "45"],
-    "colors": ["Marrom", "Preto", "Cinza"],
+    "sizes": [
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45"
+    ],
+    "colors": [
+      "Marrom",
+      "Preto",
+      "Cinza"
+    ],
     "stock": 20,
     "rating": 4.5,
     "reviews": 78,
-    "features": ["Design australiano", "Confortável", "Aventura"],
+    "features": [
+      "Design australiano",
+      "Confortável",
+      "Aventura"
+    ],
     "gender": "unisex"
   },
   {
@@ -1712,12 +2305,28 @@
       "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
       "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500"
     ],
-    "sizes": ["34", "35", "36", "37", "38", "39", "40"],
-    "colors": ["Vermelho", "Preto", "Nude"],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Vermelho",
+      "Preto",
+      "Nude"
+    ],
     "stock": 15,
     "rating": 4.8,
     "reviews": 45,
-    "features": ["Salto 12cm", "Couro premium", "Design elegante"],
+    "features": [
+      "Salto 12cm",
+      "Couro premium",
+      "Design elegante"
+    ],
     "gender": "feminino"
   },
   {
@@ -1733,12 +2342,29 @@
       "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500",
       "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"
     ],
-    "sizes": ["34", "35", "36", "37", "38", "39", "40"],
-    "colors": ["Preto", "Branco", "Rosa", "Azul"],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Preto",
+      "Branco",
+      "Rosa",
+      "Azul"
+    ],
     "stock": 35,
     "rating": 4.6,
     "reviews": 89,
-    "features": ["Design clássico", "Confortável", "Versátil"],
+    "features": [
+      "Design clássico",
+      "Confortável",
+      "Versátil"
+    ],
     "gender": "feminino"
   },
   {
@@ -1754,12 +2380,29 @@
       "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
       "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500"
     ],
-    "sizes": ["34", "35", "36", "37", "38", "39", "40"],
-    "colors": ["Preto", "Marrom", "Nude", "Azul"],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Nude",
+      "Azul"
+    ],
     "stock": 28,
     "rating": 4.5,
     "reviews": 67,
-    "features": ["Design vintage", "Confortável", "Clássico"],
+    "features": [
+      "Design vintage",
+      "Confortável",
+      "Clássico"
+    ],
     "gender": "feminino"
   },
   {
@@ -1775,12 +2418,29 @@
       "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
       "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500"
     ],
-    "sizes": ["34", "35", "36", "37", "38", "39", "40"],
-    "colors": ["Preto", "Marrom", "Cinza", "Taupe"],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Cinza",
+      "Taupe"
+    ],
     "stock": 22,
     "rating": 4.4,
     "reviews": 54,
-    "features": ["Design moderno", "Confortável", "Prática"],
+    "features": [
+      "Design moderno",
+      "Confortável",
+      "Prática"
+    ],
     "gender": "feminino"
   },
   {
@@ -1796,12 +2456,29 @@
       "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?w=500",
       "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"
     ],
-    "sizes": ["34", "35", "36", "37", "38", "39", "40"],
-    "colors": ["Preto", "Branco", "Nude", "Rosa"],
+    "sizes": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "colors": [
+      "Preto",
+      "Branco",
+      "Nude",
+      "Rosa"
+    ],
     "stock": 40,
     "rating": 4.3,
     "reviews": 78,
-    "features": ["Design contemporâneo", "Confortável", "Moderno"],
+    "features": [
+      "Design contemporâneo",
+      "Confortável",
+      "Moderno"
+    ],
     "gender": "feminino"
   },
   {
@@ -1817,12 +2494,31 @@
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
     ],
-    "sizes": ["22", "23", "24", "25", "26", "27", "28", "29", "30"],
-    "colors": ["Azul/Rosa", "Verde/Amarelo", "Rosa/Roxo", "Azul/Verde"],
+    "sizes": [
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30"
+    ],
+    "colors": [
+      "Azul/Rosa",
+      "Verde/Amarelo",
+      "Rosa/Roxo",
+      "Azul/Verde"
+    ],
     "stock": 50,
     "rating": 4.7,
     "reviews": 123,
-    "features": ["Design colorido", "Confortável", "Ativo"],
+    "features": [
+      "Design colorido",
+      "Confortável",
+      "Ativo"
+    ],
     "gender": "infantil"
   },
   {
@@ -1838,12 +2534,31 @@
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
     ],
-    "sizes": ["22", "23", "24", "25", "26", "27", "28", "29", "30"],
-    "colors": ["Preto/Branco", "Azul/Verde", "Rosa/Roxo", "Amarelo/Azul"],
+    "sizes": [
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Azul/Verde",
+      "Rosa/Roxo",
+      "Amarelo/Azul"
+    ],
     "stock": 45,
     "rating": 4.6,
     "reviews": 98,
-    "features": ["Amortecimento", "Design divertido", "Esportes"],
+    "features": [
+      "Amortecimento",
+      "Design divertido",
+      "Esportes"
+    ],
     "gender": "infantil"
   },
   {
@@ -1859,12 +2574,31 @@
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500"
     ],
-    "sizes": ["22", "23", "24", "25", "26", "27", "28", "29", "30"],
-    "colors": ["Preto", "Marrom", "Azul", "Cinza"],
+    "sizes": [
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30"
+    ],
+    "colors": [
+      "Preto",
+      "Marrom",
+      "Azul",
+      "Cinza"
+    ],
     "stock": 35,
     "rating": 4.5,
     "reviews": 67,
-    "features": ["Design clássico", "Confortável", "Elegante"],
+    "features": [
+      "Design clássico",
+      "Confortável",
+      "Elegante"
+    ],
     "gender": "infantil"
   },
   {
@@ -1880,12 +2614,32 @@
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
     ],
-    "sizes": ["22", "23", "24", "25", "26", "27", "28", "29", "30"],
-    "colors": ["Rosa", "Azul", "Amarelo", "Verde", "Roxo"],
+    "sizes": [
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30"
+    ],
+    "colors": [
+      "Rosa",
+      "Azul",
+      "Amarelo",
+      "Verde",
+      "Roxo"
+    ],
     "stock": 55,
     "rating": 4.4,
     "reviews": 89,
-    "features": ["Design colorido", "Confortável", "Verão"],
+    "features": [
+      "Design colorido",
+      "Confortável",
+      "Verão"
+    ],
     "gender": "infantil"
   },
   {
@@ -1901,12 +2655,31 @@
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
     ],
-    "sizes": ["22", "23", "24", "25", "26", "27", "28", "29", "30"],
-    "colors": ["Preto/Branco", "Azul/Verde", "Rosa/Roxo", "Amarelo/Azul"],
+    "sizes": [
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30"
+    ],
+    "colors": [
+      "Preto/Branco",
+      "Azul/Verde",
+      "Rosa/Roxo",
+      "Amarelo/Azul"
+    ],
     "stock": 42,
     "rating": 4.6,
     "reviews": 76,
-    "features": ["Design esportivo", "Confortável", "Ativo"],
+    "features": [
+      "Design esportivo",
+      "Confortável",
+      "Ativo"
+    ],
     "gender": "infantil"
   }
 ]

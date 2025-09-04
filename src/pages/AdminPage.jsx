@@ -82,7 +82,7 @@ const AdminPage = () => {
     try {
       const [usersRes, productsRes, categoriesRes] = await Promise.all([
         fetch(`${API_BASE_URL}/api/auth/users`, { headers: getAuthHeaders() }),
-        fetch(`${API_BASE_URL}/api/products`),
+        fetch(`${API_BASE_URL}/api/products?limit=100`),
         fetch(`${API_BASE_URL}/api/categories`)
       ]);
 
