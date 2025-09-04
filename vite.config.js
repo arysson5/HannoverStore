@@ -26,5 +26,6 @@ export default defineConfig({
       }
     }
   },
-  base: '/'
+  base: '/',
+  publicDir: 'public'
 })
