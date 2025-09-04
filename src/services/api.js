@@ -13,7 +13,7 @@ const apiRequest = async (endpoint, options = {}) => {
   };
 
   // Adicionar token de autenticação se existir
-  const token = localStorage.getItem('authToken');
+  const token = localStorage.getItem('token');
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -51,7 +51,7 @@ export const authService = {
     });
     
     if (response.token) {
-      localStorage.setItem('authToken', response.token);
+      localStorage.setItem('token', response.token);
       localStorage.setItem('user', JSON.stringify(response.user));
     }
     
@@ -60,7 +60,7 @@ export const authService = {
 
   // Logout
   logout: () => {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('token');
     localStorage.removeItem('user');
   },
 
@@ -71,7 +71,7 @@ export const authService = {
 
   // Verificar se está logado
   isAuthenticated: () => {
-    return !!localStorage.getItem('authToken');
+    return !!localStorage.getItem('token');
   },
 
   // Obter usuário atual

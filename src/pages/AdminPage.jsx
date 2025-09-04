@@ -69,7 +69,7 @@ const AdminPage = () => {
   }, [user]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const getAuthHeaders = () => {
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('token');
     console.log('Token encontrado:', token ? 'Sim' : 'Não');
     return {
       'Authorization': `Bearer ${token}`,
@@ -133,18 +133,29 @@ const AdminPage = () => {
   const createProduct = async (e) => {
     e.preventDefault();
     try {
+      // Validar campos obrigatórios
+      if (!productForm.name || !productForm.description || !productForm.price) {
+        showNotification('Preencha todos os campos obrigatórios', 'error');
+        return;
+      }
+
+      const priceValue = parseFloat(productForm.price);
+      if (isNaN(priceValue) || priceValue <= 0) {
+        showNotification('Preço deve ser um número válido maior que zero', 'error');
+        return;
+      }
+
       const productData = {
-        ...productForm,
-        price: parseFloat(productForm.price),
-        originalPrice: parseFloat(productForm.originalPrice),
-        stock: parseInt(productForm.stock),
-        sizes: productForm.sizes.split(',').map(s => s.trim()),
-        colors: productForm.colors.split(',').map(c => c.trim()),
-        features: productForm.features.split(',').map(f => f.trim()),
-        images: [productForm.image],
-        rating: 4.5,
-        reviews: 0,
-        gender: 'unisex'
+        title: productForm.name,
+        description: productForm.description,
+        price: `R$ ${priceValue.toFixed(2).replace('.', ',')}`,
+        image: productForm.image,
+        category: productForm.category,
+        brand: productForm.brand,
+        stock: parseInt(productForm.stock) || 0,
+        sizes: productForm.sizes.split(',').map(s => s.trim()).filter(s => s),
+        colors: productForm.colors.split(',').map(c => c.trim()).filter(c => c),
+        features: productForm.features.split(',').map(f => f.trim()).filter(f => f)
       };
 
       const response = await fetch(`${API_BASE_URL}/api/admin/products`, {
@@ -173,6 +184,10 @@ const AdminPage = () => {
     if (!confirm('Tem certeza que deseja deletar este produto?')) return;
 
     try {
+      console.log('Deletando produto:', productId);
+      console.log('Headers:', getAuthHeaders());
+      console.log('URL completa:', `${API_BASE_URL}/api/admin/products/${productId}`);
+      
       const response = await fetch(`${API_BASE_URL}/api/admin/products/${productId}`, {
         method: 'DELETE',
         headers: getAuthHeaders()
@@ -281,20 +296,35 @@ const AdminPage = () => {
   const updateProduct = async (e) => {
     e.preventDefault();
     try {
+      // Validar campos obrigatórios
+      if (!editProductForm.name || !editProductForm.description || !editProductForm.price) {
+        showNotification('Preencha todos os campos obrigatórios', 'error');
+        return;
+      }
+
+      const priceValue = parseFloat(editProductForm.price);
+      if (isNaN(priceValue) || priceValue <= 0) {
+        showNotification('Preço deve ser um número válido maior que zero', 'error');
+        return;
+      }
+
       const productData = {
-        ...editProductForm,
-        price: parseFloat(editProductForm.price),
-        originalPrice: parseFloat(editProductForm.originalPrice),
-        stock: parseInt(editProductForm.stock),
+        title: editProductForm.name,
+        description: editProductForm.description,
+        price: `R$ ${priceValue.toFixed(2).replace('.', ',')}`,
+        image: editProductForm.image,
+        category: editProductForm.category,
+        brand: editProductForm.brand,
+        stock: parseInt(editProductForm.stock) || 0,
         sizes: editProductForm.sizes.split(',').map(s => s.trim()).filter(s => s),
         colors: editProductForm.colors.split(',').map(c => c.trim()).filter(c => c),
-        features: editProductForm.features.split(',').map(f => f.trim()).filter(f => f),
-        images: [editProductForm.image]
+        features: editProductForm.features.split(',').map(f => f.trim()).filter(f => f)
       };
 
       console.log('Atualizando produto:', editingProduct.id);
       console.log('Dados do produto:', productData);
       console.log('Headers:', getAuthHeaders());
+      console.log('URL completa:', `${API_BASE_URL}/api/admin/products/${editingProduct.id}`);
 
       const response = await fetch(`${API_BASE_URL}/api/admin/products/${editingProduct.id}`, {
         method: 'PUT',
@@ -633,11 +663,11 @@ const AdminPage = () => {
                       </td>
                       <td>{product.brand || 'N/A'}</td>
                       <td className="price-cell">
-                        <strong>R$ {product.price?.toFixed(2) || '0.00'}</strong>
+                        <strong>R$ {typeof product.price === 'string' ? product.price : (product.price?.toFixed(2) || '0.00')}</strong>
                       </td>
                       <td className="price-cell">
                         {product.originalPrice ? (
-                          <span className="original-price">R$ {product.originalPrice.toFixed(2)}</span>
+                          <span className="original-price">R$ {typeof product.originalPrice === 'string' ? product.originalPrice : product.originalPrice.toFixed(2)}</span>
                         ) : (
                           <span className="no-original-price">-</span>
                         )}
@@ -717,9 +747,9 @@ const AdminPage = () => {
                       <p className="product-brand"><strong>Marca:</strong> {viewingProduct.brand || 'N/A'}</p>
                       <p className="product-category"><strong>Categoria:</strong> {viewingProduct.category || 'N/A'}</p>
                       <div className="product-prices">
-                        <p className="current-price"><strong>Preço:</strong> R$ {viewingProduct.price?.toFixed(2) || '0.00'}</p>
+                        <p className="current-price"><strong>Preço:</strong> R$ {typeof viewingProduct.price === 'string' ? viewingProduct.price : (viewingProduct.price?.toFixed(2) || '0.00')}</p>
                         {viewingProduct.originalPrice && (
-                          <p className="original-price"><strong>Preço Original:</strong> R$ {viewingProduct.originalPrice.toFixed(2)}</p>
+                          <p className="original-price"><strong>Preço Original:</strong> R$ {typeof viewingProduct.originalPrice === 'string' ? viewingProduct.originalPrice : viewingProduct.originalPrice.toFixed(2)}</p>
                         )}
                       </div>
                       <p className="product-stock"><strong>Estoque:</strong> {viewingProduct.stock || 0} unidades</p>

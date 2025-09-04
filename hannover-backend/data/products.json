@@ -765,10 +765,9 @@
     "originalPrice": 749.99,
     "category": "chuteiras",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "image": "https://sportssoutlet.com.br/cdn/shop/files/4ee2df43.jpg?v=1711030625",
     "images": [
-      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
+      "https://sportssoutlet.com.br/cdn/shop/files/4ee2df43.jpg?v=1711030625"
     ],
     "sizes": [
       "37",
@@ -793,7 +792,8 @@
       "Demonskin",
       "Primeknit collar"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-04T19:04:06.340Z"
   },
   {
     "id": "yeezy-boost-350",
@@ -877,10 +877,9 @@
     "originalPrice": 199.99,
     "category": "sandálias",
     "brand": "Arezzo",
-    "image": "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
+    "image": "https://images.tcdn.com.br/img/img_prod/1048886/sandlia_plataforma_moana_barcellis_1_20250810223411_e84b9d1a4a2c.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
-      "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
+      "https://images.tcdn.com.br/img/img_prod/1048886/sandlia_plataforma_moana_barcellis_1_20250810223411_e84b9d1a4a2c.jpg"
     ],
     "sizes": [
       "34",
@@ -905,7 +904,8 @@
       "Corda trançada",
       "Tiras ajustáveis"
     ],
-    "gender": "feminino"
+    "gender": "feminino",
+    "updatedAt": "2025-09-04T19:04:48.761Z"
   },
   {
     "id": "5516014d-8b41-47bc-b6c9-3a1806ed3974",
@@ -973,10 +973,9 @@
     "originalPrice": 799.99,
     "category": "tenis-esportivos",
     "brand": "Nike",
-    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+    "image": "https://cdnv2.moovin.com.br/palotinaesportes/imagens/produtos/det/tenis-passeio-air-zoom-pegasus-40-nike-dv3854-adb6ba616fc9285af157aadf210e97fa.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
+      "https://cdnv2.moovin.com.br/palotinaesportes/imagens/produtos/det/tenis-passeio-air-zoom-pegasus-40-nike-dv3854-adb6ba616fc9285af157aadf210e97fa.jpg"
     ],
     "sizes": [
       "38",
@@ -1001,7 +1000,8 @@
       "React foam",
       "Flywire"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-04T19:06:41.630Z"
   },
   {
     "id": "asics-gel-kayano-30",
@@ -1011,10 +1011,9 @@
     "originalPrice": 999.99,
     "category": "tenis-esportivos",
     "brand": "Asics",
-    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+    "image": "https://teniscorrida.com.br/app/media/images_product/medium/174146906/174146906095618-Tenis-Asics-Gel-Kayano-30---Preto-All-Black---Masculino--4-.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
+      "https://teniscorrida.com.br/app/media/images_product/medium/174146906/174146906095618-Tenis-Asics-Gel-Kayano-30---Preto-All-Black---Masculino--4-.jpg"
     ],
     "sizes": [
       "38",
@@ -1039,7 +1038,8 @@
       "FlyteFoam",
       "Dynamic DuoMax"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-04T19:07:10.282Z"
   },
   {
     "id": "new-balance-1080v13",
@@ -1049,10 +1049,9 @@
     "originalPrice": 899.99,
     "category": "tenis-esportivos",
     "brand": "New Balance",
-    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6TgrH2-M75xfzjl_ighh2b0cJ6YPj4ZLSwg&s",
     "images": [
-      "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
-      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6TgrH2-M75xfzjl_ighh2b0cJ6YPj4ZLSwg&s"
     ],
     "sizes": [
       "38",
@@ -1077,17 +1076,18 @@
       "Hypoknit upper",
       "Blown rubber outsole"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "updatedAt": "2025-09-04T19:07:37.360Z"
   },
   {
     "id": "brooks-ghost-15",
     "name": "Brooks Ghost 15",
     "description": "Tênis de corrida neutro com DNA Loft v3 para amortecimento suave e responsivo.",
-    "price": 749.99,
+    "price": "R$ 749,99",
     "originalPrice": 849.99,
     "category": "tenis-esportivos",
     "brand": "Brooks",
-    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+    "image": "https://runningnw.com/wp-content/uploads/2022/11/Brooks_Ghost_15_4.jpg",
     "images": [
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
@@ -1115,17 +1115,19 @@
       "Segmented crash pad",
       "3D Fit Print"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Brooks Ghost 15",
+    "updatedAt": "2025-09-04T19:22:38.153Z"
   },
   {
     "id": "saucony-endorphin-speed-3",
     "name": "Saucony Endorphin Speed 3",
     "description": "Tênis de corrida com placa de carbono para máxima eficiência e velocidade.",
-    "price": 1099.99,
+    "price": "R$ 1099,99",
     "originalPrice": 1299.99,
     "category": "tenis-esportivos",
     "brand": "Saucony",
-    "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+    "image": "data:image/jpeg;base64,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",
     "images": [
       "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
       "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"
@@ -1153,17 +1155,19 @@
       "PWRRUN PB",
       "Carbon fiber plate"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Saucony Endorphin Speed 3",
+    "updatedAt": "2025-09-04T19:29:09.473Z"
   },
   {
     "id": "converse-chuck-taylor-all-star",
     "name": "Converse Chuck Taylor All Star",
     "description": "Tênis clássico atemporal, perfeito para o dia a dia e estilo casual.",
-    "price": 199.99,
+    "price": "R$ 199,99",
     "originalPrice": 249.99,
     "category": "tenis-casual",
     "brand": "Converse",
-    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+    "image": "https://lojavirus.fbitsstatic.net/img/p/tenis-converse-chuck-taylor-all-star-core-ox-preto-vermelho-ct00010007-64651/243000-2.jpg?w=1200&h=1200&v=202503071651",
     "images": [
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
@@ -1193,17 +1197,19 @@
       "Rubber sole",
       "Classic design"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Converse Chuck Taylor All Star",
+    "updatedAt": "2025-09-04T19:30:14.620Z"
   },
   {
     "id": "adidas-originals-samba",
     "name": "Adidas Originals Samba",
     "description": "Tênis clássico da Adidas com design icônico e versatilidade para qualquer ocasião.",
-    "price": 299.99,
+    "price": "R$ 299,99",
     "originalPrice": 349.99,
     "category": "tenis-casual",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+    "image": "https://espacotenis.vteximg.com.br/arquivos/ids/174561-480-480/tenis-adidas-samba--.jpg?v=638415395896100000",
     "images": [
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
@@ -1232,7 +1238,9 @@
       "Gum sole",
       "Classic stripes"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Adidas Originals Samba",
+    "updatedAt": "2025-09-04T19:30:43.856Z"
   },
   {
     "id": "puma-suede-classic",
@@ -1278,10 +1286,10 @@
     "id": "reebok-classic-leather",
     "name": "Reebok Classic Leather",
     "description": "Tênis clássico Reebok com cabedal em couro e design vintage dos anos 80.",
-    "price": 279.99,
+    "price": "R$ 279,99",
     "originalPrice": 329.99,
     "category": "tenis-casual",
-    "brand": "Reebok",
+    "brand": "Vans",
     "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
     "images": [
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
@@ -1312,17 +1320,19 @@
       "EVA midsole",
       "Rubber outsole"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Vans Old Scholl",
+    "updatedAt": "2025-09-04T19:31:13.980Z"
   },
   {
     "id": "fila-disruptor-2",
     "name": "Fila Disruptor 2",
     "description": "Tênis Fila com plataforma e design retrô dos anos 90. Estilo único e confortável.",
-    "price": 199.99,
+    "price": "R$ 199,99",
     "originalPrice": 249.99,
     "category": "tenis-casual",
     "brand": "Fila",
-    "image": "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+    "image": "https://meninashoes.vtexassets.com/arquivos/ids/429961-800-auto?v=638793726634530000&width=800&height=auto&aspect=true",
     "images": [
       "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
       "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
@@ -1352,17 +1362,19 @@
       "Mesh upper",
       "Retro design"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Fila Disruptor 2",
+    "updatedAt": "2025-09-04T19:31:58.391Z"
   },
   {
     "id": "nike-phantom-gx-elite",
     "name": "Nike Phantom GX Elite",
-    "description": "Chuteira de campo com tecnologia Gripknit para controle superior da bola e precisão nos passes.",
-    "price": 899.99,
+    "description": "https://cdn.awsli.com.br/600x1000/1176/1176786/produto/238507329/9398e843-rm6trtq6fo.jpg",
+    "price": "R$ 778,00",
     "originalPrice": 999.99,
     "category": "chuteiras",
     "brand": "Nike",
-    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
+    "image": "https://cdn.awsli.com.br/600x1000/1176/1176786/produto/238507329/9398e843-rm6trtq6fo.jpg",
     "images": [
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500",
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500"
@@ -1390,17 +1402,19 @@
       "Solado FG",
       "Dynamic Fit"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Nike Phantom GX Elite",
+    "updatedAt": "2025-09-04T19:33:07.361Z"
   },
   {
     "id": "adidas-copa-sense-1",
     "name": "Adidas Copa Sense.1",
     "description": "Chuteira de campo com tecnologia Primeknit e controle de bola superior para jogadores técnicos.",
-    "price": 799.99,
+    "price": "R$ 799,99",
     "originalPrice": 899.99,
     "category": "chuteiras",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
+    "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ee239b59a27640e095faaed8013e580c_9366/Chuteira_Copa_Sense.1_Society_Preto_HR1853_22_model.jpg",
     "images": [
       "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500"
@@ -1428,7 +1442,9 @@
       "Solado FG",
       "Copa Sense"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Adidas Copa Sense.1",
+    "updatedAt": "2025-09-04T19:32:26.091Z"
   },
   {
     "id": "puma-future-z-1.4",
@@ -1948,11 +1964,11 @@
     "id": "ipanema-gisele",
     "name": "Ipanema Gisele",
     "description": "Sandália Ipanema com design da Gisele Bündchen. Confortável e sustentável, feita com materiais reciclados.",
-    "price": 79.99,
+    "price": "R$ 79,99",
     "originalPrice": 99.99,
     "category": "sandálias",
     "brand": "Ipanema",
-    "image": "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
+    "image": "https://i.pinimg.com/736x/2a/3c/3d/2a3c3d4dafb60e54e23e2b7ef87afc9d.jpg",
     "images": [
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
@@ -1982,17 +1998,19 @@
       "Design Gisele",
       "Confortável"
     ],
-    "gender": "feminino"
+    "gender": "feminino",
+    "title": "Ipanema Gisele",
+    "updatedAt": "2025-09-04T19:33:41.011Z"
   },
   {
     "id": "melissa-ultragirl",
     "name": "Melissa Ultragirl",
     "description": "Sandália Melissa com design feminino e material Melflex. Confortável e perfumada.",
-    "price": 149.99,
+    "price": "R$ 149,99",
     "originalPrice": 179.99,
     "category": "sandálias",
     "brand": "Melissa",
-    "image": "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
+    "image": "https://cloviscalcados.vteximg.com.br/arquivos/ids/1193607/Melissa-Ultragirl-Basic-32938-0852938_002-01.jpg?v=638690179383600000",
     "images": [
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
@@ -2021,17 +2039,19 @@
       "Perfumada",
       "Design feminino"
     ],
-    "gender": "feminino"
+    "gender": "feminino",
+    "title": "Melissa Ultragirl",
+    "updatedAt": "2025-09-04T19:34:06.876Z"
   },
   {
     "id": "greys-sandalias",
     "name": "Greys Sandálias",
     "description": "Sandália Greys com design moderno e conforto excepcional. Ideal para passeios e viagens.",
-    "price": 199.99,
+    "price": "R$ 199,99",
     "originalPrice": 249.99,
     "category": "sandálias",
     "brand": "Greys",
-    "image": "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhISExMVFBIXGBcVGBcYFxcVFhUaFxgXFhsZGBUYHSggGholHRUXITEhJSkrLi4uGh8zODMtNygtLisBCgoKDg0NDg8PDysZFRktLTcrKy03Kys3KysrLTcrLSs3Ky0tLS0rKysrKysrKzctKys3KystLSsrKysrKystLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAQUBAQAAAAAAAAAAAAAABwIDBAUGCAH/xAA/EAABAwIDBQYCCAUEAgMAAAABAAIDESEEEjEFBkFRYQcTInGBkTKhFCNCYnKxwfAzUoLR4UOSwvEkojRTY//EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABcRAQEBAQAAAAAAAAAAAAAAAAARAUH/2gAMAwEAAhEDEQA/AJxREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERARc7vPvlh8EQx+aSUiojYAXU5uJs0ea4aTtyhDiDhH2NP4gr7ZUgltFGuA7Z9nvoHtljPOgc0etQfkuz2NvPg8X/AAMRHIf5QaO/2Gh+SDboiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAis4zFshY6SRwYxoqXGwH75KK9u9szWvMeGgz0+0+t/6G6e/sglpWcZiBHG+R3wsa558mgk/koWh7asU0/WYaPL0D2n3JK6LZ/axgsVG+LEMfBna5hcPrWAOGXVoDhry9VYMDcXZMW03YubEPeXF4c5rXZahxcQC4XyilKCmg6LqXdl2yyKdw8dRPODw+/wBFE+6W8DtnYzMSHx1Mb8pq17K0ztNbiwcP+16FwmJZKxskbg5jgHNcNCCmojfa3YvhJATDPLG7gHhkrBbya/8A91wG3+yfaOFq+JonYL1hJzjqY3eL0aXL0aiVXnDd3tN2jgnd3KTMxtiyWuZtOGY+Jp86joph3S7RMFj6Na/upj/pSUBJ+67R359Fsd5d0cHjxTERAvpQSN8MrfJ4vToajooZ3u7KsVg6y4cuxEIvVjfrWfijHxD7zfYBB6DReftze1bEYUtixNcRBoCT9Y0fdedR0d0uFOGw9t4fGRiXDyB7eNPiaeTm6gpB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",
     "images": [
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
@@ -2060,17 +2080,19 @@
       "Confortável",
       "Versátil"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Greys Sandálias",
+    "updatedAt": "2025-09-04T19:34:26.552Z"
   },
   {
     "id": "zaxy-sandalia",
     "name": "Zaxy Sandália",
     "description": "Sandália Zaxy com design colorido e conforto para o dia a dia. Perfeita para o verão.",
-    "price": 89.99,
+    "price": "R$ 89,99",
     "originalPrice": 119.99,
     "category": "sandálias",
     "brand": "Zaxy",
-    "image": "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
+    "image": "https://a-static.mlcdn.com.br/1500x1500/sandalia-zaxy-partner-iii-rasteirinha-chinelo-fivela-confortavel-e-estilosa/fullstyledistribuidoradecalcados/18063-91133-36/e4e8e7104a0ed86dd1bc0b57d254ec61.jpeg",
     "images": [
       "https://images.unsplash.com/photo-1506629905607-d9b1f5e5e6a7?w=500",
       "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"
@@ -2099,17 +2121,19 @@
       "Confortável",
       "Verão"
     ],
-    "gender": "feminino"
+    "gender": "feminino",
+    "title": "Zaxy Sandália",
+    "updatedAt": "2025-09-04T19:35:07.450Z"
   },
   {
     "id": "timberland-pro-boots",
     "name": "Timberland Pro Boots",
     "description": "Bota de trabalho Timberland com biqueira de aço e solado antiderrapante. Resistente e confortável.",
-    "price": 599.99,
+    "price": "R$ 599,99",
     "originalPrice": 699.99,
     "category": "botas",
     "brand": "Timberland",
-    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
+    "image": "https://m.media-amazon.com/images/I/81Swo8T833L._AC_SY395_.jpg",
     "images": [
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
@@ -2137,7 +2161,9 @@
       "Antiderrapante",
       "Resistente"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Timberland Pro Boots",
+    "updatedAt": "2025-09-04T19:35:27.038Z"
   },
   {
     "id": "red-wing-heritage",
@@ -2181,11 +2207,11 @@
     "id": "dr-martens-1460",
     "name": "Dr. Martens 1460",
     "description": "Bota Dr. Martens 1460 com solado AirWair e design icônico. Resistente e estilosa.",
-    "price": 449.99,
+    "price": "R$ 449,99",
     "originalPrice": 549.99,
     "category": "botas",
     "brand": "Dr. Martens",
-    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
+    "image": "https://dptafza4tn3d0.cloudfront.net/cache/catalog/CV14079/coturno-dr-martens-1460-verniz-preto%20(5)-750x937.jpg",
     "images": [
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
@@ -2214,7 +2240,9 @@
       "Design icônico",
       "Resistente"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Dr. Martens 1460",
+    "updatedAt": "2025-09-04T19:36:04.980Z"
   },
   {
     "id": "wolverine-1000-mile",
@@ -2258,11 +2286,11 @@
     "id": "blundstone-550",
     "name": "Blundstone 550",
     "description": "Bota Blundstone 550 com design australiano e conforto excepcional. Ideal para aventuras.",
-    "price": 399.99,
+    "price": "R$ 399,99",
     "originalPrice": 499.99,
     "category": "botas",
     "brand": "Blundstone",
-    "image": "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
+    "image": "https://www.equipesport.com/cdn/shop/files/Screenshot2024-08-07at14-24-22550_2.jpg_WEBPImage1200x1200pixels_Scaled_76.png?v=1723055089",
     "images": [
       "https://images.unsplash.com/photo-1544966503-7cc5ac882d5f?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
@@ -2290,7 +2318,9 @@
       "Confortável",
       "Aventura"
     ],
-    "gender": "unisex"
+    "gender": "unisex",
+    "title": "Blundstone 550",
+    "updatedAt": "2025-09-04T19:43:45.393Z"
   },
   {
     "id": "salto-alto-vermelho",
@@ -2525,11 +2555,11 @@
     "id": "tenis-infantil-adidas",
     "name": "Tênis Infantil Adidas",
     "description": "Tênis infantil Adidas com tecnologia de amortecimento e design divertido. Perfeito para crianças que amam esportes.",
-    "price": 129.99,
+    "price": "R$ 129,99",
     "originalPrice": 169.99,
     "category": "calcados-infantis",
     "brand": "Adidas",
-    "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
+    "image": "https://cdn.awsli.com.br/600x700/534/534845/produto/216624914/adidas-forum-low-foto1-gob5dw12vh.jpg",
     "images": [
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
@@ -2559,7 +2589,9 @@
       "Design divertido",
       "Esportes"
     ],
-    "gender": "infantil"
+    "gender": "infantil",
+    "title": "Tênis Infantil Adidas",
+    "updatedAt": "2025-09-04T19:38:37.618Z"
   },
   {
     "id": "sapato-infantil-masculino",
@@ -2605,11 +2637,11 @@
     "id": "sandalia-infantil-feminina",
     "name": "Sandália Infantil Feminina",
     "description": "Sandália infantil feminina com design colorido e conforto para o verão. Perfeita para brincar na praia.",
-    "price": 59.99,
+    "price": "R$ 59,99",
     "originalPrice": 79.99,
     "category": "calcados-infantis",
     "brand": "Melissa",
-    "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
+    "image": "https://cafecomleitecalcados.cdn.magazord.com.br/img/2024/03/produto/1798/16.jpg?ims=fit-in/600x600/filters:fill(white)",
     "images": [
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
@@ -2640,17 +2672,19 @@
       "Confortável",
       "Verão"
     ],
-    "gender": "infantil"
+    "gender": "infantil",
+    "title": "Sandália Infantil Feminina",
+    "updatedAt": "2025-09-04T19:38:12.615Z"
   },
   {
     "id": "tenis-infantil-puma",
     "name": "Tênis Infantil Puma",
     "description": "Tênis infantil Puma com design esportivo e conforto para crianças ativas. Ideal para correr e brincar.",
-    "price": 99.99,
+    "price": "R$ 99,99",
     "originalPrice": 129.99,
     "category": "calcados-infantis",
     "brand": "Puma",
-    "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
+    "image": "https://andaraki.fbitsstatic.net/img/p/tenis-puma-infantil-menino-flyer-runner-309119-55-79356/317110.jpg?w=575&h=575&v=no-change&qs=ignore",
     "images": [
       "https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",
       "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500"
@@ -2680,6 +2714,8 @@
       "Confortável",
       "Ativo"
     ],
-    "gender": "infantil"
+    "gender": "infantil",
+    "title": "Tênis Infantil Puma",
+    "updatedAt": "2025-09-04T19:37:22.802Z"
   }
 ]
