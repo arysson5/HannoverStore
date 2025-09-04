@@ -7,7 +7,7 @@ import Footer from '../components/Footer/Footer';
 import './ProductDetailPage.css';
 
 const ProductDetailPage = () => {
-  const { products, addToCart, showNotification, getProductBySlug } = useApp();
+  const { products, addToCart, showNotification, getProductBySlug, productsLoading } = useApp();
   const { productSlug } = useParams();
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
@@ -18,18 +18,21 @@ const ProductDetailPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const foundProduct = getProductBySlug(productSlug);
-    if (foundProduct) {
-      setProduct(foundProduct);
-      if (foundProduct.colors && foundProduct.colors.length > 0) {
-        setSelectedColor(foundProduct.colors[0]);
+    // Só tenta buscar o produto quando os produtos já foram carregados
+    if (!productsLoading && products.length > 0) {
+      const foundProduct = getProductBySlug(productSlug);
+      if (foundProduct) {
+        setProduct(foundProduct);
+        if (foundProduct.colors && foundProduct.colors.length > 0) {
+          setSelectedColor(foundProduct.colors[0]);
+        }
+        if (foundProduct.sizes && foundProduct.sizes.length > 0) {
+          setSelectedSize(foundProduct.sizes[0]);
+        }
       }
-      if (foundProduct.sizes && foundProduct.sizes.length > 0) {
-        setSelectedSize(foundProduct.sizes[0]);
-      }
+      setLoading(false);
     }
-    setLoading(false);
-  }, [products, productSlug, getProductBySlug]);
+  }, [products, productSlug, getProductBySlug, productsLoading]);
 
   const handleAddToCart = () => {
     console.log('🛒 Tentando adicionar ao carrinho:', {
@@ -78,7 +81,7 @@ const ProductDetailPage = () => {
     navigate('/carrinho');
   };
 
-  if (loading) {
+  if (loading || productsLoading) {
     return (
       <>
         <Navbar />
@@ -91,7 +94,7 @@ const ProductDetailPage = () => {
     );
   }
 
-  if (!product) {
+  if (!product && !productsLoading) {
     return (
       <>
         <Navbar />

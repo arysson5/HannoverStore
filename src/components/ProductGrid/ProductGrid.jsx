@@ -19,6 +19,7 @@ const ProductGrid = () => {
   } = useApp();
 
   const [showFilters, setShowFilters] = useState(false);
+  const [scrollPositions, setScrollPositions] = useState({});
 
   const handleSearch = (searchTerm) => {
     searchProducts(searchTerm);
@@ -30,6 +31,27 @@ const ProductGrid = () => {
 
   const handleResetFilters = () => {
     resetFilters();
+  };
+
+  const scrollCategory = (categoryId, direction) => {
+    const container = document.getElementById(`category-${categoryId}`);
+    if (container) {
+      const scrollAmount = 300; // Quantidade de pixels para rolar
+      const currentScroll = scrollPositions[categoryId] || 0;
+      const newScroll = direction === 'left' 
+        ? Math.max(0, currentScroll - scrollAmount)
+        : currentScroll + scrollAmount;
+      
+      container.scrollTo({
+        left: newScroll,
+        behavior: 'smooth'
+      });
+      
+      setScrollPositions(prev => ({
+        ...prev,
+        [categoryId]: newScroll
+      }));
+    }
   };
 
   // Agrupar produtos por categoria
@@ -218,21 +240,42 @@ const ProductGrid = () => {
                   </span>
                 </div>
                 
-                <div className="category-products">
-                  {categoryData.products.map(product => (
-                    <Card
-                      key={product.id}
-                      id={product.id}
-                      image={product.image}
-                      title={product.name}
-                      price={apiUtils.formatPrice(product.price)}
-                      originalPrice={product.originalPrice ? apiUtils.formatPrice(product.originalPrice) : null}
-                      brand={product.brand}
-                      rating={product.rating}
-                      reviews={product.reviews}
-                      product={product}
-                    />
-                  ))}
+                <div className="category-carousel-container">
+                  <button 
+                    className="category-scroll-btn category-scroll-left"
+                    onClick={() => scrollCategory(categoryId, 'left')}
+                    aria-label="Rolar para esquerda"
+                  >
+                    &#8249;
+                  </button>
+                  
+                  <div 
+                    id={`category-${categoryId}`}
+                    className="category-products"
+                  >
+                    {categoryData.products.map(product => (
+                      <Card
+                        key={product.id}
+                        id={product.id}
+                        image={product.image}
+                        title={product.name}
+                        price={apiUtils.formatPrice(product.price)}
+                        originalPrice={product.originalPrice ? apiUtils.formatPrice(product.originalPrice) : null}
+                        brand={product.brand}
+                        rating={product.rating}
+                        reviews={product.reviews}
+                        product={product}
+                      />
+                    ))}
+                  </div>
+                  
+                  <button 
+                    className="category-scroll-btn category-scroll-right"
+                    onClick={() => scrollCategory(categoryId, 'right')}
+                    aria-label="Rolar para direita"
+                  >
+                    &#8250;
+                  </button>
                 </div>
               </div>
             ))

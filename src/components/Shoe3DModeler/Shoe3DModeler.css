@@ -278,7 +278,8 @@
 }
 
 .stop-camera-btn,
-.retry-detection-btn {
+.retry-detection-btn,
+.switch-camera-btn {
   background: #ef4444;
   color: white;
   border: none;
@@ -296,8 +297,20 @@
   box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
 }
 
+.switch-camera-btn {
+  background: #10b981;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+.switch-camera-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: 0 3px 10px rgba(156, 163, 175, 0.3);
+}
+
 .stop-camera-btn:hover,
-.retry-detection-btn:hover {
+.retry-detection-btn:hover,
+.switch-camera-btn:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }

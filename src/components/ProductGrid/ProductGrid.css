@@ -190,6 +190,51 @@
   font-weight: 500;
 }
 
+/* Container do carrossel por categoria */
+.category-carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-scroll-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 2;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.category-scroll-btn:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.category-scroll-btn:active {
+  transform: scale(0.95);
+}
+
+.category-scroll-left {
+  margin-right: 5px;
+}
+
+.category-scroll-right {
+  margin-left: 5px;
+}
+
 .category-products {
   display: flex;
   gap: 20px;
@@ -197,6 +242,10 @@
   padding: 10px 0;
   scroll-behavior: smooth;
   align-items: stretch;
+  min-height: 300px;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
 }
 
 .category-products > * {
@@ -347,8 +396,19 @@
     font-size: 1.25rem;
   }
 
+  .category-carousel-container {
+    gap: 5px;
+  }
+
+  .category-scroll-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
   .category-products {
     gap: 15px;
+    min-height: 280px;
   }
 
   .active-filters {
@@ -374,7 +434,18 @@
     flex: 1;
   }
 
+  .category-carousel-container {
+    gap: 3px;
+  }
+
+  .category-scroll-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
   .category-products {
     gap: 10px;
+    min-height: 260px;
   }
 } 

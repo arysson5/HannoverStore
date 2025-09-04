@@ -11,6 +11,7 @@ const Shoe3DModeler = ({ product, onClose }) => {
   const [isInitializing, setIsInitializing] = useState(false);
   const [cameraStream, setCameraStream] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [cameraFacing, setCameraFacing] = useState('user'); // 'user' = frontal, 'environment' = traseira
   
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
@@ -54,9 +55,9 @@ const Shoe3DModeler = ({ product, onClose }) => {
   }, []);
 
   // Inicializar câmera
-  const initializeCamera = async () => {
+  const initializeCamera = async (facingMode = cameraFacing) => {
     try {
-      console.log('🚀 Iniciando câmera...');
+      console.log('🚀 Iniciando câmera...', { facingMode });
       setIsInitializing(true);
       
       if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
@@ -66,7 +67,7 @@ const Shoe3DModeler = ({ product, onClose }) => {
       // Configuração otimizada para inicialização rápida
       const constraints = {
         video: {
-          facingMode: 'user', // Câmera frontal
+          facingMode: facingMode, // Câmera frontal ou traseira
           width: { ideal: 640, max: 1280 },
           height: { ideal: 480, max: 720 },
           frameRate: { ideal: 15, max: 30 }
@@ -107,6 +108,34 @@ const Shoe3DModeler = ({ product, onClose }) => {
       }
       
       showNotification(errorMessage, 'error');
+    }
+  };
+
+  // Trocar entre câmera frontal e traseira
+  const switchCamera = async () => {
+    try {
+      console.log('🔄 Trocando câmera...');
+      
+      // Parar stream atual
+      if (cameraStream) {
+        cameraStream.getTracks().forEach(track => track.stop());
+        setCameraStream(null);
+      }
+      
+      // Determinar nova câmera
+      const newFacingMode = cameraFacing === 'user' ? 'environment' : 'user';
+      setCameraFacing(newFacingMode);
+      
+      // Reinicializar com nova câmera
+      await initializeCamera(newFacingMode);
+      
+      showNotification(
+        newFacingMode === 'user' ? '📱 Câmera frontal ativada' : '📷 Câmera traseira ativada', 
+        'info'
+      );
+    } catch (error) {
+      console.error('Erro ao trocar câmera:', error);
+      showNotification('Erro ao trocar câmera', 'error');
     }
   };
 
@@ -626,6 +655,13 @@ const Shoe3DModeler = ({ product, onClose }) => {
               <div className="camera-controls">
                 <button className="stop-camera-btn" onClick={stopCamera}>
                   🛑 Parar Câmera
+                </button>
+                <button 
+                  className="switch-camera-btn" 
+                  onClick={switchCamera}
+                  disabled={isInitializing}
+                >
+                  {cameraFacing === 'user' ? '📷 Câmera Traseira' : '📱 Câmera Frontal'}
                 </button>
                 <button className="retry-detection-btn" onClick={detectFoot}>
                   🔄 Detectar Novamente
