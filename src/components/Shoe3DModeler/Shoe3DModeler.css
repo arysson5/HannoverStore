@@ -248,9 +248,9 @@
 }
 
 .detection-status.waiting {
-  background: rgba(59, 130, 246, 0.9);
+  background: rgba(255, 165, 0, 0.8);
   color: white;
-  animation: pulse 2s ease-in-out infinite alternate;
+  animation: fadeInOut 3s infinite;
 }
 
 @keyframes pulse {
@@ -262,6 +262,11 @@
     opacity: 1;
     transform: translateX(-50%) scale(1.05);
   }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
 }
 
 /* Controles da Câmera */
@@ -472,4 +477,54 @@
   color: #856404;
   margin: 5px 0;
   line-height: 1.5;
+}
+
+/* Loading spinner para botão de câmera */
+.start-camera-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Botão de cancelar câmera */
+.cancel-camera-btn {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.cancel-camera-btn:hover {
+  background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+.cancel-camera-btn:active {
+  transform: scale(0.95);
+  background: linear-gradient(135deg, #bd2130 0%, #a71e2a 100%);
 }

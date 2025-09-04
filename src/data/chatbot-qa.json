@@ -191,6 +191,114 @@
       "question": "Preciso de produtos para ciclismo",
       "answer": "Excelente! Temos roupas específicas para ciclismo, tênis adequados, luvas, óculos e acessórios. Nossa linha de ciclismo é completa e pensada para performance e conforto sobre a bike!",
       "keywords": ["ciclismo", "bike", "bicicleta", "roupas ciclismo", "tênis ciclismo", "luvas ciclismo", "óculos ciclismo"]
+    },
+    {
+      "id": 33,
+      "question": "Como escolher o tênis certo para meu tipo de pisada?",
+      "answer": "👟🤖 Ótima pergunta! Para descobrir seu tipo de pisada, acesse nosso [Portal de Dicas](/tips-portal) - lá tem um guia completo sobre tipos de pisada (pronada, supinada, neutra) e como escolher o tênis ideal! É super importante para evitar lesões!",
+      "keywords": ["tipo pisada", "pisada", "pronada", "supinada", "neutra", "como escolher tênis", "pisada correta"]
+    },
+    {
+      "id": 34,
+      "question": "Quais cuidados devo ter com meus tênis?",
+      "answer": "👟🤖 Cara, os cuidados são essenciais! No nosso [Portal de Dicas](/tips-portal) você encontra dicas completas sobre: limpeza, secagem, rotação de tênis, quando trocar e muito mais! Seus tênis vão durar muito mais!",
+      "keywords": ["cuidados tênis", "manutenção tênis", "limpeza tênis", "como cuidar", "durabilidade tênis", "preservar tênis"]
+    },
+    {
+      "id": 35,
+      "question": "Qual a diferença entre tênis de corrida e caminhada?",
+      "answer": "👟🤖 Show de bola essa pergunta! A diferença está na tecnologia e uso. No [Portal de Dicas](/tips-portal) tem tudo explicado: amortecimento, flexibilidade, peso e muito mais! Vale a pena dar uma olhada!",
+      "keywords": ["diferença tênis", "corrida vs caminhada", "tênis corrida", "tênis caminhada", "qual escolher", "diferenças"]
+    },
+    {
+      "id": 36,
+      "question": "Como saber se meu tênis está desgastado?",
+      "answer": "👟🤖 Boa pergunta! Sinais de desgaste incluem: sola lisa, desalinhamento, dor nos pés. No [Portal de Dicas](/tips-portal) tem um checklist completo para você saber quando trocar! Seus pés agradecem!",
+      "keywords": ["tênis desgastado", "quando trocar", "sinais desgaste", "tênis velho", "durabilidade", "trocar tênis"]
+    },
+    {
+      "id": 37,
+      "question": "Portal de dicas",
+      "answer": "👟🤖 Opa! Nosso [Portal de Dicas](/tips-portal) é incrível! Lá você encontra: tipos de pisada, cuidados com tênis, diferenças entre modelos, tecnologias, e muito mais! É tipo um manual completo para escolher o tênis perfeito!",
+      "keywords": ["portal dicas", "dicas", "guia", "manual", "informações", "aprender", "conhecimento"]
+    },
+    {
+      "id": 38,
+      "question": "Quais tecnologias de amortecimento existem?",
+      "answer": "👟🤖 Cara, tem várias tecnologias incríveis! Air, Zoom, Boost, React... No [Portal de Dicas](/tips-portal) tem tudo explicado: como cada uma funciona, qual escolher e muito mais! É show de bola!",
+      "keywords": ["tecnologia amortecimento", "air", "zoom", "boost", "react", "amortecimento", "tecnologias"]
+    },
+    {
+      "id": 39,
+      "question": "Como escolher o tamanho certo do tênis?",
+      "answer": "👟🤖 Ótima pergunta! O tamanho certo é fundamental! No [Portal de Dicas](/tips-portal) tem dicas completas: como medir, folga ideal, diferenças entre marcas e muito mais! Seu conforto agradece!",
+      "keywords": ["tamanho tênis", "numeração", "como medir", "tamanho certo", "folga", "conforto"]
+    },
+    {
+      "id": 40,
+      "question": "Dicas para iniciantes em corrida",
+      "answer": "👟🤖 Que legal! Para iniciantes, o [Portal de Dicas](/tips-portal) tem um guia completo: tênis ideal, roupas, aquecimento, progressão e muito mais! Começar certo é fundamental!",
+      "keywords": ["iniciante corrida", "começar corrida", "dicas corrida", "primeiros passos", "iniciante"]
+    },
+    {
+      "id": 41,
+      "question": "É preto",
+      "answer": "👟🤖 Perfeito! Preto é uma cor clássica e versátil! Vou te mostrar as opções pretas que temos disponíveis. Que tipo de tênis você está procurando?",
+      "keywords": ["preto", "cor preta", "tênis preto", "preto", "cor"]
+    },
+    {
+      "id": 42,
+      "question": "É azul",
+      "answer": "👟🤖 Show! Azul é uma cor incrível! Temos várias opções em azul, desde tons mais claros até azul marinho. Que modelo você tem em mente?",
+      "keywords": ["azul", "cor azul", "tênis azul", "azul", "cor"]
+    },
+    {
+      "id": 43,
+      "question": "É branco",
+      "answer": "👟🤖 Branco é sempre uma boa escolha! Clássico, limpo e combina com tudo! Temos várias opções em branco. Que tipo de uso você vai dar?",
+      "keywords": ["branco", "cor branca", "tênis branco", "branco", "cor"]
+    },
+    {
+      "id": 44,
+      "question": "Para corrida",
+      "answer": "👟🤖 Perfeito! Para corrida é fundamental ter um tênis com bom amortecimento e suporte! Vou te mostrar as melhores opções para corrida que temos!",
+      "keywords": ["corrida", "para corrida", "running", "correr", "atletismo"]
+    },
+    {
+      "id": 45,
+      "question": "Para academia",
+      "answer": "👟🤖 Ótima escolha! Para academia você precisa de um tênis estável e confortável! Temos várias opções ideais para treinos. Que tipo de exercício você faz mais?",
+      "keywords": ["academia", "para academia", "treino", "fitness", "musculação"]
+    },
+    {
+      "id": 46,
+      "question": "Tamanho 42",
+      "answer": "👟🤖 Perfeito! Tamanho 42 é um dos mais populares! Vou verificar quais modelos temos disponíveis nesse tamanho. Que marca você prefere?",
+      "keywords": ["42", "tamanho 42", "numeração 42", "42", "tamanho"]
+    },
+    {
+      "id": 47,
+      "question": "Tamanho 40",
+      "answer": "👟🤖 Show! Tamanho 40 é bem comum também! Temos várias opções nesse tamanho. Que tipo de tênis você está procurando?",
+      "keywords": ["40", "tamanho 40", "numeração 40", "40", "tamanho"]
+    },
+    {
+      "id": 48,
+      "question": "Nike",
+      "answer": "👟🤖 Nike é top demais! Temos vários modelos incríveis da Nike! Que tipo de uso você vai dar? Corrida, academia, casual?",
+      "keywords": ["nike", "marca nike", "nike", "marca"]
+    },
+    {
+      "id": 49,
+      "question": "Adidas",
+      "answer": "👟🤖 Adidas é show de bola! Temos uma seleção incrível da Adidas! Que cor você prefere? E para que tipo de atividade?",
+      "keywords": ["adidas", "marca adidas", "adidas", "marca"]
+    },
+    {
+      "id": 50,
+      "question": "Puma",
+      "answer": "👟🤖 Puma é incrível! Temos várias opções da Puma! Que tipo de tênis você está procurando? E que cor te chama atenção?",
+      "keywords": ["puma", "marca puma", "puma", "marca"]
     }
   ],
   "greetings": [

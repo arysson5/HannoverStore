@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "../../context/AppContext";
+import Logo from "../Logo/Logo";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Navbar.css";
 
@@ -49,9 +50,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
         <div className="d-flex align-items-center">
-          <div className="logo">
-            <img src="/Hanover logo bg.png" alt="Hannover Store" />
-          </div>
+          <Logo />
           <Link to="/" className="navbar-brand">
             Hannover Store
           </Link>

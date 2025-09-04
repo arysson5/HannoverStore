@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build-with-logo": "node build-with-logo.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "vercel-build": "vite build"
+    "vercel-build": "node build-with-logo.js"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
