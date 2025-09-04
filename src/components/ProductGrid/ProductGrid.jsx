@@ -58,48 +58,20 @@ const ProductGrid = () => {
   const productsByCategory = React.useMemo(() => {
     const grouped = {};
     
-    // Filtrar produtos baseado nos filtros ativos
-    let filteredProducts = products;
-    
-    if (filters.search) {
-      filteredProducts = filteredProducts.filter(product =>
-        product.name.toLowerCase().includes(filters.search.toLowerCase()) ||
-        product.brand.toLowerCase().includes(filters.search.toLowerCase()) ||
-        product.description?.toLowerCase().includes(filters.search.toLowerCase())
-      );
-    }
-    
-    if (filters.brand) {
-      filteredProducts = filteredProducts.filter(product =>
-        product.brand.toLowerCase() === filters.brand.toLowerCase()
-      );
-    }
-    
-    if (filters.minPrice) {
-      filteredProducts = filteredProducts.filter(product =>
-        product.price >= parseFloat(filters.minPrice)
-      );
-    }
-    
-    if (filters.maxPrice) {
-      filteredProducts = filteredProducts.filter(product =>
-        product.price <= parseFloat(filters.maxPrice)
-      );
-    }
-
     // Se há filtro de categoria específica, mostrar apenas essa categoria
     if (filters.category) {
       const category = categories.find(cat => cat.id === filters.category);
       if (category) {
+        const categoryProducts = products.filter(product => product.category === category.id);
         grouped[category.id] = {
           name: category.name,
-          products: filteredProducts.filter(product => product.category === category.id)
+          products: categoryProducts
         };
       }
     } else {
-      // Agrupar por todas as categorias
+      // Agrupar por todas as categorias - SEM filtros adicionais
       categories.forEach(category => {
-        const categoryProducts = filteredProducts.filter(product => product.category === category.id);
+        const categoryProducts = products.filter(product => product.category === category.id);
         if (categoryProducts.length > 0) {
           grouped[category.id] = {
             name: category.name,

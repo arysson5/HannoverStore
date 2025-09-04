@@ -221,10 +221,16 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: ACTIONS.SET_PRODUCTS_LOADING, payload: true });
     
     try {
-      const response = await productService.getAll({
-        ...state.filters,
-        ...filters,
-      });
+      // Se não há filtros ativos, carregar todos os produtos (limite alto)
+      const hasActiveFilters = Object.values(filters).some(value => 
+        value !== '' && value !== null && value !== undefined
+      );
+      
+      const requestFilters = hasActiveFilters 
+        ? { ...state.filters, ...filters } 
+        : { limit: 100 }; // Solicitar até 100 produtos quando não há filtros
+      
+      const response = await productService.getAll(requestFilters);
       
       dispatch({ type: ACTIONS.SET_PRODUCTS, payload: response.products || response });
     } catch (error) {
