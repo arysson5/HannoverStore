@@ -228,11 +228,42 @@ export const cartService = {
           id: productId,
           name: product.name,
           price: product.price,
-          image: product.image,
+          image: product.images && product.images.length > 0 ? product.images[0] : product.image,
           quantity,
           size,
           color,
           brand: product.brand,
+        });
+      }
+
+      cartService.saveCart(cart);
+      return cart;
+    } catch (error) {
+      console.error('Erro ao adicionar item ao carrinho:', error);
+      throw error;
+    }
+  },
+
+  // Adicionar item com dados completos (da página de produto)
+  addItemWithData: (itemData) => {
+    try {
+      const cart = cartService.getCart();
+      const existingItemIndex = cart.findIndex(
+        item => item.id === itemData.id && item.size === itemData.size && item.color === itemData.color
+      );
+
+      if (existingItemIndex >= 0) {
+        cart[existingItemIndex].quantity += itemData.quantity;
+      } else {
+        cart.push({
+          id: itemData.id,
+          name: itemData.name,
+          price: itemData.price,
+          image: itemData.image,
+          quantity: itemData.quantity,
+          size: itemData.size,
+          color: itemData.color,
+          brand: itemData.brand || 'N/A',
         });
       }
 

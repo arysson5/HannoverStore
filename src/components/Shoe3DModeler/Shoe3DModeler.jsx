@@ -15,19 +15,41 @@ const Shoe3DModeler = ({ product, onClose }) => {
   const canvasRef = useRef(null);
   const modelContainerRef = useRef(null);
 
-  // Detectar se é dispositivo móvel
+  // Detectar se é dispositivo móvel e compatível
   useEffect(() => {
-    const checkMobile = () => {
+    const checkCompatibility = () => {
       const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
                             window.innerWidth <= 768 ||
                             'ontouchstart' in window;
-      setIsMobile(isMobileDevice);
+      
+      const hasCamera = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+      const isHTTPS = location.protocol === 'https:' || location.hostname === 'localhost';
+      
+      // Verificar se é um dispositivo móvel real (não apenas tela pequena)
+      const isRealMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      console.log('🔍 Verificação de compatibilidade 3D:', {
+        isMobileDevice,
+        isRealMobile,
+        hasCamera,
+        isHTTPS,
+        userAgent: navigator.userAgent,
+        screenWidth: window.innerWidth,
+        touchSupport: 'ontouchstart' in window
+      });
+      
+      // Para 3D, preferir dispositivos móveis reais com câmera
+      setIsMobile(isRealMobile && hasCamera && isHTTPS);
     };
     
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
+    checkCompatibility();
+    window.addEventListener('resize', checkCompatibility);
+    window.addEventListener('orientationchange', checkCompatibility);
     
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => {
+      window.removeEventListener('resize', checkCompatibility);
+      window.removeEventListener('orientationchange', checkCompatibility);
+    };
   }, []);
 
   // Inicializar câmera
@@ -37,26 +59,64 @@ const Shoe3DModeler = ({ product, onClose }) => {
         throw new Error('Câmera não suportada neste dispositivo');
       }
 
-      const stream = await navigator.mediaDevices.getUserMedia({
+      // Configuração otimizada para mobile
+      const constraints = {
         video: {
           facingMode: 'user', // Câmera frontal
-          width: { ideal: 640 },
-          height: { ideal: 480 }
+          width: { ideal: 1280, max: 1920 },
+          height: { ideal: 720, max: 1080 },
+          frameRate: { ideal: 30, max: 60 }
         }
-      });
+      };
+
+      // Tentar com configuração ideal primeiro
+      let stream;
+      try {
+        stream = await navigator.mediaDevices.getUserMedia(constraints);
+      } catch (fallbackError) {
+        console.log('Configuração ideal falhou, tentando configuração básica...', fallbackError);
+        // Fallback para configuração mais simples
+        stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: 'user',
+            width: { ideal: 640 },
+            height: { ideal: 480 }
+          }
+        });
+      }
 
       setCameraStream(stream);
       
       if (videoRef.current) {
         videoRef.current.srcObject = stream;
         videoRef.current.play();
+        
+        // Aguardar o vídeo carregar
+        videoRef.current.onloadedmetadata = () => {
+          console.log('Vídeo carregado:', {
+            videoWidth: videoRef.current.videoWidth,
+            videoHeight: videoRef.current.videoHeight
+          });
+        };
       }
 
       setIsActive(true);
-      showNotification('Câmera ativada! Posicione seu pé na tela', 'info');
+      showNotification('📱 Câmera ativada! Posicione seu pé na tela', 'info');
     } catch (error) {
       console.error('Erro ao acessar câmera:', error);
-      showNotification('Erro ao acessar câmera. Verifique as permissões.', 'error');
+      
+      let errorMessage = 'Erro ao acessar câmera. ';
+      if (error.name === 'NotAllowedError') {
+        errorMessage += 'Permissão negada. Permita o acesso à câmera.';
+      } else if (error.name === 'NotFoundError') {
+        errorMessage += 'Câmera não encontrada.';
+      } else if (error.name === 'NotSupportedError') {
+        errorMessage += 'Câmera não suportada.';
+      } else {
+        errorMessage += 'Verifique as permissões.';
+      }
+      
+      showNotification(errorMessage, 'error');
     }
   };
 
@@ -79,21 +139,33 @@ const Shoe3DModeler = ({ product, onClose }) => {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const data = imageData.data;
 
-    // Algoritmo simplificado de detecção de pé
-    // Procura por áreas com tons de pele (tons de rosa/bege)
+    // Algoritmo otimizado de detecção de pé para mobile
     let footPixels = 0;
     let footCenterX = 0;
     let footCenterY = 0;
     let totalFootX = 0;
     let totalFootY = 0;
 
-    for (let i = 0; i < data.length; i += 4) {
+    // Amostrar apenas uma parte da imagem para melhor performance
+    const step = 4; // Processar a cada 4 pixels
+    const minPixels = Math.max(500, (canvas.width * canvas.height) / 1000); // Mínimo adaptativo
+
+    for (let i = 0; i < data.length; i += step * 4) {
       const r = data[i];
       const g = data[i + 1];
       const b = data[i + 2];
       
-      // Detectar tons de pele (simplificado)
-      if (r > 100 && g > 80 && b > 60 && r > g && g > b) {
+      // Detectar tons de pele mais precisos
+      const isSkinTone = (
+        r > 95 && r < 255 &&
+        g > 40 && g < 200 &&
+        b > 20 && b < 180 &&
+        r > g && g > b &&
+        (r - g) > 15 &&
+        (g - b) > 10
+      );
+
+      if (isSkinTone) {
         footPixels++;
         const x = (i / 4) % canvas.width;
         const y = Math.floor((i / 4) / canvas.width);
@@ -102,8 +174,11 @@ const Shoe3DModeler = ({ product, onClose }) => {
       }
     }
 
+    // Ajustar threshold baseado no tamanho da tela
+    const threshold = Math.max(minPixels, (canvas.width * canvas.height) / 2000);
+
     // Se detectou área suficiente de "pele"
-    if (footPixels > 1000) {
+    if (footPixels > threshold) {
       footCenterX = totalFootX / footPixels;
       footCenterY = totalFootY / footPixels;
       
@@ -111,39 +186,43 @@ const Shoe3DModeler = ({ product, onClose }) => {
       setShoeModel({
         x: footCenterX,
         y: footCenterY,
-        scale: Math.sqrt(footPixels) / 50 // Escala baseada no tamanho detectado
+        scale: Math.min(Math.max(Math.sqrt(footPixels) / 40, 0.5), 2.0) // Escala limitada
       });
 
-      // Desenhar indicador visual
+      // Desenhar indicador visual otimizado
       ctx.strokeStyle = '#00ff00';
-      ctx.lineWidth = 3;
+      ctx.lineWidth = 2;
       ctx.beginPath();
-      ctx.arc(footCenterX, footCenterY, 50, 0, 2 * Math.PI);
+      ctx.arc(footCenterX, footCenterY, Math.min(40, canvas.width / 20), 0, 2 * Math.PI);
       ctx.stroke();
       
       ctx.fillStyle = '#00ff00';
-      ctx.font = '16px Arial';
-      ctx.fillText('Pé Detectado!', footCenterX - 40, footCenterY - 60);
+      ctx.font = `${Math.min(14, canvas.width / 30)}px Arial`;
+      ctx.fillText('Pé Detectado!', footCenterX - 30, footCenterY - 50);
       
-      showNotification('Pé detectado! Visualizando tênis 3D', 'success');
+      showNotification('👟 Pé detectado! Visualizando tênis 3D', 'success');
     } else {
       setFootDetected(false);
       setShoeModel(null);
     }
   }, [showNotification]);
 
-  // Loop de detecção
+  // Loop de detecção otimizado para mobile
   useEffect(() => {
     let detectionInterval;
     
     if (isActive && cameraStream) {
+      // Frequência adaptativa baseada no dispositivo
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const detectionInterval_ms = isMobileDevice ? 300 : 500; // Mais frequente em mobile
+      
       detectionInterval = setInterval(() => {
         if (!isDetecting) {
           setIsDetecting(true);
           detectFoot();
-          setTimeout(() => setIsDetecting(false), 100);
+          setTimeout(() => setIsDetecting(false), 50); // Processamento mais rápido
         }
-      }, 500); // Detectar a cada 500ms
+      }, detectionInterval_ms);
     }
 
     return () => {
@@ -252,6 +331,10 @@ const Shoe3DModeler = ({ product, onClose }) => {
   }, [footDetected, shoeModel, renderShoe3D]);
 
   if (!isMobile) {
+    const isDesktop = !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.innerWidth > 768;
+    const hasCamera = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+    const isHTTPS = location.protocol === 'https:' || location.hostname === 'localhost';
+    
     return (
       <div className="shoe-3d-modal">
         <div className="shoe-3d-content">
@@ -260,11 +343,50 @@ const Shoe3DModeler = ({ product, onClose }) => {
             <button className="close-btn" onClick={handleClose}>✕</button>
           </div>
           <div className="shoe-3d-body">
-            <div className="mobile-only-message">
-              <div className="mobile-icon">📱</div>
-              <h4>Funcionalidade Disponível Apenas em Dispositivos Móveis</h4>
-              <p>Esta funcionalidade requer acesso à câmera e é otimizada para dispositivos móveis.</p>
-              <p>Abra este site em seu celular ou tablet para experimentar a modelagem 3D!</p>
+            <div className="compatibility-message">
+              <div className="compatibility-icon">🔧</div>
+              <h4>Funcionalidade 3D Indisponível</h4>
+              
+              {isDesktop && (
+                <div className="reason">
+                  <h5>🖥️ Dispositivo Desktop Detectado</h5>
+                  <p>Esta funcionalidade é otimizada para dispositivos móveis com câmera.</p>
+                  <p><strong>Solução:</strong> Acesse este site em seu celular ou tablet.</p>
+                </div>
+              )}
+              
+              {!hasCamera && (
+                <div className="reason">
+                  <h5>📷 Câmera Não Disponível</h5>
+                  <p>Seu dispositivo não possui câmera ou não suporta acesso à câmera.</p>
+                  <p><strong>Solução:</strong> Use um dispositivo com câmera funcional.</p>
+                </div>
+              )}
+              
+              {!isHTTPS && (
+                <div className="reason">
+                  <h5>🔒 Conexão Não Segura</h5>
+                  <p>O acesso à câmera requer conexão HTTPS segura.</p>
+                  <p><strong>Solução:</strong> Acesse via HTTPS ou localhost.</p>
+                </div>
+              )}
+              
+              <div className="compatibility-info">
+                <h5>📋 Requisitos para Funcionar:</h5>
+                <ul>
+                  <li>✅ Dispositivo móvel (celular/tablet)</li>
+                  <li>✅ Câmera funcional</li>
+                  <li>✅ Conexão HTTPS ou localhost</li>
+                  <li>✅ Permissão de acesso à câmera</li>
+                </ul>
+              </div>
+              
+              <div className="alternative-info">
+                <h5>💡 Alternativas:</h5>
+                <p>• Visualize as imagens do produto em alta resolução</p>
+                <p>• Use a funcionalidade de zoom nas imagens</p>
+                <p>• Acesse em um dispositivo móvel para experimentar o 3D</p>
+              </div>
             </div>
           </div>
         </div>

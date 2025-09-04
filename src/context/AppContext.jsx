@@ -288,11 +288,21 @@ export const AppProvider = ({ children }) => {
   };
 
   // Adicionar ao carrinho
-  const addToCart = async (productId, quantity = 1, size = null, color = null) => {
+  const addToCart = async (productIdOrItem, quantity = 1, size = null, color = null) => {
     dispatch({ type: ACTIONS.SET_CART_LOADING, payload: true });
     
     try {
-      const cart = await cartService.addItem(productId, quantity, size, color);
+      let cart;
+      
+      // Se é um objeto de produto completo (da página de produto)
+      if (typeof productIdOrItem === 'object' && productIdOrItem.id) {
+        const item = productIdOrItem;
+        cart = cartService.addItemWithData(item);
+      } else {
+        // Se é apenas um ID (dos cards)
+        cart = await cartService.addItem(productIdOrItem, quantity, size, color);
+      }
+      
       dispatch({ type: ACTIONS.ADD_TO_CART, payload: cart });
       
       // Destacar o ícone do carrinho
@@ -403,6 +413,21 @@ export const AppProvider = ({ children }) => {
   const highlightCart = () => dispatch({ type: ACTIONS.HIGHLIGHT_CART });
   const unhighlightCart = () => dispatch({ type: ACTIONS.UNHIGHLIGHT_CART });
 
+  // Buscar produto por slug
+  const getProductBySlug = (slug) => {
+    return state.products.find(product => {
+      const productSlug = product.name
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim();
+      return productSlug === slug;
+    });
+  };
+
   // Valores do contexto
   const value = {
     // Estado
@@ -414,6 +439,7 @@ export const AppProvider = ({ children }) => {
     searchProducts,
     applyFilters,
     resetFilters,
+    getProductBySlug,
     
     // Ações de carrinho
     addToCart,

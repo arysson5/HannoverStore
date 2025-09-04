@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Compatibilidade 3D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; color: #155724; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
+        .warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover { background: #0056b3; }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste de Compatibilidade 3D</h1>
+    
+    <div id="compatibility-results"></div>
+    
+    <div class="test-section">
+        <h3>📱 Teste de Câmera</h3>
+        <button onclick="testCamera()">Testar Acesso à Câmera</button>
+        <div id="camera-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>🎮 Teste de WebGL</h3>
+        <button onclick="testWebGL()">Testar WebGL</button>
+        <div id="webgl-result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>🎨 Teste de CSS 3D</h3>
+        <button onclick="testCSS3D()">Testar CSS 3D</button>
+        <div id="css3d-result"></div>
+    </div>
+
+    <script>
+        // Verificar compatibilidade do navegador
+        function check3DCompatibility() {
+            const results = document.getElementById('compatibility-results');
+            let html = '<h2>🔍 Verificação de Compatibilidade</h2>';
+            
+            // 1. Verificar se é dispositivo móvel
+            const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                                window.innerWidth <= 768 ||
+                                'ontouchstart' in window;
+            
+            html += `<div class="status ${isMobileDevice ? 'success' : 'error'}">
+                <strong>📱 Dispositivo móvel:</strong> ${isMobileDevice ? '✅ Sim' : '❌ Não'}<br>
+                <small>User Agent: ${navigator.userAgent}</small><br>
+                <small>Largura da tela: ${window.innerWidth}px</small><br>
+                <small>Touch support: ${'ontouchstart' in window ? 'Sim' : 'Não'}</small>
+            </div>`;
+            
+            // 2. Verificar suporte à câmera
+            const hasCamera = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+            html += `<div class="status ${hasCamera ? 'success' : 'error'}">
+                <strong>📷 Suporte à câmera:</strong> ${hasCamera ? '✅ Sim' : '❌ Não'}
+            </div>`;
+            
+            // 3. Verificar HTTPS
+            const isHTTPS = location.protocol === 'https:' || location.hostname === 'localhost';
+            html += `<div class="status ${isHTTPS ? 'success' : 'error'}">
+                <strong>🔒 HTTPS/Localhost:</strong> ${isHTTPS ? '✅ Sim' : '❌ Não'}<br>
+                <small>Protocolo: ${location.protocol}</small><br>
+                <small>Hostname: ${location.hostname}</small>
+            </div>`;
+            
+            // 4. Verificar WebGL
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            html += `<div class="status ${gl ? 'success' : 'error'}">
+                <strong>🎮 WebGL:</strong> ${gl ? '✅ Suportado' : '❌ Não suportado'}
+            </div>`;
+            
+            // 5. Verificar CSS 3D Transforms
+            const testElement = document.createElement('div');
+            const transforms = ['transform', 'WebkitTransform', 'MozTransform', 'msTransform'];
+            const has3DSupport = transforms.some(prop => prop in testElement.style);
+            
+            html += `<div class="status ${has3DSupport ? 'success' : 'error'}">
+                <strong>🎨 CSS 3D Transforms:</strong> ${has3DSupport ? '✅ Suportado' : '❌ Não suportado'}
+            </div>`;
+            
+            // Resultado final
+            const isCompatible = isMobileDevice && hasCamera && isHTTPS;
+            html += `<div class="status ${isCompatible ? 'success' : 'error'}">
+                <strong>🎯 Compatibilidade geral:</strong> ${isCompatible ? '✅ COMPATÍVEL' : '❌ INCOMPATÍVEL'}
+            </div>`;
+            
+            if (!isCompatible) {
+                html += '<h3>📋 Motivos da incompatibilidade:</h3><ul>';
+                if (!isMobileDevice) html += '<li>❌ Não é um dispositivo móvel</li>';
+                if (!hasCamera) html += '<li>❌ Câmera não disponível</li>';
+                if (!isHTTPS) html += '<li>❌ Conexão não segura (não é HTTPS)</li>';
+                html += '</ul>';
+            }
+            
+            results.innerHTML = html;
+            
+            return { isMobileDevice, hasCamera, isHTTPS, hasWebGL: !!gl, has3DSupport, isCompatible };
+        }
+        
+        // Testar acesso à câmera
+        async function testCamera() {
+            const result = document.getElementById('camera-result');
+            result.innerHTML = '<div class="status info">🔄 Testando acesso à câmera...</div>';
+            
+            try {
+                if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                    throw new Error('Câmera não suportada');
+                }
+                
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                result.innerHTML = '<div class="status success">✅ Câmera acessível! Parando stream...</div>';
+                
+                // Parar o stream
+                stream.getTracks().forEach(track => track.stop());
+            } catch (error) {
+                result.innerHTML = `<div class="status error">❌ Erro ao acessar câmera: ${error.message}</div>`;
+            }
+        }
+        
+        // Testar WebGL
+        function testWebGL() {
+            const result = document.getElementById('webgl-result');
+            const canvas = document.createElement('canvas');
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            
+            if (gl) {
+                result.innerHTML = '<div class="status success">✅ WebGL funcionando! Renderizando teste...</div>';
+                
+                // Teste simples de renderização
+                gl.clearColor(0.0, 0.0, 0.0, 1.0);
+                gl.clear(gl.COLOR_BUFFER_BIT);
+                
+                setTimeout(() => {
+                    result.innerHTML += '<div class="status info">✅ Renderização WebGL concluída!</div>';
+                }, 100);
+            } else {
+                result.innerHTML = '<div class="status error">❌ WebGL não suportado</div>';
+            }
+        }
+        
+        // Testar CSS 3D
+        function testCSS3D() {
+            const result = document.getElementById('css3d-result');
+            const testElement = document.createElement('div');
+            
+            // Aplicar transformação 3D
+            testElement.style.transform = 'perspective(500px) rotateX(45deg) rotateY(45deg)';
+            testElement.style.width = '100px';
+            testElement.style.height = '100px';
+            testElement.style.background = 'linear-gradient(45deg, #ff0000, #0000ff)';
+            testElement.style.margin = '20px auto';
+            testElement.style.borderRadius = '10px';
+            
+            result.innerHTML = '<div class="status success">✅ CSS 3D funcionando! Visualizando teste:</div>';
+            result.appendChild(testElement);
+            
+            // Animar o elemento
+            let rotation = 0;
+            const animate = () => {
+                rotation += 2;
+                testElement.style.transform = `perspective(500px) rotateX(45deg) rotateY(${rotation}deg)`;
+                if (rotation < 360) {
+                    requestAnimationFrame(animate);
+                }
+            };
+            animate();
+        }
+        
+        // Executar verificação ao carregar
+        window.onload = () => {
+            const compatibility = check3DCompatibility();
+            
+            console.log('Compatibilidade 3D:', compatibility);
+            
+            if (compatibility.isCompatible) {
+                console.log('✅ Seu dispositivo é compatível com a funcionalidade 3D!');
+            } else {
+                console.log('❌ Seu dispositivo não é compatível com a funcionalidade 3D');
+            }
+        };
+    </script>
+</body>
+</html>

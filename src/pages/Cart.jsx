@@ -8,6 +8,7 @@ import "./Cart.css";
 const Cart = () => {
   const { cart, removeFromCart, updateCartQuantity, clearCart } = useApp();
   const [isMobile, setIsMobile] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   // Função helper para converter preço para número
   const parsePrice = (price) => {
@@ -57,6 +58,25 @@ const Cart = () => {
       window.removeEventListener('resize', checkMobile);
     };
   }, []);
+
+  // Controlar visibilidade do botão "voltar ao topo"
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      setShowBackToTop(scrollTop > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Função para voltar ao topo
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   // Verificar se há itens inválidos no carrinho e limpar se necessário
   useEffect(() => {
@@ -200,6 +220,17 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      
+      {/* Botão flutuante para voltar ao topo */}
+      <button 
+        className={`cart-back-to-top ${showBackToTop ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        aria-label="Voltar ao topo"
+        title="Voltar ao topo"
+      >
+        ↑
+      </button>
+      
       <Footer />
     </>
   );

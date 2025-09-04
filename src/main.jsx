@@ -7,6 +7,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Cart from "./pages/Cart.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage.jsx";
 import ReturnPolicy from "./pages/ReturnPolicy.jsx";
 import TipsPortal from "./pages/TipsPortal.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/admin/settings" element={<AdminSettings />} />
           <Route path="/product/:id" element={<ProductPage />} />
+          <Route path="/produto/:productSlug" element={<ProductDetailPage />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/tips-portal" element={<TipsPortal />} />
         </Routes>

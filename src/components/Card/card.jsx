@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useApp } from "../../context/AppContext";
+import { generateProductSlug } from "../../utils/productUtils";
 import AddToCartAnimation from "../AddToCartAnimation/AddToCartAnimation";
 import CartConfirmModal from "../CartConfirmModal/CartConfirmModal";
 import Shoe3DModeler from "../Shoe3DModeler/Shoe3DModeler";
@@ -108,6 +109,12 @@ const Card = ({
     }
   };
 
+  const handle3DClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    open3DModal();
+  };
+
   const renderStars = (rating) => {
     if (!rating) return null;
     
@@ -135,81 +142,84 @@ const Card = ({
 
   return (
     <>
-      <Link 
-        to={`/product/${id}`} 
-        className="card-link"
-        onClick={handleCardClick}
-      >
-        <div 
-          className="product-card" 
-          id="card"
-          ref={cardRef}
+      <div className="card-wrapper">
+        <Link 
+          to={`/produto/${generateProductSlug(title)}`} 
+          className="card-link"
+          onClick={handleCardClick}
         >
-          <div className="card-image-container">
-            <img src={image} alt={title} className="card-image" />
-            {hasDiscount && (
-              <div className="discount-badge">
-                {Math.round(((originalPrice - (typeof price === 'string' ? parseFloat(price.replace(/[^\d,]/g, '').replace(',', '.')) : price)) / originalPrice) * 100)}% OFF
-              </div>
-            )}
-            {brand && (
-              <div className="brand-badge">
-                {brand}
-              </div>
-            )}
-          </div>
-          
-          <div className="card-content">
-            <h3 className="product-title">{title}</h3>
-            
-            {rating && (
-              <div className="rating-container">
-                <div className="stars">
-                  {renderStars(rating)}
-                </div>
-                <span className="rating-text">
-                  {rating} {reviews && `(${reviews})`}
-                </span>
-              </div>
-            )}
-            
-            <div className="price-container">
+          <div 
+            className="product-card" 
+            id="card"
+            ref={cardRef}
+          >
+            <div className="card-image-container">
+              <img src={image} alt={title} className="card-image" />
               {hasDiscount && (
-                <span className="original-price">{originalPrice}</span>
+                <div className="discount-badge">
+                  {Math.round(((originalPrice - (typeof price === 'string' ? parseFloat(price.replace(/[^\d,]/g, '').replace(',', '.')) : price)) / originalPrice) * 100)}% OFF
+                </div>
               )}
-              <span className="current-price">{price}</span>
+              {brand && (
+                <div className="brand-badge">
+                  {brand}
+                </div>
+              )}
             </div>
             
-            <div className="card-buttons">
-              <button 
-                className={`add-to-cart-btn ${isTouchDevice ? 'touch-device' : ''} ${isLoading ? 'loading' : ''}`}
-                onClick={handleAddToCart}
-                ref={buttonRef}
-                disabled={isLoading}
-                aria-label="Adicionar ao Carrinho"
-              >
-                {isLoading ? (
-                  <>
-                    <span className="loading-spinner"></span>
-                    Adicionando...
-                  </>
-                ) : (
-                  'Adicionar ao Carrinho'
-                )}
-              </button>
+            <div className="card-content">
+              <h3 className="product-title">{title}</h3>
               
-              <button 
-                className="try-3d-btn"
-                onClick={open3DModal}
-                aria-label="Experimentar em 3D"
-                title="Experimentar tênis em 3D"
-              >
-                👟 3D
-              </button>
+              {rating && (
+                <div className="rating-container">
+                  <div className="stars">
+                    {renderStars(rating)}
+                  </div>
+                  <span className="rating-text">
+                    {rating} {reviews && `(${reviews})`}
+                  </span>
+                </div>
+              )}
+              
+              <div className="price-container">
+                {hasDiscount && (
+                  <span className="original-price">{originalPrice}</span>
+                )}
+                <span className="current-price">{price}</span>
+              </div>
+              
+              <div className="card-buttons">
+                <button 
+                  className={`add-to-cart-btn ${isTouchDevice ? 'touch-device' : ''} ${isLoading ? 'loading' : ''}`}
+                  onClick={handleAddToCart}
+                  ref={buttonRef}
+                  disabled={isLoading}
+                  aria-label="Adicionar ao Carrinho"
+                >
+                  {isLoading ? (
+                    <>
+                      <span className="loading-spinner"></span>
+                      Adicionando...
+                    </>
+                  ) : (
+                    'Adicionar ao Carrinho'
+                  )}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+        
+        {/* Botão 3D posicionado sobre o card */}
+        <button 
+          className="try-3d-btn-overlay"
+          onClick={handle3DClick}
+          aria-label="Experimentar em 3D"
+          title="Experimentar tênis em 3D"
+        >
+          👟 3D
+        </button>
+      </div>
       
       {showAnimation && animationProps && addedProduct && (
         <AddToCartAnimation 

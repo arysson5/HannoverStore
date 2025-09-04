@@ -3,7 +3,7 @@ import { useApp } from '../../context/AppContext';
 import './Chatbot.css';
 
 const Chatbot = () => {
-  const { user, products, categories } = useApp();
+  const { products, categories } = useApp();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
@@ -16,12 +16,12 @@ const Chatbot = () => {
   useEffect(() => {
     if (isOpen && messages.length === 0) {
       const greetings = [
-        "👟 Olá! Eu sou o Hannovinho, seu tênis-robô! Como posso ajudá-lo hoje?",
-        "🤖 Oi! Hannovinho aqui! Pronto para encontrar os melhores produtos esportivos para você!",
-        "👟 Olá! Sou o Hannovinho, especialista em produtos esportivos! O que você está procurando?",
-        "🤖 Ei! Hannovinho na área! Vamos encontrar o produto perfeito para você!",
-        "👟 Salve! Hannovinho aqui, seu assistente tênis-robô! Como posso ajudar?",
-        "🤖 Olá! Eu sou o Hannovinho! Pronto para te ajudar a encontrar produtos incríveis!"
+        "👟 Oi! Sou o Hannovinho! Como posso te ajudar?",
+        "🤖 Salve! Hannovinho aqui! O que você tá procurando?",
+        "👟 Ei! Hannovinho na área! Vamos encontrar algo top?",
+        "🤖 Opa! Sou o Hannovinho! Pronto para te ajudar!",
+        "👟 Salve! Hannovinho aqui! Como posso ajudar?",
+        "🤖 Oi! Hannovinho na área! O que você precisa?"
       ];
       const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
       setMessages([{ type: 'bot', text: randomGreeting }]);
@@ -87,21 +87,21 @@ const Chatbot = () => {
             console.log('Erro na IA, usando fallback:', aiError.message);
             // Se a IA falhar, usar fallback
             const relevantProducts = findRelevantProducts(inputMessage);
-            let fallbackResponse = "👟🤖 Opa, não tenho essa informação específica agora! Mas posso te ajudar de outras formas!";
+            let fallbackResponse = "👟🤖 Opa, não tenho essa info agora! Mas olha só:";
             
             if (relevantProducts.length > 0) {
-              fallbackResponse += "\n\n👟 **Produtos que podem te interessar:**\n";
-              relevantProducts.forEach(product => {
+              fallbackResponse += "\n\n👟 **Produtos top que podem te interessar:**\n";
+              relevantProducts.slice(0, 3).forEach(product => {
                 const productName = product.name || product.title || 'Produto';
                 const productPrice = product.price ? `R$ ${product.price}` : 'Consulte o preço';
                 fallbackResponse += `• [${productName}](/produto/${product.id}) - ${productPrice}\n`;
               });
             }
             
-            fallbackResponse += "\n\n🤖 **Outras formas de ajuda:**\n";
+            fallbackResponse += "\n\n🤖 **Dicas:**\n";
             fallbackResponse += "• Navegue pelos produtos na página inicial\n";
             fallbackResponse += "• Use os filtros por categoria\n";
-            fallbackResponse += "• Entre em contato: contato@hannoverstore.com\n";
+            fallbackResponse += "• Contato: contato@hannoverstore.com\n";
             
             response = fallbackResponse;
           }
@@ -109,21 +109,21 @@ const Chatbot = () => {
           console.log('Sem API key, usando fallback');
           // Se não tiver API key, usar fallback
           const relevantProducts = findRelevantProducts(inputMessage);
-          let fallbackResponse = "👟🤖 Opa, não tenho essa informação específica agora! Mas posso te ajudar de outras formas!";
+          let fallbackResponse = "👟🤖 Opa, não tenho essa info agora! Mas olha só:";
           
           if (relevantProducts.length > 0) {
-            fallbackResponse += "\n\n👟 **Produtos que podem te interessar:**\n";
-            relevantProducts.forEach(product => {
+            fallbackResponse += "\n\n👟 **Produtos top que podem te interessar:**\n";
+            relevantProducts.slice(0, 3).forEach(product => {
               const productName = product.name || product.title || 'Produto';
               const productPrice = product.price ? `R$ ${product.price}` : 'Consulte o preço';
               fallbackResponse += `• [${productName}](/produto/${product.id}) - ${productPrice}\n`;
             });
           }
           
-          fallbackResponse += "\n\n🤖 **Outras formas de ajuda:**\n";
+          fallbackResponse += "\n\n🤖 **Dicas:**\n";
           fallbackResponse += "• Navegue pelos produtos na página inicial\n";
           fallbackResponse += "• Use os filtros por categoria\n";
-          fallbackResponse += "• Entre em contato: contato@hannoverstore.com\n";
+          fallbackResponse += "• Contato: contato@hannoverstore.com\n";
           
           response = fallbackResponse;
         }
@@ -211,6 +211,12 @@ const Chatbot = () => {
 
   const getGoogleAIResponse = async (question, retryCount = 0) => {
     try {
+      // Construir contexto da conversa (últimas 6 mensagens)
+      const recentMessages = messages.slice(-6);
+      const conversationContext = recentMessages.map(msg => 
+        `${msg.type === 'user' ? 'Usuário' : 'Hannovinho'}: ${msg.text}`
+      ).join('\n');
+
       const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + apiKey, {
         method: 'POST',
         headers: {
@@ -227,12 +233,16 @@ SUA PERSONALIDADE:
 - Seja animado, divertido e entusiasmado com produtos esportivos
 - Fale como um amigo que ama esportes e produtos de qualidade
 - Use expressões como "cara", "galera", "show de bola", "top demais"
+- Seja CONCISO - respostas curtas e diretas (máximo 2-3 frases)
 
 PRODUTOS REAIS DISPONÍVEIS:
 ${products && products.length > 0 ? products.slice(0, 10).map(p => `- ${p.name || p.title} (ID: ${p.id}) - R$ ${p.price || 'Consulte'}`).join('\n') : '- Carregando produtos...'}
 
 CATEGORIAS DISPONÍVEIS:
 ${categories && categories.length > 0 ? categories.map(c => `- ${c.name}`).join('\n') : '- Carregando categorias...'}
+
+CONTEXTO DA CONVERSA:
+${conversationContext ? `\nConversa recente:\n${conversationContext}\n` : ''}
 
 SUAS RESPONSABILIDADES:
 1. Responda como o Hannovinho, sendo divertido e animado
@@ -241,15 +251,17 @@ SUAS RESPONSABILIDADES:
 4. Dê dicas sobre produtos específicos que temos em estoque
 5. Seja entusiasmado sobre produtos esportivos
 6. Use emojis e linguagem jovem e divertida
+7. MANTENHA O CONTEXTO da conversa - referencie mensagens anteriores quando relevante
+8. Seja CONCISO - respostas curtas e diretas (máximo 2-3 frases)
 
-Pergunta do usuário: ${question}`
+Pergunta atual do usuário: ${question}`
             }]
           }],
           generationConfig: {
-            temperature: 0.7,
+            temperature: 0.8,
             topK: 40,
             topP: 0.95,
-            maxOutputTokens: 1024,
+            maxOutputTokens: 512, // Reduzido para respostas mais curtas
           }
         })
       });
@@ -267,7 +279,7 @@ Pergunta do usuário: ${question}`
             if (retryCount === 0) {
               setMessages(prev => [...prev, { 
                 type: 'bot', 
-                text: '👟🤖 Opa! O serviço tá um pouquinho lento, mas tô tentando de novo aqui...' 
+                text: '👟🤖 Opa! Serviço lento, tentando de novo...' 
               }]);
             }
             await new Promise(resolve => setTimeout(resolve, 2000 * (retryCount + 1))); // Delay progressivo
@@ -280,7 +292,7 @@ Pergunta do usuário: ${question}`
             console.log('Rate limit atingido, aguardando...');
             setMessages(prev => [...prev, { 
               type: 'bot', 
-              text: '👟🤖 Cara, tô recebendo muitas perguntas agora! Aguarda um pouquinho...' 
+              text: '👟🤖 Muitas perguntas! Aguarda um pouquinho...' 
             }]);
             await new Promise(resolve => setTimeout(resolve, 5000));
             return getGoogleAIResponse(question, retryCount + 1);
