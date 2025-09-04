@@ -9,11 +9,10 @@
     "build-with-logo": "node build-with-logo.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "vercel-build": "node build-with-logo.js"
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "node-fetch": "^3.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.0"

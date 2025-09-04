@@ -1,27 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { copyFileSync } from 'fs'
-import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [
-    react(),
-    // Plugin para copiar arquivos estáticos
-    {
-      name: 'copy-static-assets',
-      generateBundle() {
-        // Copiar logo para o diretório de build
-        try {
-          copyFileSync(
-            resolve(__dirname, 'public/Hanover logo bg.png'),
-            resolve(__dirname, 'dist/Hanover logo bg.png')
-          )
-          console.log('✅ Logo copiada para o build')
-        } catch (error) {
-          console.warn('⚠️ Erro ao copiar logo:', error.message)
-        }
-      }
-    }
+    react()
   ],
   server: {
     port: 3000,
