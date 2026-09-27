@@ -35,9 +35,12 @@ HannoverStore/
 ### 3. Variáveis de Ambiente no Render
 ```bash
 NODE_ENV=production
-JWT_SECRET=seu-jwt-secret-aqui
+JWT_SECRET=YOUR_JWT_SECRET
+GOOGLE_AI_API_KEY=YOUR_GOOGLE_AI_KEY
 PORT=10000
 ```
+
+> 🔐 Configure esses valores apenas no painel do Render. Nunca commite segredos (nem arquivos `.env` / `config.env` com valores reais) no repositório.
 
 ### 4. URL do Backend
 Após o deploy, você receberá uma URL como:
@@ -77,12 +80,12 @@ https://hannover-backend-xxxx.onrender.com
 ## 🔧 Configuração Pós-Deploy
 
 ### 1. Configurar Chave API do Google AI
-1. **Acesse:** `https://seu-site.vercel.app/admin`
-2. **Faça login como admin:**
-   - Email: `admin@hannover.com`
-   - Senha: `password`
-3. **Vá para Configurações**
-4. **Adicione sua chave API do Google AI**
+- **Opção recomendada:** defina `GOOGLE_AI_API_KEY` nas variáveis de ambiente do Render.
+- **Ou pelo painel admin:**
+  1. **Acesse:** `https://seu-site.vercel.app/admin`
+  2. **Faça login com sua conta de administrador** (use uma senha forte; nunca mantenha credenciais padrão em produção)
+  3. **Vá para Configurações**
+  4. **Adicione sua chave API do Google AI**
 
 ### 2. Testar Funcionalidades
 - ✅ Login/Registro
