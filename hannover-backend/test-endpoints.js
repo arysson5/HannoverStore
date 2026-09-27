@@ -83,9 +83,10 @@ async function runTests() {
   // Teste 5: Login
   log('\n📋 Teste 5: Login', 'yellow');
   totalTests++;
+  // NOTA: Configure as credenciais corretas usando variáveis de ambiente ADMIN_EMAIL e ADMIN_PASSWORD
   const loginData = {
-    email: 'admin@hannover.com',
-    password: 'password'
+    email: process.env.ADMIN_EMAIL || 'admin@hannover.com',
+    password: process.env.ADMIN_PASSWORD || 'your-admin-password-here'
   };
   const loginTest = await testEndpoint('POST', '/api/auth/login', loginData);
   if (loginTest.success) passedTests++;

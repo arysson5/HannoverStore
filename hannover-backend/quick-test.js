@@ -31,8 +31,8 @@ async function quickTest() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: 'admin@hannover.com',
-        password: 'password'
+        email: process.env.ADMIN_EMAIL || 'admin@hannover.com',
+        password: process.env.ADMIN_PASSWORD || 'your-admin-password-here'
       })
     });
     

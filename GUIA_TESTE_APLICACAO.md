@@ -51,9 +51,7 @@ npm run dev
 
 #### **B. Teste de Login**
 1. Clique em "Login" ou "Entrar"
-2. Use as credenciais:
-   - **Email:** `admin@hannover.com`
-   - **Senha:** `password`
+2. Use as credenciais de administrador configuradas no ambiente
 3. Verifique se o login funciona
 
 #### **C. Teste de Admin**
@@ -64,7 +62,7 @@ npm run dev
 #### **D. Teste de Configuração da Chave API**
 1. Faça login como admin
 2. Vá para "Configurações" ou `/admin/settings`
-3. Tente configurar a chave API do Google AI
+3. Verifique o status da chave API do Google AI (configurada via variável de ambiente no servidor)
 
 ## 🔧 Solução de Problemas
 

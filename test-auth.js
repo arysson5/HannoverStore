@@ -5,9 +5,10 @@ async function testAuth() {
   console.log('🔐 Testando autenticação...');
   
   // Dados de login do admin
+  // NOTA: Configure as credenciais corretas antes de executar este script
   const adminCredentials = {
-    email: 'admin@hannover.com',
-    password: 'password' // Senha padrão
+    email: process.env.ADMIN_EMAIL || 'admin@hannover.com',
+    password: process.env.ADMIN_PASSWORD || 'your-admin-password-here'
   };
   
   try {
