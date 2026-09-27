@@ -39,8 +39,11 @@ Instance Type: Free
 5. **Variáveis de Ambiente:**
 ```
 NODE_ENV = production
-JWT_SECRET = hannover-store-secret-2024
+JWT_SECRET = YOUR_JWT_SECRET
+GOOGLE_AI_API_KEY = YOUR_GOOGLE_AI_KEY
 ```
+
+> 🔐 Use um `JWT_SECRET` longo e aleatório (ex.: `openssl rand -hex 32`) ou deixe o Render gerar o valor (o `render.yaml` já usa `generateValue: true`). Segredos ficam apenas nas variáveis de ambiente do Render, nunca no repositório.
 
 6. **"Create Web Service"**
 
@@ -77,4 +80,4 @@ VITE_API_URL=https://hannover-backend.onrender.com
 
 ---
 
-**🎉 Pronto! Backend funcionando no Render gratuitamente!** 
+**🎉 Pronto! Backend funcionando no Render gratuitamente!**
