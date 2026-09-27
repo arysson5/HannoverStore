@@ -38,21 +38,21 @@ Arquivos atualizados para não usar valores hardcoded:
 Mesmo após estas mudanças, os segredos **continuam visíveis no histórico do Git**. É obrigatório:
 
 #### 1. Revogar a Chave do Google AI
-```
-Chave exposta: AIzaSyAgr9giBlNpAEU2Acz1YomK02CbDPqf_Ao
-```
+
+A chave do Google AI que estava commitada no arquivo `hannover-backend/config.env` foi exposta publicamente.
 
 **Passos**:
 1. Acesse: https://console.cloud.google.com/apis/credentials
-2. Localize a chave `AIzaSyAgr9giBlNpAEU2Acz1YomK02CbDPqf_Ao`
+2. Localize a chave API do Google que estava sendo usada no projeto
 3. Clique em "Excluir" ou "Revogar"
 4. Gere uma nova chave (se desejar usar funcionalidades de IA no futuro)
 5. Configure no Render como variável de ambiente `GOOGLE_AI_API_KEY`
 
-#### 2. Rotacionar JWT_SECRET no Render
-```
-Valor exposto: hannover-store-secret-key-2024
-```
+#### 2. Rotacionar JWT_SECRET no Render (Recomendado)
+
+O JWT_SECRET antigo que estava hardcoded no código foi exposto no histórico do git.
+
+**Nota**: O ambiente de produção no Render já utiliza um JWT_SECRET próprio (gerado automaticamente pelo `generateValue: true` no render.yaml), diferente do valor que estava commitado. O merge deste PR não afetará a produção, mas é recomendado rotacionar por boa prática.
 
 **Passos**:
 1. Acesse: https://dashboard.render.com/
@@ -67,14 +67,13 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
 #### 3. Trocar Senha do Admin
-```
-Credenciais expostas: admin@hannover.com / password
-```
+
+As credenciais padrão do administrador foram expostas na documentação e histórico do git.
 
 **Passos**:
-1. Faça login como admin na aplicação
+1. Faça login como admin na aplicação usando as credenciais atuais
 2. Vá em "Perfil" ou "Configurações"
-3. Altere a senha para uma senha forte
+3. Altere a senha para uma senha forte e única
 4. Ou altere diretamente no arquivo `hannover-backend/data/users.json` (regenere o hash bcrypt)
 
 ## 📋 Variáveis de Ambiente no Render
@@ -175,10 +174,10 @@ npm run dev
 
 ## ⚠️ Avisos Importantes
 
-1. **Não faça merge antes de configurar as variáveis de ambiente no Render**
-2. **Revogue os segredos expostos antes de tornar o repositório público**
-3. **O histórico do git ainda contém os segredos** - eles só foram removidos dos arquivos atuais
-4. **Todos os colaboradores devem atualizar seus clones locais** após o merge
+1. **Revogue os segredos expostos conforme descrito acima**
+2. **O histórico do git ainda contém os segredos** - eles só foram removidos dos arquivos atuais
+3. **Todos os colaboradores devem atualizar seus clones locais** após o merge
+4. **Considere rotacionar o JWT_SECRET no Render por boa prática** (produção não será afetada pelo merge)
 
 ---
 
