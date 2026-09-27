@@ -33,8 +33,7 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // A funcionalidade de IA avançada foi removida por questões de segurança
-  // O chatbot agora funciona apenas com respostas do banco de dados local
+  // Chatbot configurado para usar banco de dados local
   useEffect(() => {
     console.log('Chatbot funcionando no modo offline (apenas respostas locais)');
     setApiKey('');

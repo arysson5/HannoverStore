@@ -50,7 +50,7 @@ jspm_packages/
 .env.test.local
 .env.production.local
 
-# Arquivo de configuração com segredos
+# Arquivo de configuração local
 config.env
 
 # parcel-bundler cache

@@ -7,7 +7,7 @@ dotenv.config({ path: './config.env' });
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const JWT_SECRET = process.env.JWT_SECRET;
 
-// Validação de variáveis críticas em produção
+// Verificar variáveis obrigatórias em produção
 if (NODE_ENV === 'production' && !JWT_SECRET) {
   console.error('❌ ERRO: JWT_SECRET não definido! Configure a variável de ambiente JWT_SECRET.');
   process.exit(1);
