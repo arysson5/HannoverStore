@@ -1,8 +1,23 @@
+import dotenv from 'dotenv';
+import process from 'process';
+
+// Carregar variáveis de ambiente
+dotenv.config({ path: './config.env' });
+
+const NODE_ENV = process.env.NODE_ENV || 'development';
+const JWT_SECRET = process.env.JWT_SECRET;
+
+// Verificar variáveis obrigatórias em produção
+if (NODE_ENV === 'production' && !JWT_SECRET) {
+  console.error('❌ ERRO: JWT_SECRET não definido! Configure a variável de ambiente JWT_SECRET.');
+  process.exit(1);
+}
+
 export const config = {
   port: process.env.PORT || 3002,
   host: process.env.HOST || '0.0.0.0',
   jwt: {
-    secret: process.env.JWT_SECRET || 'hannover-store-secret-key-2024',
+    secret: JWT_SECRET,
     expiresIn: process.env.JWT_EXPIRES_IN || '7d'
   },
   cors: {

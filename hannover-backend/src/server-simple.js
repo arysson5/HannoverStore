@@ -5,14 +5,25 @@ import { fileURLToPath } from 'url';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
+import dotenv from 'dotenv';
+import process from 'process';
+
+// Carregar variáveis de ambiente
+dotenv.config({ path: './config.env' });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Configuração com variáveis de ambiente para Render
-const JWT_SECRET = process.env.JWT_SECRET || 'hannover-store-secret-key-2024';
+// Configuração com variáveis de ambiente
+const JWT_SECRET = process.env.JWT_SECRET;
 const PORT = process.env.PORT || 3002;
 const NODE_ENV = process.env.NODE_ENV || 'development';
+
+// Verificar variáveis obrigatórias em produção
+if (NODE_ENV === 'production' && !JWT_SECRET) {
+  console.error('❌ ERRO: JWT_SECRET não definido! Configure a variável de ambiente JWT_SECRET.');
+  process.exit(1);
+}
 
 // Função para ler arquivos JSON
 async function readJsonFile(filename) {

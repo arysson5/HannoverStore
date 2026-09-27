@@ -441,10 +441,14 @@ curl -X POST http://localhost:3002/api/orders \
 ```bash
 PORT=3002
 HOST=0.0.0.0
-JWT_SECRET=hannover-store-secret-key-2024
+JWT_SECRET=<seu-jwt-secret-aqui>
 JWT_EXPIRES_IN=7d
 CORS_ORIGIN=http://localhost:3000,http://localhost:5173
 ```
+
+Gere um JWT_SECRET aleatório usando: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
+
+Use o arquivo `config.env.example` como referência.
 
 ### Executar Servidor
 ```bash

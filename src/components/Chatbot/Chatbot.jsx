@@ -33,27 +33,10 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  // Carregar API key do backend
+  // Chatbot configurado para usar banco de dados local
   useEffect(() => {
-    const loadApiKey = async () => {
-      try {
-        const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
-        const response = await fetch(`${API_BASE_URL}/api/google-ai-key`);
-        if (response.ok) {
-          const data = await response.json();
-          console.log('API Key carregada do backend:', data.apiKey ? 'Sim' : 'Não');
-          setApiKey(data.apiKey || '');
-        } else {
-          console.log('API Key não configurada no backend');
-          setApiKey('');
-        }
-      } catch (error) {
-        console.error('Erro ao carregar API key:', error);
-        setApiKey('');
-      }
-    };
-
-    loadApiKey();
+    console.log('Chatbot funcionando no modo offline (apenas respostas locais)');
+    setApiKey('');
   }, []);
 
   const handleSendMessage = async () => {
@@ -67,89 +50,44 @@ const Chatbot = () => {
     try {
       let response = '';
       console.log('Processando mensagem:', inputMessage);
-      console.log('API Key disponível:', apiKey ? 'Sim' : 'Não');
 
-      // Primeiro, tentar encontrar resposta no banco local (QA)
+      // Tentar encontrar resposta no banco local (QA)
       const localResponse = await findLocalAnswer(inputMessage);
       if (localResponse) {
         console.log('Resposta encontrada no banco local');
         response = localResponse;
       } else {
-        console.log('Resposta não encontrada no banco local');
+        console.log('Resposta não encontrada no banco local, usando fallback');
+        // Se não encontrar no QA, usar fallback com produtos relevantes
+        const relevantProducts = findRelevantProducts(inputMessage);
+        let fallbackResponse = "👟🤖 Opa, não tenho essa info agora! Mas olha só:";
         
-        // Se não encontrar no QA e tiver API key, usar Google AI
-        if (apiKey) {
-          console.log('Tentando usar Google AI...');
-          try {
-            response = await getGoogleAIResponse(inputMessage);
-            console.log('Resposta da IA recebida:', response.substring(0, 100) + '...');
-          } catch (aiError) {
-            console.log('Erro na IA, usando fallback:', aiError.message);
-            // Se a IA falhar, usar fallback
-            const relevantProducts = findRelevantProducts(inputMessage);
-            let fallbackResponse = "👟🤖 Opa, não tenho essa info agora! Mas olha só:";
-            
-            if (relevantProducts.length > 0) {
-              fallbackResponse += "\n\n👟 **Produtos top que podem te interessar:**\n";
-              relevantProducts.slice(0, 3).forEach(product => {
-                const productName = product.name || product.title || 'Produto';
-                const productPrice = product.price ? `R$ ${product.price}` : 'Consulte o preço';
-                fallbackResponse += `• [${productName}](/produto/${product.id}) - ${productPrice}\n`;
-              });
-            }
-            
-            fallbackResponse += "\n\n🤖 **Dicas:**\n";
-            fallbackResponse += "• Navegue pelos produtos na página inicial\n";
-            fallbackResponse += "• Use os filtros por categoria\n";
-            fallbackResponse += "• Contato: contato@hannoverstore.com\n";
-            
-            response = fallbackResponse;
-          }
-        } else {
-          console.log('Sem API key, usando fallback');
-          // Se não tiver API key, usar fallback
-          const relevantProducts = findRelevantProducts(inputMessage);
-          let fallbackResponse = "👟🤖 Opa, não tenho essa info agora! Mas olha só:";
-          
-          if (relevantProducts.length > 0) {
-            fallbackResponse += "\n\n👟 **Produtos top que podem te interessar:**\n";
-            relevantProducts.slice(0, 3).forEach(product => {
-              const productName = product.name || product.title || 'Produto';
-              const productPrice = product.price ? `R$ ${product.price}` : 'Consulte o preço';
-              fallbackResponse += `• [${productName}](/produto/${product.id}) - ${productPrice}\n`;
-            });
-          }
-          
-          fallbackResponse += "\n\n🤖 **Dicas:**\n";
-          fallbackResponse += "• Navegue pelos produtos na página inicial\n";
-          fallbackResponse += "• Use os filtros por categoria\n";
-          fallbackResponse += "• Contato: contato@hannoverstore.com\n";
-          
-          response = fallbackResponse;
+        if (relevantProducts.length > 0) {
+          fallbackResponse += "\n\n👟 **Produtos top que podem te interessar:**\n";
+          relevantProducts.slice(0, 3).forEach(product => {
+            const productName = product.name || product.title || 'Produto';
+            const productPrice = product.price ? `R$ ${product.price}` : 'Consulte o preço';
+            fallbackResponse += `• [${productName}](/produto/${product.id}) - ${productPrice}\n`;
+          });
         }
+        
+        fallbackResponse += "\n\n🤖 **Dicas:**\n";
+        fallbackResponse += "• Navegue pelos produtos na página inicial\n";
+        fallbackResponse += "• Use os filtros por categoria\n";
+        fallbackResponse += "• Contato: contato@hannoverstore.com\n";
+        
+        response = fallbackResponse;
       }
 
       setMessages(prev => [...prev, { type: 'bot', text: response, hasLinks: response.includes('[') && response.includes(']') }]);
     } catch (error) {
       console.error('Erro ao processar mensagem:', error);
-      let errorMessage = '👟🤖 Opa, cara! Deu um probleminha aqui! Mas não se preocupe, vou te ajudar mesmo assim!';
-      
-      if (error.message.includes('Chave da API inválida')) {
-        errorMessage = '🤖👟 Cara, a chave da API não está funcionando! Verifica se está correta no Google AI Studio, beleza?';
-      } else if (error.message.includes('sem permissão')) {
-        errorMessage = '👟🤖 Opa! Sua chave não tem permissão. Dá uma olhada nas configurações do Google AI Studio!';
-      } else if (error.message.includes('Solicitação inválida')) {
-        errorMessage = '🤖👟 Não consegui entender sua pergunta! Tenta reformular de um jeito mais simples, ok?';
-      } else if (error.message.includes('temporariamente indisponível')) {
-        errorMessage = '👟🤖 Opa! O serviço tá temporariamente fora do ar. Tenta de novo em alguns minutos, beleza? Enquanto isso, que tal dar uma olhada nos nossos produtos esportivos?';
-      } else if (error.message.includes('Muitas solicitações')) {
-        errorMessage = '🤖👟 Cara, tô recebendo muitas perguntas agora! Aguarda um pouquinho e tenta de novo, ok?';
-      }
+      let errorMessage = '👟🤖 Opa, deu um probleminha aqui! Mas vou te ajudar mesmo assim!';
       
       // Adicionar recomendações de produtos mesmo em caso de erro
       const relevantProducts = findRelevantProducts(inputMessage);
       if (relevantProducts.length > 0) {
-        errorMessage += "\n\n👟 **Mas olha só, tenho uns produtos que podem te interessar:**\n";
+        errorMessage += "\n\n👟 **Olha só, tenho uns produtos que podem te interessar:**\n";
         relevantProducts.forEach(product => {
           const productName = product.name || product.title || 'Produto';
           const productPrice = product.price ? `R$ ${product.price}` : 'Consulte o preço';

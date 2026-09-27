@@ -14,11 +14,17 @@ dotenv.config({ path: './config.env' });
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Configuração com variáveis de ambiente para Render
-const JWT_SECRET = process.env.JWT_SECRET || 'hannover-store-secret-key-2024';
+// Configuração com variáveis de ambiente
+const JWT_SECRET = process.env.JWT_SECRET;
 const PORT = process.env.PORT || 3002;
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const GOOGLE_AI_API_KEY = process.env.GOOGLE_AI_API_KEY || 'AIzaSyDummyKeyForDevelopment123456789';
+const GOOGLE_AI_API_KEY = process.env.GOOGLE_AI_API_KEY || '';
+
+// Verificar variáveis obrigatórias em produção
+if (NODE_ENV === 'production' && !JWT_SECRET) {
+  console.error('❌ ERRO: JWT_SECRET não definido! Configure a variável de ambiente JWT_SECRET.');
+  process.exit(1);
+}
 
 // Função para ler arquivos JSON
 async function readJsonFile(filename) {
@@ -115,16 +121,6 @@ const verifyAdmin = async (request, reply) => {
 // Health check
 fastify.get('/api/health', async () => {
   return { status: 'OK', timestamp: new Date().toISOString() };
-});
-
-// Obter chave API do Google AI (pública para o chatbot)
-fastify.get('/api/google-ai-key', async (request, reply) => {
-  try {
-    return { apiKey: GOOGLE_AI_API_KEY };
-  } catch (error) {
-    console.error('Erro ao buscar chave API:', error);
-    reply.code(500).send({ error: 'Erro interno do servidor' });
-  }
 });
 
 // ==================== ROTAS DE AUTENTICAÇÃO ====================
